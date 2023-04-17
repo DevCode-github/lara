@@ -1,0 +1,53 @@
+									  OBJECT
+									    |
+									THROWABLE (SEMI CHECKED)
+									    |
+									    |
+						|								|
+					ERROR (UNCHECKED)						EXCEPTION (SEMI CHECKED)
+													    |
+												|			|
+									     (UNCHECKED) RuntimeException    'SOME EXCEPTIONS'(CHECKED)
+
+CHECKED		- Syntax check by compiler.Verifying every syntax related to checked.
+UNCHECKED	- No syntax check by compiler.Least bothered about try or catch block or any exception related statements.
+SEMI CHECKECD	- In some scenarios its acting as checked and some as unchecked.
+
+UNCHECKED:
+		1.Error
+		2.StacOverFlowError
+		3.OutOfMemoryError
+		4.NoSuchFieldError
+		5.NoSuchMethodError
+		6.NoClassDefFoundError
+		7.any error type classes
+
+		8.RuntimeException
+		9.NullPointerException
+		10.ArithmeticException
+		11.ArrayIndexOutOfBoundsException
+		12.NumberFormatException
+		13.any type of RuntimeException
+
+CHECKED:
+		1.ClassNotFoundException	==> Class.forName("java.lang.String")
+		2.SQLException			==> JDBC
+		3.CloneNotSupportedException	==> clone()
+		4.IOException-------------------|
+							  |---File Handling
+		5.FileNotFoundException---------|(subclass to IOException)
+		6.ParseExecption		==> DateFormat's parse() method
+		7.InterruptedException		==> Thread's sleep(), wait(), join()	
+SEMICHECKED:
+		1.Exception
+		2.Throwable
+
+Overriding rules for methods having throws:
+		1. Any method of super class having throws checked/unchecked can be overrided without throws by subclass method.
+		2. Any method of super class, may or may not have throws checked/unchecked, can be overrided with throws unchecked subclass method. 
+		3. Any method of super class having throws checked, can only be overrided by the subclass method only if it throws checked of the same type or subclass.
+		
+Q.Why have more catches?
+A-We can provide exception specific messages for the said exception.Error wise different solutions are possible.
+		
+throw - Should always be the last statement in the current block.

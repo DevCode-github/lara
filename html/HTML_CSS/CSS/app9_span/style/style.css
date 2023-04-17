@@ -1,0 +1,9 @@
+span {
+    display: block;
+    text-transform: uppercase;
+    background: white;
+}
+.red{
+    color: red;
+    background: black;
+}

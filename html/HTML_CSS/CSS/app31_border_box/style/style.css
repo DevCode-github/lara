@@ -1,0 +1,40 @@
+/* box sizing: border-box; border and padding is included in the width and height of the element
+
+box-sizing: content-box;(default)
+content-box: this is the default value of the box-sizing property. In this mode, the width and height properties include only the content. Border & padding are not included in it. i.e if we set an element's width to 200 pixels, then the element's content box will be 200 pixels wide, and the width of any border or padding will be adding to the final rendered width.
+
+By default, the width and height of an element is calculated like this:
+
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element
+
+This means when you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the elements's specified width/height) */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+.box-1,
+.box-2,
+.box-3 {
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-size: 1.5rem;
+}
+.box-1 {
+    background: red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box-2 {
+  background: blue;
+  /* padding: 20px; */
+  /* box-sizing: border-box; */
+}
+.box-3 {
+    background: green;
+    padding: 20px;
+}

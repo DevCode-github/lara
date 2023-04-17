@@ -1,0 +1,24 @@
+Web technology
+    1.web design
+    2.web development
+web design
+    1.HTML
+    2.css
+    3.Bootstrap
+web development
+    1.js
+    2.JQuery
+    3.Angular
+    4.React
+
+web page = web design  + web development
+
+HTML
+    -creating web page 
+    -interface between server side application and ui
+CSS 
+    -design
+    -setting elements size, color, margin etc.
+Bootstrap
+    -framework built on top of css
+    -predefined look and component

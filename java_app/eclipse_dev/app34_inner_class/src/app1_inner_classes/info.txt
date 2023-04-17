@@ -1,0 +1,7 @@
+-Any inner class can be used anywhere if the usage is data type usage.
+-If any inner class is not static the it can only be used by using outer class reference.
+-It can also be used along with outer class as outerclass.innerclass.
+-Any variable to be used in inner class should be final or should not attempted to anywhere outside inner class, otherwise error. 
+-Outer class can be public or default.Inner classes can have any access level.
+-Local members(inner class inside main method) should not have access level and static.
+-Member of local inner class can have any access level.

@@ -1,0 +1,3 @@
+Referes to the tools and technique used in the process of producing and communication of data b/n various devices over the internet.
+
+Internet : Network of connected computers

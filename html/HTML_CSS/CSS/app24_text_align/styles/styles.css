@@ -1,0 +1,23 @@
+body
+{
+  font-family:monospace;
+  text-align:right;
+}
+.main-heading
+{
+  font-family:verdana,geneva, tahoma, sans-serif;
+  text-align: center;
+}
+.sub-heading
+{
+  text-align:left;
+}
+.one
+{
+  text-align:center;
+}
+.two
+{
+  text-align:justify;
+  text-indent: 6rem;
+}

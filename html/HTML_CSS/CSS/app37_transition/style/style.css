@@ -1,0 +1,29 @@
+/* transition 0 = 100% -from start to end state
+animation 0 1% 2%  */
+
+div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+div:hover {
+    background: coral;
+    /* transform: rotate(70deg); */
+    /* transition-duration: 2s ; */
+    border-radius: 50%;
+}
+.one {
+  background: red;
+  /* transform: rotate(10deg); */
+  transition-duration: 4s ;
+}
+.two {
+  background-color: green;
+  /* transform: skewx(50deg); */
+  transition-duration: 4s ;
+}
+.three {
+  background: purple;
+  transition-property: background, border-radius;
+  transition-duration: 10s;
+}

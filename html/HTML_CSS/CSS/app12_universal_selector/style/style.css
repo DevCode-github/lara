@@ -1,0 +1,13 @@
+* {
+    color: crimson;
+}
+/* last preference for universal selector */
+p{
+    color: red;
+}
+.heading{
+    color: green
+}
+.special {
+    color: green;
+}

@@ -1,0 +1,20 @@
+/* :root root element - highest specificity*/
+/* root represent html elements and has the highest specificity */
+/* root selector is default for all variables  */
+/* between root and html, root has higher specificity */
+:root {
+  font-size: 10px;
+  color: greenyellow;
+}
+html{
+    font-weight: bold;
+    color:brown;
+}
+.absolute {
+  font-size: 24px;
+  color: red;
+}
+.relative {
+  color: blue;
+  font-size: 1.5rem;
+}

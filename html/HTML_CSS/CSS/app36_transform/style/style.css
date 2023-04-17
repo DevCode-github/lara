@@ -1,0 +1,32 @@
+/* only the latest tranform will manifest */
+div{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+.one {
+    background: red;
+    /* transform: scaleX(10); */
+    /* transform: scaleY(10); */
+    /* transform: scale(10,10); */
+    /* transform: translateX(50%); */
+    transform: rotate(10deg);
+}
+.two {
+    background-color: green;
+    /* transform: translateX(-40%) */
+    /* transform: rotate(30deg); */
+    /* transform: skewX(5deg); */
+    transform: skewx(50deg);
+
+}
+.three {
+    background: purple;
+    /* transform: translateX(40%); */
+    /* transform: translate(-200px, 300px); */
+    /* transform: rotatex(50deg); */
+    /* transform: rotatey(50deg); */
+    /* transform: rotatez(50deg); */
+    transform: rotate(70deg);
+
+}

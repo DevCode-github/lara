@@ -1,0 +1,11 @@
+length() - > to find length of the string
+charAt() - > read the character
+indexOf(' ',i) - > to find the index of particular character after the certain index default 0
+lastindexOf() - > find the last occurances of particular character
+substring(start,stop) -> stop in exclusive
+trim() -> remove space from the either ends of the string
+split(' ',@) -> split the string with the seperator given
+endsWith('') -> check whether the index ends with the specified character
+equals() -> compare two strings return two strings if strings are equal
+equalsIgnoreCase() -> compare two strings ignore case consideration
+isEmpty() -> checks whether the string is empty

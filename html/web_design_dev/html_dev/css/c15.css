@@ -1,0 +1,21 @@
+*{
+    padding: 0px;
+    margin: 0%;
+    box-sizing: border-box;
+}
+#info{
+    margin: 50px;
+}
+#top{
+    background: orange;
+}
+td{
+    padding: 5px;
+}
+#bottom{
+    margin: 50px;
+    background: orange;
+}
+#main{
+    padding: 10px;
+}

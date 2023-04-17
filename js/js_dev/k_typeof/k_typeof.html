@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test() {
+            var i;
+            alert(i + "," + (typeof i));
+            var i = 10;
+            alert(i + "," + (typeof i) );
+            i = 3.4;
+            alert(i + "," + (typeof i) );
+            i = true;
+            alert(i + "," + (typeof i) );
+            i = "abc";
+            alert(i + "," + (typeof i) );
+            i = 'xyz';
+            alert(i + "," + (typeof i) );
+            i = null;
+            alert(i + "," + (typeof i) );
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="test()">test typeof internals</a>
+</body>
+</html>

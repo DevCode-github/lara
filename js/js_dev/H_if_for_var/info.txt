@@ -1,0 +1,1 @@
+-variables declared using var is local to the nearest function not to the local current block
