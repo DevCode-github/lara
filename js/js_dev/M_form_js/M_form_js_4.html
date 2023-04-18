@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function regValidation() {
+            var regForm = document.forms[0];
+            var firstname = regForm.firstname;
+            var lastname = regForm.lastname;
+            var firstname_warning = document.getElementById('firstname_warning');
+            var lastname_warning = document.getElementById('lastname_warning');
+            if (firstname.value.length == 0) {
+                firstname_warning.innerHTML = "*First name is required";
+                firstname.focus();
+                return false;
+            }
+            else {
+                firstname_warning.innerHTML = "";
+            }
+            if (lastname.value.length == 0) {
+                lastname_warning.innerHTML = "*Last name is required";
+                lastname.focus();
+                return false;
+            }
+            else {
+                lastname_warning.innerHTML = "";
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="success.html">
+        first name: <input type="text" name="firstname" ><span id="firstname_warning" style="color:red;"></span><br>
+        last name: <input type="text" name="lastname" ><span id="lastname_warning" style="color:red;"></span><br>
+        <input type="submit" value="submit" onclick="return regValidation()">
+    </form>
+</body>
+</html>
