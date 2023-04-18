@@ -1,0 +1,9 @@
+More than one task simultaneously is called multitasking.
+Achieving multitasking through :
+	1.multiprocessing
+	2.multithreading
+	
+1. Multiple task through multiple processes. Multiprocessing is a heavy weight because of multiple process.
+
+
+2. In one process multiple blocks producing output simultaneously.
