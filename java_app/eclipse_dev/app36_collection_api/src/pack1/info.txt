@@ -1,0 +1,22 @@
+Array:
+-only one type of data type can be stored.
+-Array size is fixed, we cannot modify further.
+-No built-in methods.
+-First element is the reference to the rest of the element, thats why Array index starting from 0.
+
+Collection api :
+collection of elements , group of elements, managing collection of elements.
+
+List :
+-It maintains the order of the elements in which they were added.
+-Its built on top Array. Internally it uses index numbers, we need not mention explicitly.
+
+Queue :
+-FIFO
+
+Set :
+-While managing multiple elements it won't allow duplicates.
+
+Map :
+-Every elements mapping with a key.
+-Also called key-value pair.
