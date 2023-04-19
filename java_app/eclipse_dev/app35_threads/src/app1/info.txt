@@ -1,4 +1,4 @@
-More than one task simultaneously is called multitasking.
+nMore than one task simultaneously is called multitasking.
 Achieving multitasking through :
 	1.multiprocessing
 	2.multithreading
