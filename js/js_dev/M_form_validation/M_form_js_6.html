@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var regForm = document.forms[0];
+            var gender = regForm.gender;
+            var skill = regForm.skill
+            var flag = false;
+            for (var i = 0 ; i < gender.length ; i++) {
+                if (gender[i].checked) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag) {
+                alert("pls select a gender");
+                gender[0].focus();
+                return false;
+            }
+            flag = false;
+            for (var i = 0 ; i < skill.length ; i++) {
+                if (skill[i].checked) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag) {
+                alert("pls select a skill");
+                skill[0].focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="./success.html">
+        Gender : 
+            <input type="radio" name="gender" value="m"> Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="f"> Female <br>
+        Skills :
+            <input type="checkbox" name="skill" value="c"> C &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="skill" value="cpp"> C++ &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="skill" value="java"> java <br>
+        <input type="submit" value="submit" onclick="return validate()">
+    </form>
+</body>
+</html>

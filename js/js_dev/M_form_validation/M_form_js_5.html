@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateLogin() {
+            var loginForm = document.forms[0];
+            var username = loginForm.username;
+            var usernameError = document.getElementById("usernameError");
+            var password = loginForm.password;
+            var passwordError = document.getElementById("passwordError");
+
+            if(username.value.length == 0 && password.value.length != 0) {
+                passwordError.innerHTML=" ";
+                usernameError.innerText="*Username is required";
+                username.focus();
+                return false;
+            }
+            else {
+                usernameError.innerHTML=" ";
+            }
+            if(password.value.length == 0 && username.value.length != 0) {
+                passwordError.innerText="*Password is required";
+                password.focus();
+                return false;
+            }
+            else {
+                passwordError.innerHTML=" ";
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="success.html">
+        username : <input type="text" name="username"><span id="usernameError" style="color:red;"></span> <br>
+        password: <input type="password" name="password"><span id="passwordError" style="color:red;"></span><br>
+        <input type="submit" name="submit" onclick="return validateLogin()">
+    </form>
+</body>
+</html>

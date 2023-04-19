@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var regForm = document.forms[0];
+            var education = regForm.education;
+            if(education.value.length == 0){
+                alert("education is required");
+                education.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="success.html">
+        Education: <select name="education" >
+            <option value="">pls select</option>
+            <option value="be">BE</option>
+            <option value="be">MCA</option>
+            <option value="be">BCA</option>
+        </select><br>
+        <input type="submit" value="submit" onclick="return validate()">
+    </form>
+</body>
+</html>
