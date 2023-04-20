@@ -20,3 +20,27 @@ Set :
 Map :
 -Every elements mapping with a key.
 -Also called key-value pair.
+
+
+
+class ArrayList{
+	public void add(Object obj){}
+	public Object get(int index){}
+	public Boolean remove(Object index){}
+	public Object remove(int index){}
+}
+
+
+methods :
+add()
+set()
+remove()
+removeAll()
+removeRange()
+retainAll()
+size()
+
+
+length : Available in the arrays, tells size of the array through this property.
+length() : Available in string, to know total numbers of characters in the string.
+size(): Available in the Collection api, to know the number of elements in collection object.  
