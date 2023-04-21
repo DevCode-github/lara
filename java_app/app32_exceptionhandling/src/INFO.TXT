@@ -43,9 +43,10 @@ SEMICHECKED:
 		2.Throwable
 
 Overriding rules for methods having throws:
-		1. Any method of super class having throws checked/unchecked can be overrided without throws by subclass method.
-		2. Any method of super class, may or may not have throws checked/unchecked, can be overrided with throws unchecked subclass method. 
-		3. Any method of super class having throws checked, can only be overrided by the subclass method only if it throws checked of the same type or subclass.
+		1. Any method of super class having throws checked, can only be overrided by the subclass method only if it throws checked of the same type or its subclass or throws unchecked 
+		   does not throws any.
+		2. Any method of super class having throws unchecked, can only be overrided by subclass method with throws unchecked or not having throws.  
+		3. Any method of super class not having throws clause, can only be overrided by subclass method with throws unchecked or not having throws. 
 		
 Q.Why have more catches?
 A-We can provide exception specific messages for the said exception.Error wise different solutions are possible.
