@@ -24,7 +24,7 @@ Map :
 
 
 class ArrayList{
-	public void add(Object obj){}
+	public Boolean add(Object obj){}
 	public Object get(int index){}
 	public Boolean remove(Object index){}
 	public Object remove(int index){}
@@ -32,15 +32,20 @@ class ArrayList{
 
 
 methods :
-add()
-set()
+
+1.boolean add(): adds elements upcasted to Object type and return boolean result
+2. set(int index, Object obj): replaces elements in a specified position
 remove()
 removeAll()
 removeRange()
 retainAll()
 size()
+contains():checks whether specified element is there or not.
 
 
 length : Available in the arrays, tells size of the array through this property.
 length() : Available in string, to know total numbers of characters in the string.
 size(): Available in the Collection api, to know the number of elements in collection object.  
+
+
+@Thread does not implement comparable interface
