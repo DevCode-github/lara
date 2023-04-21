@@ -1,10 +1,11 @@
 abstract class F{
 	F(){}
-	static int a = 10;
+	int a = 10;
 	
 }
-class F_1{
+class F_1 extends F{
 	public static void main(String[] args){
-		System.out.println(F.a);
+		F_1 f = new F_1();
+		System.out.println(f.a);
 	}
 }
