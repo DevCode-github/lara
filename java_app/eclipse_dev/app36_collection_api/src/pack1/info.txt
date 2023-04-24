@@ -1,5 +1,3 @@
-Index :
-M30 - toString() overriding
 Array:
 -only one type of data type can be stored.
 -Array size is fixed, we cannot modify further.
