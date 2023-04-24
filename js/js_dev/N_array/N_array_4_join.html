@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var elements = [10, 20.4,"abc",true, 1, 't'];
+        var elementsContent = '';
+        function test() {
+            document.getElementById('d1').innerHTML = elements.join(', ');
+            document.getElementById('d1').innerHTML = elements.join('; ');
+            document.getElementById('d1').innerHTML = elements.join(' and ');
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="test()">print js</a>
+    <div id="d1"></div>
+</body>
+</html>

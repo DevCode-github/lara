@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var elements = [10, 20.4,"abc",true, 1, 't','e',"dfs",55,66,77];
+        function delSubArray() {
+        //    elements.splice(3);//removes everything after index 3
+        //    elements.splice(0,3);//removes from 0 till 3 elements i.e. till index 2
+        //    elements.splice(3.9);//convert double to int removes from 3
+        //    elements.splice(0,9,"abc");
+           elements.splice(3,1,"abc","xyz");//removes one element from index and insert "abc","xyz" from index 3
+        //    elements.splice(0,9,["abc","efg",'t',true]);//removes 9 elements from 0 and insert the array from 0
+        //    elements.splice("");//removes everything
+        //    elements.splice([]);//removes everything
+           print();
+        }
+        function print() {
+            document.getElementById('d1').innerHTML = elements.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="print()">print js array</a> <br>
+    <a href="#" onclick="delSubArray()">splice</a>
+    <div id="d1"></div>
+</body>
+</html>

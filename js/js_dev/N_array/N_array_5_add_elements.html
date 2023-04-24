@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var elements = [10, 20.4,"abc",true, 1, 't'];
+        function add() {
+            elements[elements.length] = 4000;            
+            elements[elements.length + 100] = 4100;            
+            elements.push(66);
+        }
+        function print() {
+            document.getElementById('d1').innerHTML = elements.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="print()">print js array</a> <br>
+    <a href="#" onclick="add()">add</a>
+    <div id="d1"></div>
+</body>
+</html>
