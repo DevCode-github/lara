@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person = [
+        {
+            firstName: "ramu",
+            lastName: "test",
+            age: 23,
+            weight: 45.9
+        },
+        {
+            firstName: "mohan",
+            lastName: "a",
+            age: 22,
+            weight: 49.9
+        },
+        {
+            firstName: "pavan",
+            lastName: "p",
+            age: 21,
+            weight: 55.9
+        },
+        {
+            firstName: "murali",
+            lastName: "m",
+            age: 20,
+            weight: 65.9
+        },
+        ]
+        function test() {
+            var str = '';
+            for(var i = 0 ; i < person.length ; i++) {
+                str += person[i].firstName + ", " + person[i].lastName + ", " + person[i].age + ", " + person[i].weight + "<br>"; 
+            }
+            document.getElementById('p1').innerHTML = str;
+        }
+        /**
+         * fucntion sort1 : sort by age
+        */
+        function sort1() {
+            person.sort(function(a,b) {
+                return a.age - b.age;
+            });
+            test();
+        }
+    </script>
+</head>
+<body>
+    <p id="p1"></p>
+    <input type="button" value="read"  onclick="test()">
+    <input type="button" value="sort based on age"  onclick="sort1()">
+</body>
+</html>
