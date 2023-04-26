@@ -9,7 +9,7 @@ public class M5 {
 		b1 = new B();
 		M5 obj = new M5();
 		a1 = obj.new A();
-
+		System.out.println("done");
 	}
 
 }

@@ -15,8 +15,5 @@ public class M11 {
 		};
 		e2.test1();
 		e2.test2();
-		for (dfd;;){
-			
-		}
 	}
 }

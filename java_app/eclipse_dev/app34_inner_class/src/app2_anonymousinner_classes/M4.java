@@ -1,3 +1,4 @@
+
 package app2_anonymousinner_classes;
 
 public class M4 {

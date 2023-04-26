@@ -12,7 +12,9 @@ public class M14 {
 		System.out.println(list1);
 //		Object obj = list1.remove(Integer.valueOf(400));
 		System.out.println(list1.remove(Integer.valueOf(400)));
-		System.out.println(list1.remove(9.0));
+		System.out.println(list1.remove(9.0));//converts into double object and calls remove which takes object argument
+		System.out.println(list1.remove(9));//call remove method which takes index as int
+		System.out.println(list1.remove('9'));//converts ascii equivalent integer
 		System.out.println(list1);
 		
 	}
