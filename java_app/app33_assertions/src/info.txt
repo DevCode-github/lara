@@ -11,7 +11,7 @@ enabling/disabling can be done in three diff ways:
 classes java -ea A
 classes java -da A
 classes java -ea:pack1... A (enabling package for pack1 and subpackages)
-classes java -ea -da:pack2... A (enabling for all packages and package for pack2)
+classes java -ea -da:pack2... A (enabling for all packages and disabling for pack2)
 classes java -ea -da:pack1... -da:pack2... A (enabling for all packages and disabling for pack1 and pack2).
 
 in-apropiate usage

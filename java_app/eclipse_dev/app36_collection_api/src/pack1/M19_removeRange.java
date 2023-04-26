@@ -2,9 +2,9 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M22 {
+public class M19_removeRange extends ArrayList{
 	public static void main(String[] args) {
-		ArrayList list1 = new ArrayList();
+		M19_removeRange list1 = new M19_removeRange();
 		list1.add("abc");
 		list1.add("xyx");
 		list1.add("hello");
@@ -14,7 +14,8 @@ public class M22 {
 		list1.add("html");
 		list1.add("spring");
 		list1.add("js");
-		System.out.println(list1.contains("test"));
-		System.out.println(list1.contains("angular"));
+		System.out.println(list1);
+		list1.removeRange(2,6);
+		System.out.println(list1);
 	}
 }

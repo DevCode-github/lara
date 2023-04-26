@@ -2,9 +2,9 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M19 extends ArrayList{
+public class M22_contains {
 	public static void main(String[] args) {
-		M19 list1 = new M19();
+		ArrayList list1 = new ArrayList();
 		list1.add("abc");
 		list1.add("xyx");
 		list1.add("hello");
@@ -14,8 +14,7 @@ public class M19 extends ArrayList{
 		list1.add("html");
 		list1.add("spring");
 		list1.add("js");
-		System.out.println(list1);
-		list1.removeRange(2,6);
-		System.out.println(list1);
+		System.out.println(list1.contains("test"));
+		System.out.println(list1.contains("angular"));
 	}
 }

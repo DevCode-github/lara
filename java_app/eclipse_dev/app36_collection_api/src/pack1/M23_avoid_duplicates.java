@@ -2,7 +2,7 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M23 {
+public class M23_avoid_duplicates {
 	public static boolean addNew(Object obj, ArrayList list) {
 		if (!list.contains(obj)) {
 			list.add(obj);

@@ -1,8 +1,7 @@
 package pack1;
 
 import java.util.ArrayList;
-
-public class M21 {
+public class M20_size {
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add("abc");
@@ -14,9 +13,8 @@ public class M21 {
 		list1.add("html");
 		list1.add("spring");
 		list1.add("js");
-		for(Object obj : list1) {
-			System.out.println(obj);
-			
+		for(int i = 0 ; i < list1.size() ; i++) {
+			System.out.println(list1.get(i));
 		}
 	}
 }

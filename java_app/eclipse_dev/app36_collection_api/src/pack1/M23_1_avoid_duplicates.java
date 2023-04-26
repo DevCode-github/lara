@@ -1,7 +1,7 @@
 package pack1;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class M23_1 {
+public class M23_1_avoid_duplicates {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		ArrayList list = new ArrayList();

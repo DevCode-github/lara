@@ -3,7 +3,7 @@ package pack1;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class M28 {
+public class M28_Collections_sort_thread {
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(190);

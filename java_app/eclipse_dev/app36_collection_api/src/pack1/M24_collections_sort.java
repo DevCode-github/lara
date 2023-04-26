@@ -3,7 +3,7 @@ package pack1;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class M25 {
+public class M24_collections_sort {
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
 //		list.add(100);
@@ -13,7 +13,7 @@ public class M25 {
 		list.add("xyz");
 		list.add("xyz");
 		System.out.println(list);
-		Collections.sort(list, Collections.reverseOrder());
+		Collections.sort(list);
 		System.out.println(list);
 	}
 }
