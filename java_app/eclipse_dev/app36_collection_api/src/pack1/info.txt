@@ -1,3 +1,4 @@
+class in pack1 used till Q
 Array:
 -only one type of data type can be stored.
 -Array size is fixed, we cannot modify further.
