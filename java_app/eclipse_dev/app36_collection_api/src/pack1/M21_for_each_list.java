@@ -2,7 +2,7 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M21_for_each {
+public class M21_for_each_list {
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add("abc");
