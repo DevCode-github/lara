@@ -2,7 +2,7 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M7 {
+public class M7_get {
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
 		list.add(90);

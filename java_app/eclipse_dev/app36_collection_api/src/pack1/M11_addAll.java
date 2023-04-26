@@ -2,7 +2,7 @@ package pack1;
 
 import java.util.ArrayList;
 
-public class M11 {
+public class M11_addAll {
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(100);

@@ -1,8 +1,8 @@
 package pack1;
 import java.util.ArrayList;
-class A{
+class A_1{
 	int i;
-	A(int i) {
+	A_1(int i) {
 		this.i = i;
 	}
 	/**
@@ -15,12 +15,12 @@ class A{
 public class M29_toString {
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
-		list.add(new A(90));
-		list.add(new A(910));
-		list.add(new A(190));
-		list.add(new A(9));
+		list.add(new A_1(90));
+		list.add(new A_1(910));
+		list.add(new A_1(190));
+		list.add(new A_1(9));
 		System.out.println(list);
-		A a1 = new A(90);
+		A_1 a1 = new A_1(90);
 		System.out.println(a1);
 	}
 }

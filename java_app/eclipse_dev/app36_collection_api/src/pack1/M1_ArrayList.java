@@ -1,6 +1,6 @@
 package pack1;
 import java.util.ArrayList;
-public class M1 {
+public class M1_ArrayList {
 	public static void main(String[] args) {
 		int[] elements = {10,32,434};
 		System.out.println(elements);
