@@ -1,0 +1,14 @@
+java.io.* : IO package, input and output package
+
+java.io.File :
+	-path given to file only works with single forward(/) slash and double backward slash(\\).
+	-mkdir does not require to IOException.(java.io.IOException)
+	
+methods :
+1. boolean createNewFile() : creates new file for the given existing path, if created returns true then false.
+2. boolean exists() : check whether the file exists and return true or false
+3. boolean mkdir() : create dir if not exists and return true of false.
+4. boolean mkdirs() : creates chain of dirs for the given path if does not exist, and return true of false.
+4. boolean isFile() : check whether the given path is a file if yes return true, else return false.
+5. boolean idDirectory() :  check whether the given path is a directory if yes return true, else return false.
+	
