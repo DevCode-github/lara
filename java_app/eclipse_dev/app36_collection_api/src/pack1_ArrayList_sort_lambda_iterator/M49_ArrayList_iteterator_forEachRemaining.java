@@ -3,7 +3,7 @@ package pack1_ArrayList_sort_lambda_iterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
-public class M49_ArrayList_iteterator {
+public class M49_ArrayList_iteterator_forEachRemaining {
 	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
