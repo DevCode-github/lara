@@ -72,18 +72,42 @@ public class M50_ArrayList_ListIteterator {
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
-		int position = 6;
+		int position = 8;
+		boolean match = false;
 		/**
-		 * Finding the index for the position that is 5 in this case
+		 * Finding the index for the position that is 19 in this case, which does not exist.
+		 * If it attempts to go beyond the last element,
+		 * or attempts to go before the first element,
+		 * it will mean that the index is out of range,
+		 * catch the error, make the flag false and break the loop.
 		 */
-		while((it.nextIndex()-1) != position-1) {
-			if(it.nextIndex() < position && it.nextIndex() != -1 || it.previousIndex() == -1) {
-				it.next();
+		while(position > -1) {
+			if(it.nextIndex() < position || it.previousIndex() == -1) {
+				try {
+					it.next();
+				}
+				catch(Exception ex) {
+					match = false;
+					break;
+				}
 			}
-			else it.previous();
+			else {
+				try {
+					it.previous();
+				}
+				catch(Exception ex) {
+					match = false;
+					break;
+				}
+			}
+			if(it.nextIndex() == position) {
+				match = true;
+				break;
+			}
+			
 		}
 		System.out.println("after adding 96.5");
-		it.add(96.5);
+		if (match) it.add(96.5);
 		while(it.hasPrevious()) {it.previous();}//set to starting index
 		while(it.hasNext()) {
 			System.out.println(it.next());
