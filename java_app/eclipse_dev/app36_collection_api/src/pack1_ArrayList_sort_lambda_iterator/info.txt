@@ -22,15 +22,12 @@ Map :
 -Every elements mapping with a key.
 -Also called key-value pair.
 
-
-
 class ArrayList{
 	public Boolean add(Object obj){}
 	public Object get(int index){}
 	public Boolean remove(Object index){}
 	public Object remove(int index){}
 }
-
 
 Array list methods :
 
@@ -40,8 +37,8 @@ Array list methods :
    boolean remove(Object i) : removes object, if present returns true if not returns false.
 4. <reference_variable>.removeAll(ArrayList list) : removes the element in the list that are present in the passed list.
 5. <reference_variable>.removeRange(int i, int j) : protected member of ArrayList, removes elements form index i, till index j-1 since j is exclusive. 
-6. retainAll()
-7. size()
+6. <reference_variable>.retainAll(ArrayList list) : retains all the elements that matches in the passed list and deletes the rest.
+7. int size() : Returns the number of elements present int the ArrayList.
 8. contains() : checks whether specified element is there or not, if present returns true, if not false.
 
 
@@ -65,7 +62,7 @@ public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
   public abstract boolean hasNext(); : checks for the next element if none return false else true
   public abstract E next(); : returns the next element if none returns noSuchElementError
   public abstract boolean hasPrevious(); : checks for the previous element if none return false else true
-  public abstract E previous(); : returns the previous element if none returns noSuchElementError
+  public abstract E previous(); : returns the previous element if none throws  noSuchElementError
   public abstract int nextIndex(); : returns the next index if none returns -1
   public abstract int previousIndex(); : returns the previous index if none returns -1
   public abstract void remove(); : remove at the pointer
