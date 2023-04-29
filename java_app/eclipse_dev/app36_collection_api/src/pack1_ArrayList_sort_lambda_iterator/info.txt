@@ -21,6 +21,7 @@ Set :
 Map :
 -Every elements mapping with a key.
 -Also called key-value pair.
+-It is not a extending to collection but it is also part of collection framework.
 
 class ArrayList{
 	public Boolean add(Object obj){}
@@ -35,9 +36,9 @@ Array list methods :
 2. set(int index, Object obj): replaces elements in a specified position
 3. boolean remove(int i) : removes element for the passed index if int is greater than object length than gives error
    boolean remove(Object i) : removes object, if present returns true if not returns false.
-4. <reference_variable>.removeAll(ArrayList list) : removes the element in the list that are present in the passed list.
-5. <reference_variable>.removeRange(int i, int j) : protected member of ArrayList, removes elements form index i, till index j-1 since j is exclusive. 
-6. <reference_variable>.retainAll(ArrayList list) : retains all the elements that matches in the passed list and deletes the rest.
+4. boolean removeAll(ArrayList list) : removes the element in the list that are present in the passed list and return true if none removed else false.
+5. void removeRange(int i, int j) : protected member of ArrayList, removes elements form index i, till index j-1 since j is exclusive. 
+6. boolean retainAll(ArrayList list) : retains all the elements that matches in the passed list and deletes the rest.
 7. int size() : Returns the number of elements present int the ArrayList.
 8. contains() : checks whether specified element is there or not, if present returns true, if not false.
 
@@ -69,3 +70,29 @@ public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
   public abstract void set(E); : replacing is done at the pointer
   public abstract void add(E); : adding is done left to the nextIndex of the pointer.
 }
+
+
+
+														COLLECTION
+														
+			List									Queue								Set 				Map
+(All are implementing List interface)	
+			1.ArrayList 							1.LinkedList
+			2.Vector 								2.PriorityQueue
+				-synchronized							-Auto sorting through head
+				-advisable in multiple threads				
+			3.LinkedList
+
+**
+Queue:
+-Has no index unlike List.
+
+LinkedList:
+-LinkedList displays dual feature List(has index) and Queue.
+
+
+ArrayList : 																	Linked list :
+-Reading(Random access) operation is very fast, since its uses contiguous       -Elements are scattered in the memory, takes more time to access a element. 
+memory locations.
+-Insert and Remove is not effective.											-Insert and Remove is most effective.
+-Only implements List.															-Implements List and Queue.
