@@ -1,0 +1,98 @@
+class in pack1 used till P
+Array:
+-only one type of data type can be stored.
+-Array size is fixed, we cannot modify further.
+-No built-in methods.
+-First element is the reference to the rest of the element, thats why Array index starting from 0.
+
+Collection api :
+collection of elements , group of elements, managing collection of elements.
+
+List :
+-It maintains the order of the elements in which they were added.
+-Its built on top Array. Internally it uses index numbers, we need not mention explicitly.
+
+Queue :
+-FIFO
+
+Set :
+-While managing multiple elements it won't allow duplicates.
+
+Map :
+-Every elements mapping with a key.
+-Also called key-value pair.
+-It is not a extending to collection but it is also part of collection framework.
+
+class ArrayList{
+	public Boolean add(Object obj){}
+	public Object get(int index){}
+	public Boolean remove(Object index){}
+	public Object remove(int index){}
+}
+
+Array list methods :
+
+1. boolean add(): adds elements upcasted to Object type and return boolean result
+2. set(int index, Object obj): replaces elements in a specified position
+3. boolean remove(int i) : removes element for the passed index if int is greater than object length than gives error
+   boolean remove(Object i) : removes object, if present returns true if not returns false.
+4. boolean removeAll(ArrayList list) : removes the element in the list that are present in the passed list and return true if none removed else false.
+5. void removeRange(int i, int j) : protected member of ArrayList, removes elements form index i, till index j-1 since j is exclusive. 
+6. boolean retainAll(ArrayList list) : retains all the elements that matches in the passed list and deletes the rest.
+7. int size() : Returns the number of elements present int the ArrayList.
+8. contains() : checks whether specified element is there or not, if present returns true, if not false.
+
+
+length : Available in the arrays, tells size of the array through this property.
+length() : Available in string, to know total numbers of characters in the string.
+size(): Available in the Collection api, to know the number of elements in collection object.  
+
+
+-@Thread does not implement comparable interface
+
+Iterator interface methods :
+public interface java.util.Iterator<E> {
+					public abstract boolean hasNext();
+					public abstract E next();
+					public default void remove();
+					public default void forEachRemaining(java.util.function.Consumer<? super E>);
+		   }
+		  
+ListIterator interface methods :
+public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
+  public abstract boolean hasNext(); : checks for the next element if none return false else true
+  public abstract E next(); : returns the next element if none returns noSuchElementError
+  public abstract boolean hasPrevious(); : checks for the previous element if none return false else true
+  public abstract E previous(); : returns the previous element if none throws  noSuchElementError
+  public abstract int nextIndex(); : returns the next index if none returns -1
+  public abstract int previousIndex(); : returns the previous index if none returns -1
+  public abstract void remove(); : remove at the pointer
+  public abstract void set(E); : replacing is done at the pointer
+  public abstract void add(E); : adding is done left to the nextIndex of the pointer.
+}
+
+
+
+														COLLECTION
+														
+			List									Queue								Set 				Map
+(All are implementing List interface)	
+			1.ArrayList 							1.LinkedList
+			2.Vector 								2.PriorityQueue
+				-synchronized							-Auto sorting through head
+				-advisable in multiple threads				
+			3.LinkedList
+
+**
+Queue:
+-Has no index unlike List.
+
+LinkedList:
+-LinkedList displays dual feature List(has index) and Queue.
+
+
+ArrayList : 																	Linked list :
+-Reading(Random access) operation is very fast, since its uses contiguous       -Elements are scattered in the memory, takes more time to access a element. 
+memory locations.
+-Insert and Remove is not effective.											-Insert and Remove is most effective.
+-Only implements List.															-Implements List and Queue.
