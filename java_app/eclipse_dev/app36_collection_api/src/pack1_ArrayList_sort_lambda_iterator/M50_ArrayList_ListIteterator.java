@@ -104,7 +104,6 @@ public class M50_ArrayList_ListIteterator {
 				match = true;
 				break;
 			}
-			
 		}
 		System.out.println("after adding 96.5");
 		if (match) it.add(96.5);
