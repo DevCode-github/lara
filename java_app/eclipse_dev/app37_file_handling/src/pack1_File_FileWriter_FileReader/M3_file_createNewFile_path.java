@@ -1,4 +1,4 @@
-package pack1_File_FileWriter;
+package pack1_File_FileWriter_FileReader;
 
 import java.io.File;
 import java.io.IOException;
