@@ -1,4 +1,7 @@
 class in pack1 used till P
+/**
+-Do not use tabs while giving indentation.
+*/
 Array:
 -only one type of data type can be stored.
 -Array size is fixed, we cannot modify further.
@@ -72,14 +75,13 @@ public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
 }
 
 
-
-                                                                                   COLLECTION
+                                                                     COLLECTION
 														
-			List                                                        Queue												Set 				Map
+			List                                    Queue                                   Set                          Map
 (All are implementing List interface)	
-			1.ArrayList                                             1.LinkedList
-			2.Vector                                                  2.PriorityQueue
-				-synchronized                                      	-Auto sorting through head
+			1.ArrayList                             1.LinkedList
+			2.Vector                                2.PriorityQueue
+				-synchronized                       	-Auto sorting through head
 				-advisable in multiple threads				
 			3.LinkedList
 
@@ -91,8 +93,8 @@ LinkedList:
 -LinkedList displays dual feature List(has index) and Queue.
 
 
-ArrayList :                                                                                                     Linked list :
+ArrayList :                                                                     Linked list :
 -Reading(Random access) operation is very fast, since its uses contiguous       -Elements are scattered in the memory, takes more time to access a element. 
 memory locations.
--Insert and Remove is not effective.                                                               -Insert and Remove is most effective.
--Only implements List.                                                                                  -Implements List and Queue.
+-Insert and Remove is not effective.                                            -Insert and Remove is most effective.
+-Only implements List.                                                          -Implements List and Queue.
