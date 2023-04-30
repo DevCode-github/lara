@@ -1,0 +1,29 @@
+Buffer :
+-Transferring a bucket of characters to program, instead of character by character.
+FileReader and FileReader are low level api.
+-FileReader and FileReader does not use buffer.
+
+
+BufferWriter and BufferReader :
+-Built on top of FileWriter and FileReader.
+-FileWriter is a raw connection, and built on top of that is BufferedWriter enhancing it for effective and efficient writing.
+
+
+Resource close rule :
+-close the resources in opposite order in which they were opened.
+
+
+java.io.BufferedWriter :
+
+methods :
+0. BufferedWriter(FileWriter fout) : creates a buffered character output stream of the default output buffer size.
+   BufferedWritre(FileWriter fout, int size) : creates a buffered character output stream of the given size.
+1. write(char[]) +4 overloaded : wirtes the character array to the input stream.
+2. newline() : writes a line separator.
+
+
+java.io.BufferedReader :
+
+0. BufferedReader(FileReader fin) : creates a buffer character input stream of the default size.
+   BufferedReader(FileReader fin, int size) : create a buffer character input stream of the given size.
+1. String readLine() : Reads a line in the text and returns the string.
