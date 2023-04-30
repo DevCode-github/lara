@@ -16,7 +16,7 @@ methods :
 6. long length() : return the length of the total content in file.
 
 java.io.FileWriter :
- 
+ -Low level api.
 -FileWriter initializing statement is checked statement type statement.
 -It implements Closable interface. If declared in try A.R.C, it will automatically be closed by the exception handling mechanism.
 
@@ -28,6 +28,7 @@ methods :
 3. write()
 
 java.io.FileReader :
+-Low level api.
 
 methods :
 0. FileReader(String file_name)
