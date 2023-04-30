@@ -98,3 +98,5 @@ ArrayList :                                                                     
 memory locations.
 -Insert and Remove is not effective.                                            -Insert and Remove is most effective.
 -Only implements List.                                                          -Implements List and Queue.
+
+
