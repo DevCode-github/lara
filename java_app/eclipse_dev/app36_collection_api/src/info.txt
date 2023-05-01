@@ -138,6 +138,51 @@ public class java.util.HashSet<E> extends java.util.AbstractSet<E> implements ja
 LinkedHashSet : 
 -avoids duplicates and maintains the input order.
 
+public class java.util.LinkedHashSet<E> extends java.util.HashSet<E> implements java.util.Set<E>, java.lang.Cloneable, java.io.Serializable {
+  public java.util.LinkedHashSet(int, float);
+  public java.util.LinkedHashSet(int);
+  public java.util.LinkedHashSet();
+  public java.util.LinkedHashSet(java.util.Collection<? extends E>);
+  public java.util.Spliterator<E> spliterator();
+  public static <T> java.util.LinkedHashSet<T> newLinkedHashSet(int);
+}
+
 
 TreeSet:
 -avoids duplicates and maintains the sorting order.
+
+public class java.util.TreeSet<E> extends java.util.AbstractSet<E> implements java.util.NavigableSet<E>, java.lang.Cloneable, java.io.Serializable {
+  java.util.TreeSet(java.util.NavigableMap<E, java.lang.Object>);
+  public java.util.TreeSet();
+  public java.util.TreeSet(java.util.Comparator<? super E>);
+  public java.util.TreeSet(java.util.Collection<? extends E>);
+  public java.util.TreeSet(java.util.SortedSet<E>);
+  public java.util.Iterator<E> iterator();
+  public java.util.Iterator<E> descendingIterator();
+  public java.util.NavigableSet<E> descendingSet();
+  public int size();
+  public boolean isEmpty();
+  public boolean contains(java.lang.Object);
+  public boolean add(E);
+  public boolean remove(java.lang.Object);
+  public void clear();
+  public boolean addAll(java.util.Collection<? extends E>);
+  public java.util.NavigableSet<E> subSet(E, boolean, E, boolean);
+  public java.util.NavigableSet<E> headSet(E, boolean);
+  public java.util.NavigableSet<E> tailSet(E, boolean);
+  public java.util.SortedSet<E> subSet(E, E);
+  public java.util.SortedSet<E> headSet(E);
+  public java.util.SortedSet<E> tailSet(E);
+  public java.util.Comparator<? super E> comparator();
+  public E first();
+  public E last();
+  public E lower(E);
+  public E floor(E);
+  public E ceiling(E);
+  public E higher(E);
+  public E pollFirst();
+  public E pollLast();
+  public java.lang.Object clone();
+  public java.util.Spliterator<E> spliterator();
+  static {};
+}
