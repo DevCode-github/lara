@@ -61,6 +61,7 @@ public interface java.util.Iterator<E> {
 					public default void forEachRemaining(java.util.function.Consumer<? super E>);
 		   }
 		  
+		  
 ListIterator interface methods :
 public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
   public abstract boolean hasNext(); : checks for the next element if none return false else true
@@ -77,15 +78,17 @@ public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
 
                                                                      COLLECTION
 														
-			List                                    Queue                                   Set                          Map
-(All are implementing List interface)	
-			1.ArrayList                             1.LinkedList
-			2.Vector                                2.PriorityQueue
-				-synchronized                       	-Auto sorting through head
-				-advisable in multiple threads				
-			3.LinkedList
+			List                                        Queue                                   Set                                          Map
+(All are implementing List interface)           (All are implementing Queue interface)   (All are implementing Set interface)
+			1. ArrayList(I)                             1. LinkedList(I)                        1. HashSet(I)
+			2. Vector(I)                                2. PriorityQueue(I)                     2. LinkedHashSet(I)
+				-synchronized                          		-Auto sorting through head          3.0. SortedSet
+				-advisable in multiple threads                                                		3.1. NavigableSet
+			3. LinkedList(I)                                                                   		3.2. TreeSet(I)
 
 **
+*(I) - it implements.
+
 Queue:
 -Has no index unlike List.
 
@@ -98,3 +101,43 @@ ArrayList :                                                                     
 memory locations.
 -Insert and Remove is not effective.                                            -Insert and Remove is most effective.
 -Only implements List.                                                          -Implements List and Queue.
+
+
+Set :
+-Has no index, cannot read one particular element.
+-Main feature is to avoid duplicates.
+-Random order
+
+
+HashSet :
+-only avoids duplicates
+
+public class java.util.HashSet<E> extends java.util.AbstractSet<E> implements java.util.Set<E>, java.lang.Cloneable, java.io.Serializable {
+  static final long serialVersionUID;
+  public java.util.HashSet();
+  public java.util.HashSet(java.util.Collection<? extends E>);
+  public java.util.HashSet(int, float);
+  public java.util.HashSet(int);
+  java.util.HashSet(int, float, boolean);
+  public java.util.Iterator<E> iterator();
+  public int size();
+  public boolean isEmpty();
+  public boolean contains(java.lang.Object);
+  public boolean add(E); : adds the element, if no duplicates returns true otherwise returns false.
+  public boolean remove(java.lang.Object);
+  public void clear();
+  public java.lang.Object clone();
+  public java.util.Spliterator<E> spliterator();
+  public java.lang.Object[] toArray();
+  public <T> T[] toArray(T[]);
+  public static <T> java.util.HashSet<T> newHashSet(int);
+  static {};
+}
+
+
+LinkedHashSet : 
+-avoids duplicates and maintains the input order.
+
+
+TreeSet:
+-avoids duplicates and maintains the sorting order.
