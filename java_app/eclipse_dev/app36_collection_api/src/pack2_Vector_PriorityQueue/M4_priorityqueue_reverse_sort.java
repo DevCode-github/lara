@@ -1,4 +1,4 @@
-package pack2_Vector;
+package pack2_Vector_PriorityQueue;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

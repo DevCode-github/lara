@@ -1,4 +1,4 @@
-package pack2_Vector;
+package pack2_Vector_PriorityQueue;
 import java.util.PriorityQueue;
 public class M2_priorityqueue {
 	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
