@@ -186,3 +186,24 @@ public class java.util.TreeSet<E> extends java.util.AbstractSet<E> implements ja
   public java.util.Spliterator<E> spliterator();
   static {};
 }
+
+
+Object class : e
+-hashCode() and equals() methods are used to identify duplicates.
+-Object class hashCode and equals return integer form of memory representation.
+-These methods are overrided in Set stream and String and Wrapper classes.
+
+public class java.lang.Object {
+  public java.lang.Object();
+  public final native java.lang.Class<?> getClass();
+  public native int hashCode(); : It returns integer form of the memory representation of the object. 
+  public boolean equals(java.lang.Object);
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+  public java.lang.String toString();
+  public final native void notify();
+  public final native void notifyAll();
+  public final void wait() throws java.lang.InterruptedException;
+  public final void wait(long) throws java.lang.InterruptedException;
+  public final void wait(long, int) throws java.lang.InterruptedException;
+  protected void finalize() throws java.lang.Throwable;
+}
