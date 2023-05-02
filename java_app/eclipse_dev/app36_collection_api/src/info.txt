@@ -188,10 +188,11 @@ public class java.util.TreeSet<E> extends java.util.AbstractSet<E> implements ja
 }
 
 
-Object class : e
+Object class :
 -hashCode() and equals() methods are used to identify duplicates.
 -Object class hashCode and equals return integer form of memory representation.
 -These methods are overrided in Set stream and String and Wrapper classes.
+
 
 public class java.lang.Object {
   public java.lang.Object();
