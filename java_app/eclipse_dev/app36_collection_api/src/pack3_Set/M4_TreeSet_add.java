@@ -2,8 +2,8 @@ package pack3_Set;
 
 import java.util.TreeSet;
 
-public class M4_TreeSet {
-	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
+public class M4_TreeSet_add {
+	@SuppressWarnings({ "unchecked", "rawtypes"})
 	public static void main(String[] args) {
 		TreeSet set = new TreeSet();
 		set.add(1000000000);

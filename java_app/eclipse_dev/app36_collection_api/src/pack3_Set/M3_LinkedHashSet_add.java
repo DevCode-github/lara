@@ -2,7 +2,7 @@ package pack3_Set;
 
 import java.util.LinkedHashSet;
 
-public class M3_LinkedHashSet {
+public class M3_LinkedHashSet_add {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		LinkedHashSet set = new LinkedHashSet();
