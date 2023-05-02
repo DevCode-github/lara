@@ -1,0 +1,38 @@
+-FileInputStream and FileOutputStream are similar to FileReader and FileWriter as they are low level api's which perform read and write operations byte by byte,
+ unlike the latter that perform read and write  character by character.
+
+
+-BufferedInputStream and BufferedOutputStream api's built on top of FileInputStream and FileOutputStream, only they perform read and write operations,
+ on a bucket(the size is variable) of bytes, which more efficient and faster.
+ 
+FileInputStream : 
+-opens a input stream for byte by byte reading
+
+methods :
+0. FileInputStream(File file) :
+   FileInputStream(String name) :
+1. long length() : returns the length of the file.
+
+
+FileOutputStream : 
+-opens a output stream for byte by byte writing
+
+methods : 
+0. FileOutputStream(File file) :
+   FileOutputStream(String name) :
+   
+   
+BufferedInputStream :
+-opens a new Input stream to read data from the specifying underlying Input stream.
+
+methods :
+0. BufferedInputStream(InputStream in) :
+   BufferedInputStream(InputStream in, int size) :
+
+
+BufferedOutputStream :
+-opens a new Output stream to write data to the specifying underlying output stream.
+
+methods :
+0. BufferedOutputStream(OutputStream out) :
+   BufferedOutputStream(OutputStream out, int size) :
