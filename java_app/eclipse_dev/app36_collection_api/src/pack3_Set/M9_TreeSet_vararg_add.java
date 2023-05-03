@@ -22,13 +22,23 @@ class C{
 }
 @SuppressWarnings({"unchecked","rawtypes","serial"})
 class TreeSet1 extends TreeSet{
+	/*
+	 * @Constructor : Adding our own constructor for object creation.
+	 */
 	TreeSet1(){
 		super();
 	}
+	/*
+	 * @ParametrizedConstructor : Adding our own argument constructor for object,
+	 * creation with our own comparator.
+	 */
 	TreeSet1(Comparator comparator){
 		super(comparator);
 	}
-	public boolean add1(Object ... o1) {
+	/*
+	 * @addMany : Built on top of add() method, to more than one value at a time.
+	 */
+	public boolean addMany(Object ... o1) {
 		boolean flag = false;
 		for(Object o2 : o1) {
 			if (flag == true) add(o2);
@@ -40,9 +50,9 @@ class TreeSet1 extends TreeSet{
 public class M9_TreeSet_vararg_add {
 	public static void main(String[] args) {
 		TreeSet1 set = new TreeSet1((o1,o2) -> ((C)o1).i - ((C)o2).i);
-		System.out.println(set.add1(new C(2,3),new C(4,5),new C(5,6)));
-		System.out.println(set.add1(new C(2,3),new C(4,5),new C(5,6)));
-		System.out.println(set.add1(new C(2,3),new C(4,5),new C(5,6)));
+		System.out.println(set.addMany(new C(2,3),new C(4,5),new C(5,6)));
+		System.out.println(set.addMany(new C(2,3),new C(4,5),new C(5,6)));
+		System.out.println(set.addMany(new C(2,3),new C(4,5),new C(5,6)));
 		System.out.println(set);
 	}
 
