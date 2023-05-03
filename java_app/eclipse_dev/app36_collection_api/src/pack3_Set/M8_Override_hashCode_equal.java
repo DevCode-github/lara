@@ -19,6 +19,8 @@ class B{
 		 * since hashCode returns a unique number
 		 * the addition of unique number will also 
 		 * be unique.
+		 * But one can also go with subtraction, since it will
+		 * break the commutative property of the integer fields. 
 		 */
 		return Integer.hashCode(this.i) + this.s.hashCode();
 	}
