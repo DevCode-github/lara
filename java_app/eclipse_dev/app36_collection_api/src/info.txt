@@ -208,3 +208,10 @@ public class java.lang.Object {
   public final void wait(long, int) throws java.lang.InterruptedException;
   protected void finalize() throws java.lang.Throwable;
 }
+
+
+HahsCode & equals: 
+-Only for inequality.
+-If two objects have same hash code, objects may or may not be equal.
+-Then it class equals() to check equality, which is 100% accurate.
+-hashCode() is faster than equals(), Thats why hashCode() is called first.If same go for equals().
