@@ -1,0 +1,27 @@
+1.find out total number of elements in an array?
+2.read first 3 elements from the given array?
+3.read last 3 elements in the given array?
+4.read middle two elements?
+5.read all the elements from a given array?
+6.read all the elements except first and last?
+7.read first half of the elements?
+8.read second half of the elements?
+9.read all the elements in the given array in reverse order?
+10.read all the elements in the reverse order but except first and last from a given array?
+11.read first half of the elements from a given array in the reverse order?
+12.read last half of the elements from a given array in the reverse order?
+13.read alternate elements?
+14.read alternate elements in reverse order?
+15.repeat all above programs by considering total number of elements 11.(optional)
+16.find out the sum of all the elements in the given array?
+17.find out avg of all the elements in the given array?
+18.find out the sum of first half of the elements in the given array?
+19.find out the avg of first of half the elements in the given array?
+20.find out the sum of second half of the elements in the given array?
+21.19.find out the avg second half of the elements in the given array?
+22.find out min value from a given array?
+23.find out max value from a given array?
+24.find out min value in the first half from a given array?
+25.find out max value in the first half from a given array?
+26.find out min value in the second half from a given array?
+27.find out max value in the second half from a given array?
