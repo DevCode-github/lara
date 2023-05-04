@@ -1,4 +1,4 @@
-package pack3_Binary_file;
+package pack3_Buffer_Binary_file;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
