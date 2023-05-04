@@ -1,0 +1,26 @@
+Object state | state of the object:
+-class attributes
+
+
+serialization | Persisting media :
+-writing object state into the file system.
+
+
+De-serialization:
+-reading object state from the file system.
+
+
+Marker interface :
+-Interface without any members.
+
+
+java.io.FileInputStream :
+
+
+java.io.FileOutputStream :
+
+
+java.io.ObjectInputStream :
+
+
+java.io.ObjectOutputStream :
