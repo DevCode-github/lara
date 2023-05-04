@@ -25,7 +25,7 @@ class E{
 public class M10_CE_Treeset {
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	public static void main(String[] args) {
-		TreeSet set = new TreeSet((o1,o2) -> (((E)o1).i+((E)o1).j) - (((E)o2).i)+((E)o1).j);
+		TreeSet set = new TreeSet((o1,o2) -> ((E)o1).i - ((E)o2).i);
 		set.add(new E(2,3));
 		set.add(new E(2,4));
 		set.add(new E(2,5));
