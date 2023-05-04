@@ -215,3 +215,9 @@ HahsCode & equals:
 -If two objects have same hash code, objects may or may not be equal.
 -Then it class equals() to check equality, which is 100% accurate.
 -hashCode() is faster than equals(), Thats why hashCode() is called first.If same go for equals().
+
+
+HashBucket :
+-Objects with exact hash code and but are not equal are stored in the same bucket with the hash code as label.
+-The next Object with same hash code will matched in the bucket in the with same hash code, if the object is not equal
+ to any member in the bucket, discard it. If the hash code is entirely different create a new bucket for it. 
