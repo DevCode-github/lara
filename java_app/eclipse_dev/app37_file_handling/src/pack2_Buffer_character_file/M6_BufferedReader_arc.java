@@ -1,4 +1,4 @@
-package pack2_Buffer;
+package pack2_Buffer_character_file;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
