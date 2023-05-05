@@ -1,0 +1,11 @@
+ArrayList
+
+1.add()
+2.addAll()
+3.set()
+4.remove()
+5.removeAll()
+6.removeRange()(Pr)
+7.retainAll()
+8.size()
+9.contains()
