@@ -35,15 +35,17 @@ class ArrayList{
 
 Array list methods :
 
-1. boolean add(): adds elements upcasted to Object type and return boolean result
-2. set(int index, Object obj): replaces elements in a specified position
-3. boolean remove(int i) : removes element for the passed index if int is greater than object length than gives error
+1. boolean add(Object obj): adds elements upcasted to Object type and return boolean result
+   boolean add(int index, Object obj) : add elements at the certain index, and shifts the rest to the right.
+2. Object set(int index, Object obj): replaces elements in the specified index and returns the object.
+3. boolean remove(int i) : removes element for the passed index, if int is greater than or equal to the object length than it gives error.
    boolean remove(Object i) : removes object, if present returns true if not returns false.
 4. boolean removeAll(ArrayList list) : removes the element in the list that are present in the passed list and return true if none removed else false.
 5. void removeRange(int i, int j) : protected member of ArrayList, removes elements form index i, till index j-1 since j is exclusive. 
 6. boolean retainAll(ArrayList list) : retains all the elements that matches in the passed list and deletes the rest.
 7. int size() : Returns the number of elements present int the ArrayList.
-8. contains() : checks whether specified element is there or not, if present returns true, if not false.
+8. boolean contains() : checks whether specified element is there or not, if present returns true, if not false.
+9. Object get(int index) : 
 
 
 length : Available in the arrays, tells size of the array through this property.

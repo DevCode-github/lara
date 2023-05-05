@@ -25,3 +25,12 @@
 25.find out max value in the first half from a given array?
 26.find out min value in the second half from a given array?
 27.find out max value in the second half from a given array?
+28.find out min value from all even elements from a given int array?
+29.find out max value from all even elements from a given int array?
+30.find out min value from all odd elements from a given int array?
+31.find out max value from all odd elements from a given int array?
+32.find out 2nd max from a given int array?
+33.find out 2nd min from a given int array?
+34.find out 3rd max from given array?
+35.find out 3rd min from given array?
+36.find out the continuous element which are in the ascending/descending order?

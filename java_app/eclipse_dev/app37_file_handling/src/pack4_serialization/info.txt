@@ -1,3 +1,5 @@
+till class G
+
 Object state | state of the object:
 -class attributes
 
