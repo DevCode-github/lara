@@ -2,7 +2,9 @@ package pack1_ArrayList_sort_lambda_iterator;
 
 import java.util.ArrayList;
 
+@SuppressWarnings({ "rawtypes", "serial" })
 public class M19_removeRange extends ArrayList{
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		M19_removeRange list1 = new M19_removeRange();
 		list1.add("abc");

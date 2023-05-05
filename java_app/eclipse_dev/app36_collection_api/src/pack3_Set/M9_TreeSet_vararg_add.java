@@ -51,7 +51,7 @@ public class M9_TreeSet_vararg_add {
 	public static void main(String[] args) {
 		/*
 		 * Tree set is not using hashCode() and equal() method.
-		 * Tree set if discarding object if compare method determines its field which we specified, as equal,
+		 * Tree set is discarding object if compare method determines its field which we specified, as equal,
 		 * so, made some changes in comparator.
 		 */
 		TreeSet1 set = new TreeSet1((o1,o2) -> {

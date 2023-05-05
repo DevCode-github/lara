@@ -3,6 +3,7 @@ package pack1_ArrayList_sort_lambda_iterator;
 import java.util.ArrayList;
 
 public class M12_remeoveAll {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(100);
@@ -19,7 +20,7 @@ public class M12_remeoveAll {
 		System.out.println(list2);
 		System.out.println("----------");
 //		list2.removeAll(list1);
-		list1.removeAll(list2);
+		System.out.println(list1.removeAll(list2));
 		System.out.println(list1);
 		System.out.println(list2);
 	}

@@ -12,7 +12,6 @@ public class M17_remove {
 		System.out.println(list1);
 //		Object obj = list1.remove(Integer.valueOf(400));
 		System.out.println(list1.remove("btm"));
-		System.out.println(list1);
-		
+		System.out.println(list1);		
 	}
 }

@@ -3,6 +3,7 @@ package pack1_ArrayList_sort_lambda_iterator;
 import java.util.ArrayList;
 
 public class M13_retainAll {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(100);

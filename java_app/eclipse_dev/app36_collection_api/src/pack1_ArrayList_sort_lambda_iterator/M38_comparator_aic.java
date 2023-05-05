@@ -16,6 +16,7 @@ class M {
 	}
 }
 public class M38_comparator_aic {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
 		list.add(new M(10, 28));

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 /* Integer reversal */
 public class M26_Collections_sort_reverseorder {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
 		list.add(100);

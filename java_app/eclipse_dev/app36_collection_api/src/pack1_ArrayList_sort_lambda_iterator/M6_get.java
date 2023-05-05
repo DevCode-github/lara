@@ -12,6 +12,6 @@ public class M6_get {
 		list.add("abc");
 		list.add('t');
 		System.out.println(list);
-		System.out.println(list.get(1));
+		System.out.println(list.get(list.size()-1));
 	}
 }
