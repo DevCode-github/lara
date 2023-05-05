@@ -9,6 +9,6 @@ public class A27_subarray_max {
 			arr[j] = arr[j] < arr[i] ? arr[i] : arr[j];
 //			if (arr[j] < arr[i]) arr[j] = arr[i];
 		}	
-		System.out.println("second hal f max " + arr[j]);
+		System.out.println("second half max " + arr[j]);
 	}
 }
