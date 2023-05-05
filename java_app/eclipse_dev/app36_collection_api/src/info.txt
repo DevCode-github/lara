@@ -78,13 +78,13 @@ public interface java.util.ListIterator<E> extends java.util.Iterator<E> {
 
                                                                      COLLECTION
 														
-			List                                        Queue                                   Set                                          Map
-(All are implementing List interface)           (All are implementing Queue interface)   (All are implementing Set interface)
-			1. ArrayList(I)                             1. LinkedList(I)                        1. HashSet(I)
-			2. Vector(I)                                2. PriorityQueue(I)                     2. LinkedHashSet(I)
-				-synchronized                          		-Auto sorting through head          3.0. SortedSet
-				-advisable in multiple threads                                                		3.1. NavigableSet
-			3. LinkedList(I)                                                                   		3.2. TreeSet(I)
+			List                                     Queue                              Set                                  Map
+(All are implementing List interface)        (All are implementing Queue interface)   (All are implementing Set interface)  
+			1. ArrayList(I)                          1. LinkedList(I)                   1. HashSet(I)                        1. HashMap(I)
+			2. Vector(I)                             2. PriorityQueue(I)                2. LinkedHashSet(I)                  2. HashTable(I)
+				-synchronized                        	-Auto sorting through head      3.0. SortedSet                       3.0. SortedMap
+				-advisable in multiple threads                                          	3.1. NavigableSet                	3.1. NavigableMap
+			3. LinkedList(I)                                                                3.2. TreeSet(I)                  	3.2. TreeMap(I)
 
 **
 *(I) - it implements.
@@ -220,4 +220,17 @@ HahsCode & equals:
 HashBucket :
 -Objects with exact hash code and but are not equal are stored in the same bucket with the hash code as label.
 -The next Object with same hash code will matched in the bucket in the with same hash code, if the object is not equal
- to any member in the bucket, discard it. If the hash code is entirely different create a new bucket for it. 
+ to any member in the bucket, discard it. If the hash code is entirely different create a new bucket for it.
+ 
+
+HashMap :
+-key value pair
+-Not maintaining order of addition.
+-Keys cannot be duplicates.For two identical key input, it will assign the latest input value to the key.
+-It used hashcode() and equals() to avoid duplicates.
+
+methods : 
+1. put() :
+2. get() :
+3. KeySet() :
+4. iterator() :
