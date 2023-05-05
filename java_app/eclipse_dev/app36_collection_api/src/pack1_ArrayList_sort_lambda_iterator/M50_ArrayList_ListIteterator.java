@@ -72,7 +72,7 @@ public class M50_ArrayList_ListIteterator {
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
-		int position = 8;
+		int position = 19;
 		boolean match = false;
 		/**
 		 * Finding the index for the position that is 19 in this case, which does not exist.
