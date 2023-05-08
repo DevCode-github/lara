@@ -236,3 +236,9 @@ methods :
 2. get() :
 3. KeySet() :
 4. iterator() :
+5. entrySet() : 
+
+HashMap                                                          Hashtable
+-HashMap allows null.                                             -Hashtable doesn't allows it.
+-Not synchronized                                                 -Synchronized
+-does not maintain order of addition                              -does not maintain order of addition
