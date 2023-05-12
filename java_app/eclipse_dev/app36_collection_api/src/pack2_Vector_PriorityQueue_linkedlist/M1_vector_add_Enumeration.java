@@ -1,6 +1,7 @@
-package pack2_Vector_PriorityQueue;
+package pack2_Vector_PriorityQueue_linkedlist;
 
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Vector;
 
 public class M1_vector_add_Enumeration {
@@ -32,6 +33,10 @@ public class M1_vector_add_Enumeration {
 		}
 		while(e1.hasMoreElements()) {
 			System.out.println(e1.nextElement());
+		}
+		Iterator it = v1.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
 		}
 	}
 }

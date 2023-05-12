@@ -1,4 +1,4 @@
-package pack2_Vector_PriorityQueue;
+package pack2_Vector_PriorityQueue_linkedlist;
 
 import java.util.PriorityQueue;
 
