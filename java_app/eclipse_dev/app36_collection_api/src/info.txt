@@ -238,7 +238,17 @@ methods :
 4. iterator() :
 5. entrySet() : 
 
+
 HashMap                                                          Hashtable
 -HashMap allows null.                                             -Hashtable doesn't allows it.
 -Not synchronized                                                 -Synchronized
 -does not maintain order of addition                              -does not maintain order of addition
+
+
+Collections.sort(), ProirityQueue, TreeSet, TreeMap has sorting by default.
+
+
+Generics : 
+-Object to object data type is changing.
+-Only for Derived data types.
+-cannot be applied for the static.
