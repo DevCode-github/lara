@@ -1,11 +1,32 @@
-ArrayList
+												collection
+												1. boolean add()
+												2. boolean addAll()
+												3. boolean remove()
+												4. boolean removeAll
+												5. boolean contains()
+												6. boolean isEmpty()
+												7. int size()
+												8. java.util.Iterator iterator()
+												9. void clear()
+												10. int hashCode()
+												11. boolean equals()
 
-1.add()
-2.addAll()
-3.set()
-4.remove()
-5.removeAll()
-6.removeRange()(Pr)
-7.retainAll()
-8.size()
-9.contains()
+ArrayList                       LinkedList                             Vector
+
+1. boolean add() +2             1. boolean add() +2
+2. boolean addAll() +2          2. boolean addAll() +2
+3. boolean set()                3. boolean set()
+4. boolean/object remove() +3   4. boolean/object remove() +3
+5. boolean removeAll()          5. boolean removeAll()
+6. void removeRange()(Pr)       6. object peek()
+7. boolean retainAll()          7. object poll()
+8. int size()                   8. object peekfirst()
+9. boolean contains()           9. object peeklast()
+10. void clear()                10. object pollfirst()
+                                11. object polllast()
+                                12. object pop()
+								13. object push()
+								14. object removeFirst()
+								15. object removeLast()
+								16. object removeFirstOccurence()
+								17. object removeLastOccurence()
