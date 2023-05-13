@@ -1,6 +1,6 @@
 package pack1_basic_operations;
 
-public class M36_ {
+public class A36_asec_desc {
 	public static void main(String[] args) {
 		int[] arr = {-1,5,4,6,90,-2,4,80,-3,110};
 		boolean asc,desc;
@@ -14,6 +14,7 @@ public class M36_ {
 				}
 				else {
 					desc = true;
+					asc = false;
 					System.out.println();
 				}
 			}
@@ -25,6 +26,7 @@ public class M36_ {
 				}
 				else {
 					asc = true;
+					desc = true;
 					System.out.println();
 				}
 			}
