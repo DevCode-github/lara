@@ -34,3 +34,14 @@
 34.find out 3rd max from given array?
 35.find out 3rd min from given array?
 36.find out the continuous element which are in the ascending/descending order?
+37.print the elements which are next to even elements
+38.print the elements which are prev to even elements
+39.print the elements which are in the middle of two even elements.
+40.print the even elements which are in the middle of two even elements.
+41.print the even elements which are in the middle of two odd elements.
+42.print two consecutive even elements
+43.print two consecutive odd elements
+44.print 3 elements which are first 2's sum is 3rd one
+45.find out all the two elements who's sum is zero.
+46.find out all the three elements who's sum is zero.
+47.find out the nearest number for every number.
