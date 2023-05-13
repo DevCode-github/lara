@@ -1,4 +1,4 @@
-till class G
+till class H
 
 Object state | state of the object:
 -class attributes
@@ -24,5 +24,15 @@ java.io.FileOutputStream :
 
 java.io.ObjectInputStream :
 
+method : 
+- readObject() :
 
 java.io.ObjectOutputStream :
+
+method :
+-writeObject() :  
+
+Version :
+-while storing class version is also getting stored.
+-if current and stored class version is different, it will throw exception.
+-Any changes in the attributes of the class or adding a new method will lead to version change.
