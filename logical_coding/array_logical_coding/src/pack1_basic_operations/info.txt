@@ -1,5 +1,5 @@
 1.find out total number of elements in an array?
-2.read first 3 elements from the given array?
+2.read first 3 elements from the given array?0
 3.read last 3 elements in the given array?
 4.read middle two elements?
 5.read all the elements from a given array?
