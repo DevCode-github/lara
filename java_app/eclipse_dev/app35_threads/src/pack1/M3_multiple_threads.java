@@ -1,4 +1,4 @@
-package app1;
+package pack1;
 
 class B extends Thread{
 	public void run() {
@@ -22,7 +22,7 @@ class D extends Thread{
 	}
 }
 
-public class M3 {
+public class M3_multiple_threads {
 	public static void main(String[] args) {
 		B b1 = new B();
 		C c1 = new C();

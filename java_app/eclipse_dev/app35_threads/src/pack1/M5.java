@@ -1,4 +1,4 @@
-package app1;
+package pack1;
 
 public class M5 {
 	static class A extends Thread {

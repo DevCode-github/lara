@@ -1,4 +1,4 @@
-package app1;
+package pack1;
 class F extends Thread{
 	public void run() {
 		for (int i = 0 ; i < 100 ; i++) {

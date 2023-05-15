@@ -1,4 +1,5 @@
-package app1;
+package pack1;
+
 class A extends Thread{	//inbuilt class
 	public void run() {	//inherited method overriding
 		for (int i = 1; i < 1000 ; i++) {
@@ -6,7 +7,7 @@ class A extends Thread{	//inbuilt class
 		}
 	}
 }
-public class M2 {
+public class M2_Thread_start {
 	public static void main(String[] args) {
 		A a1 = new A();
 		a1.start();

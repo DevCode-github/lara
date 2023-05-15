@@ -1,4 +1,4 @@
-package app1;
+package pack1;
 
 public class M1 {
 	public static void main(String[] args) {
