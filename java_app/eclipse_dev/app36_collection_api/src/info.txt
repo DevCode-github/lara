@@ -252,3 +252,7 @@ Generics :
 -Object to object data type is changing.
 -Only for Derived data types.
 -cannot be applied for the static.
+
+
+concurrent package :
+-Contains classes that returns fail safe iterator.
