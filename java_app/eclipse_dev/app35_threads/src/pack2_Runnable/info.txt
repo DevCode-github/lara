@@ -1,0 +1,6 @@
+class used till B
+
+
+Runnable : 
+-Functional Interface : public void run();
+-By using one runnable object any number of threads can be created.
