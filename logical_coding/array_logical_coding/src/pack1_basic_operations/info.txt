@@ -45,3 +45,10 @@
 45.find out all the two elements who's sum is zero.
 46.find out all the three elements who's sum is zero.
 47.find out the nearest number for every number.
+48.increment every value to 5 units.
+49.decrement every value to 10 units.
+50.increment fist half  value by 5 units and decrement 2nd half values by 10 units.
+51.multiply every even value with 20 and add 20 to every odd value.
+52.swap first element wit last element.
+53.swap the current element with its next element.
+54.reverse array element.
