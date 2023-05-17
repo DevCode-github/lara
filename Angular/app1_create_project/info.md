@@ -50,11 +50,11 @@ Go to the project folder
 ```
 D:\[path_to_your_directory]>cd [Project_name]
 ```
-start the server
+Start the server
 
 `command` 
 ```
-D:\[path_to_your_directory]\[Project_name]>ng server
+D:\[path_to_your_directory]\[Project_name]>ng serve
 ```
 
 
