@@ -59,3 +59,17 @@ D:\[path_to_your_directory]\[Project_name]>ng serve
 
 
 >Open the browser and go to the link `localhost:4200`.
+
+
+## 6. Create a **New Component**
+
+In the same [Project_name] dirctory.
+
+`command`
+```
+D:\[path_to_your_directory]\[Project_name]>ng generate component [component_name]
+```
+or
+```
+D:\[path_to_your_directory]\[Project_name]>ng g c [component_name]
+```
