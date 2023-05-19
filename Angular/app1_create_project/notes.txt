@@ -1,0 +1,12 @@
+typescript : 
+
+(done inside hello1component)
+constructor :
+-Only one constructor in component
+-cannot access fields directly, must be used along with this keyboard.
+-no overloading
+-constructor arguments can have access levels.
+Methods :
+-methods can have any number of arguments.
+-method overloading is not there.
+-arguments cannot take acess levels.
