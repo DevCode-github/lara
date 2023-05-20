@@ -9,7 +9,7 @@ public class A54_reverse_array {
 		//taking input
 		int count = 0;
 		int arr[] = new int[10];
-		System.out.println("enter 'e' to break :(max 10)");
+		System.out.println("press enter after entering an element, enter 'e' to break :(max 10)");
 		Scanner sc = new Scanner(System.in);
 		for (int i = 0 ; i < arr.length ; i++) {
 			try {
@@ -34,7 +34,6 @@ public class A54_reverse_array {
 		
 		//pattern for splitting array
 		String[] s = Arrays.toString(arr).split("[\\[\\],]");
-		System.out.println(Arrays.toString(s));
 		
 		//reversing and saving values to new array
 		for (int i = count,j = 0 ; i >= 0 ; i--,j++) {

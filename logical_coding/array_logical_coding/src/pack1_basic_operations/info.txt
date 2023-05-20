@@ -52,3 +52,11 @@
 52.swap first element wit last element.
 53.swap the current element with its next element.
 54.reverse array element.
+55.replace array elements with the index numbers.
+56.replace array elements with twice of index numbers.
+57.left shift by one.
+58.left shift by two.
+59.left rotate by one.
+60.left rotate by two.
+61.right shift by one.
+62.right shift by two.
