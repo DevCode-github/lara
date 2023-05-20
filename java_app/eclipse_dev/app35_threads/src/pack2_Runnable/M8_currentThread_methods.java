@@ -24,6 +24,7 @@ public class M8_currentThread_methods {
 		/*
 		 * Threads are two types : 1)Daemon 2)User
 		 * Also, Convert user to Daemon, Daemon to user through setDaemon().
+		 * Before starting a thread, u can change a Daemon status.
 		 */
 		System.out.println(t1.isDaemon());
 	}

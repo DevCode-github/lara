@@ -1,4 +1,4 @@
-class used till B
+class used till I
 
 
 Runnable : 
@@ -9,3 +9,6 @@ Runnable :
 Threads are two types : 
 1)Daemon :  
 2)User : 
+
+
+-child thread priority depends on parent. 
