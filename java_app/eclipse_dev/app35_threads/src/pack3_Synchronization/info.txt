@@ -1,0 +1,2 @@
+-one object shared to multiple threads.
+-at a time only one thread is allowed to engage the object.
