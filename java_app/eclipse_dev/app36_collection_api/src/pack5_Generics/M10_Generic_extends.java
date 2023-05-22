@@ -15,7 +15,7 @@ public class M10_Generic_extends {
 		/*
 		 * E should be a Number or Subclasses to Number.
 		 */
-		R<String> r3 = new R<String>();
+		R<String> r3 = new R<String>();//Error
 		System.out.println(r3);
 		
 		System.out.println("done");
