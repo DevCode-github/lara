@@ -1,0 +1,7 @@
+<h1><p>f1 works!</p></h1>
+<form [formGroup]="form" (ngSubmit)="save()">
+    firstName : <input type="text" formControlName="firstName" id=""> <br>
+    lastName :  <input type="text" formControlName="lastName" id=""> <br>
+    age : <input type="number" formControlName="age" id="" max="99" min="10"> <br>
+    <input type="submit" value="submit">
+</form>

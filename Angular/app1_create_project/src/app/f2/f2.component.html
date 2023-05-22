@@ -1,0 +1,7 @@
+<h1><p>f2 works!</p></h1>
+<form [formGroup]="form" (ngSubmit)="save()">
+    Employee : <input type="text" formControlName="firstName" id=""> <br>
+    Password : <input type="password" formControlName="password" id=""> <br>
+    Email : <input type="email" formControlName="email" id=""> <br>
+    <input type="submit" value="submit">
+</form>

@@ -11,6 +11,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { SimpleComponentComponent } from './simple-component/simple-component.component';
 import { SimpleComponent2Component } from './simple-component2/simple-component2.component';
 import { Hello1Component } from './hello1/hello1.component';
+import { F1Component } from './f1/f1.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { F2Component } from './f2/f2.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,14 @@ import { Hello1Component } from './hello1/hello1.component';
     LogoutComponent,
     SimpleComponentComponent,
     SimpleComponent2Component,
-    Hello1Component
+    Hello1Component,
+    F1Component,
+    F2Component,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
