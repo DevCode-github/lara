@@ -6,4 +6,5 @@ import java.io.Serializable;
 public class H implements Serializable{
 	int i;
 	int j;
+	int k;
 }

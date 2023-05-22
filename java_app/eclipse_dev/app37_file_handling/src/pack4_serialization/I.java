@@ -1,3 +1,6 @@
+/*
+ * used in M13_customization
+ */
 package pack4_serialization;
 
 import java.io.FileInputStream;
@@ -36,6 +39,5 @@ public class I implements Serializable{
 		System.out.println(i1.i + ", " + i.j +", " + i.k);
 		in.close();
 		fin.close();
-		
 	}
 }
