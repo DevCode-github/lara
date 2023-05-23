@@ -10,3 +10,7 @@ Methods :
 -methods can have any number of arguments.
 -method overloading is not there.
 -arguments cannot take acess levels.
+
+Angular is supporting two types of development:
+1. Template driven form - required changes in html.
+2. Reactive driven form - required changes in the class in the programming place.

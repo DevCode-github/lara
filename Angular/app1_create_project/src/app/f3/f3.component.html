@@ -1,0 +1,19 @@
+<h1><p>f3 works!</p></h1>
+<form [formGroup]="f1" (ngSubmit)="save()">
+    firstName = <input type="text" formControlName="firstName"> 
+    <span *ngIf="firstName?.touched && firstName?.invalid">
+        pls enter first name
+    </span>
+    <br>
+    lastName = <input type="text" formControlName="lastName"> 
+    <span *ngIf="lastName?.touched && lastName?.invalid">
+        pls enter last name
+    </span>
+    <br>
+    age = <input type="number" formControlName="age"> 
+    <span *ngIf="age?.touched && (age?.invalid || age?.value < 10 || age?.value > 100)">
+        pls enter age > 10 and < 100
+    </span>
+    <br>
+    <input type="submit" value="submit">
+</form>

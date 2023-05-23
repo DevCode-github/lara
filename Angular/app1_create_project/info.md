@@ -73,3 +73,16 @@ or
 ```
 D:\[path_to_your_directory]\[Project_name]>ng g c [component_name]
 ```
+
+    ###Options
+    ```
+        ng g c [component_name] --skip-tests
+    ```
+
+    To know more, go for :
+    ```
+    ng g c --help
+    ```
+
+
+ng g c logout --skip-tests

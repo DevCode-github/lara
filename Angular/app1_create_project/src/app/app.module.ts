@@ -14,6 +14,7 @@ import { Hello1Component } from './hello1/hello1.component';
 import { F1Component } from './f1/f1.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { F2Component } from './f2/f2.component';
+import { F3Component } from './f3/f3.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { F2Component } from './f2/f2.component';
     Hello1Component,
     F1Component,
     F2Component,
+    F3Component,
   ],
   imports: [
     BrowserModule,
