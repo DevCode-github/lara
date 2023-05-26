@@ -15,6 +15,7 @@ import { F1Component } from './f1/f1.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { F2Component } from './f2/f2.component';
 import { F3Component } from './f3/f3.component';
+import { Test1Component } from './test1/test1.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { F3Component } from './f3/f3.component';
     F1Component,
     F2Component,
     F3Component,
+    Test1Component,
   ],
   imports: [
     BrowserModule,

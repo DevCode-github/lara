@@ -15,9 +15,9 @@ export class F3Component {
   */
   constructor (formBuilder: FormBuilder){
     this.f1 = formBuilder.group({
-      firstName: new FormControl(),
-      lastName: new FormControl(),
-      age: new FormControl()
+      firstName: new FormControl('',Validators.required),
+      lastName: new FormControl('',Validators.required),
+      age: new FormControl('',Validators.required)
     })
   }
 

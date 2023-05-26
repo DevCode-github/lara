@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app1_create_project": {
+    "app2_routing_module": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app1_create_project",
+            "outputPath": "dist/app2_routing_module",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -29,9 +29,9 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/popper.js/dist/umd/popper.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/jquery/dist/jquery.js"
             ]
           },
           "configurations": {
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app1_create_project:build:production"
+              "browserTarget": "app2_routing_module:build:production"
             },
             "development": {
-              "browserTarget": "app1_create_project:build:development"
+              "browserTarget": "app2_routing_module:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app1_create_project:build"
+            "browserTarget": "app2_routing_module:build"
           }
         },
         "test": {

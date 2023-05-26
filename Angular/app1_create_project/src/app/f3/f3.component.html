@@ -1,19 +1,38 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">This is home</div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">This is profile</div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">This is contact</div>
+  </div>
 <h1><p>f3 works!</p></h1>
 <form [formGroup]="f1" (ngSubmit)="save()">
-    firstName = <input type="text" formControlName="firstName"> 
-    <span *ngIf="firstName?.touched && firstName?.invalid">
-        pls enter first name
-    </span>
+    <div class="form-group text-center has-validation">
+        firstName <input type="text" formControlName="firstName" class="form-control"> 
+        <span *ngIf="firstName?.touched && firstName?.invalid">
+            pls enter first name
+        </span>
+    </div>
+    <div>
+        lastName <input type="text" formControlName="lastName" class="form-control" required> 
+        <span *ngIf="lastName?.touched && lastName?.invalid">
+            pls enter last name
+        </span>
+        <div class="invalid-feedback">
+            Please choose a username.
+        </div>
+    </div>
+    <div class="form-group text-center">
+        age <input type="number" formControlName="age" class="form-control" min="10" max="100"> 
+        <span *ngIf="age?.touched && (age?.invalid)">
+            pls enter age > 10 and < 100
+        </span>
+    </div>
     <br>
-    lastName = <input type="text" formControlName="lastName"> 
-    <span *ngIf="lastName?.touched && lastName?.invalid">
-        pls enter last name
-    </span>
-    <br>
-    age = <input type="number" formControlName="age"> 
-    <span *ngIf="age?.touched && (age?.invalid || age?.value < 10 || age?.value > 100)">
-        pls enter age > 10 and < 100
-    </span>
-    <br>
-    <input type="submit" value="submit">
+    <input type="submit" value="submit" class="btn btn-outline-dark form-control">
 </form>
