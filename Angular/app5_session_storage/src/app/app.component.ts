@@ -6,8 +6,8 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //fieds
   title = 'app5_session_storage';
-
   name1: string = "Angular " + VERSION.full;
 
   //to save data in session storage
