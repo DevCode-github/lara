@@ -1,4 +1,4 @@
-package pack4_serialization;
+	package pack4_serialization;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -21,8 +21,8 @@ public class J implements Externalizable{
 	@Override
 	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		i = in.readInt();
-//		j = in.readDouble();
-//		k = in.readUTF();
+		j = in.readDouble();
+		k = in.readUTF();
 		System.out.println(in.readInt());
 		System.out.println(in.readUTF());
 		System.out.println(".......done reading " + this);

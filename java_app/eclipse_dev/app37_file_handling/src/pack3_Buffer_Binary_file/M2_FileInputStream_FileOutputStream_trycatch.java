@@ -21,6 +21,9 @@ public class M2_FileInputStream_FileOutputStream_trycatch{
 			bout = new BufferedOutputStream(fout);
 			
 			//setting the size of the bucket of bytes to read, in this case the file size
+			/*
+			 * available() - Returns an estimate of the number of remaining bytes that can be read from file
+			 */
 			byte[] b = new byte[(int) fin.available()];
 			bin.read(b);//reading
 			bout.write(b);//writing
