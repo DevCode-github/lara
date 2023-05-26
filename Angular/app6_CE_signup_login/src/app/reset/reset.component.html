@@ -1,0 +1,4 @@
+<input type="submit" value="Clear" class="btn btn-primary" (click)="reset()" [hidden]="cleared">
+<div *ngIf="cleared">
+    <div class="view">Database Cleared!</div>
+</div>

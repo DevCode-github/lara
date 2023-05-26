@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="validate()" [hidden]="validateForm">
+    <h2 *ngIf="signupWarning" style="color: green;">Pls sign-up first!</h2>
+    <label for="firstName">First Name</label>
+    <input type="text" formControlName="firstName" id="firstName" class="form-control" [(ngModel)]="firstName" required>
+    <span *ngIf="validateName" style="color: red;">*Name is wrong</span>
+    <span *ngIf="name?.touched && name?.invalid && !validateName" style="color: red;">*Enter name</span>
+    <br>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="password" class="form-control" [(ngModel)]="password" required>
+    <span *ngIf="validatePassword" style="color: red;">*Password is wrong.</span>
+    <span *ngIf="pass?.touched && pass?.invalid && !validatePassword"></span>
+    <div class="submit">
+        <input type="submit" value="submit" class="btn btn-primary">
+    </div>
+</form>
+<div *ngIf="validateForm">
+    <div class="view">Login Successful!</div>
+</div>
+ 
+

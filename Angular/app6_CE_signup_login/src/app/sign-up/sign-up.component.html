@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="saveData()" [hidden]="submitted">
+    <label for="firstname">First Name</label>
+    <input type="text" formControlName="firstName" id="firstname" class="form-control">
+    <span *ngIf="firstName?.touched && firstName?.invalid" style="color: red;">*Pls enter the First Name</span>
+    <label for="lastname">Last Name</label>
+    <input type="text" formControlName="lastName" id="lastname" class="form-control">
+    <span *ngIf="lastName?.touched && lastName?.invalid" style="color: red;">*Pls enter the Last Name</span>
+    <label for="age">Age</label>
+    <input type="number" formControlName="age" id="age" class="form-control" min="10" max="100">
+    <span *ngIf="age?.touched && age?.invalid" style="color: red;">*Pls enter your Age | MIN 10 | MAX 100</span>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="password" class="form-control">
+    <span *ngIf="length?.touched && length?.invalid" style="color: red;">*Minimun length 8</span>
+    <br>
+    <div class="submit">
+        <input type="submit" value="Submit" class="btn btn-primary" [disabled]="!form.valid">
+    </div>
+</form>
+<div *ngIf="msg == true">
+    <div class="view">Sign-up is successful!. Please Login</div>
+</div>
+ 
