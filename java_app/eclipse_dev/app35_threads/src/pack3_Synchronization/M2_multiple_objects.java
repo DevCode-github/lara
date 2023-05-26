@@ -1,6 +1,6 @@
 package pack3_Synchronization;
 
-class A{
+class B{
 	static int j = 0;
 	synchronized void test() {
 //		for(int i = 0; i <= 1000 ; i++) {
@@ -10,29 +10,30 @@ class A{
 		}
 	}
 }
-class Thread1 extends Thread{
-	A obj;
-	Thread1(A obj){
+class Thread_1 extends Thread{
+	B obj;
+	Thread_1(B obj){
 		this.obj = obj;
 	}
 	public void run() {
 		obj.test();
 	}
 }
-class Thread2 extends Thread{
-	A obj;
-	Thread2(A obj){
+class Thread_2 extends Thread{
+	B obj;
+	Thread_2(B obj){
 		this.obj = obj;
 	}
 	public void run() {
 		obj.test();
 	}
 }
-public class M1_synchronized {
+public class M2_multiple_objects {
 	public static void main(String[] args) {
-		A a1 = new A();
-		Thread1 obj1 = new Thread1(a1);
-		Thread2 obj2 = new Thread2(a1);
+		B b1 = new B();
+		B b2 = new B();
+		Thread_1 obj1 = new Thread_1(b1);
+		Thread_2 obj2 = new Thread_2(b2);
 		obj1.start();
 		obj2.start();
 	}
