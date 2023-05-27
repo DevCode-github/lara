@@ -74,23 +74,23 @@ or
 D:\[path_to_your_directory]\[Project_name]>ng g c [component_name]
 ```
 
-    ### Create components without **Test file**
-    ```
-        ng g c [component_name] --skip-tests
-    ```
-    
-    ### Create components without **Html file**
-    ```
-        ng g c [component_name] --inline-template
-    ```
+  ### Create components without **Test file**
+  ```
+      ng g c [component_name] --skip-tests
+  ```
 
-    ### Create components without **Css file**
-    ```
-        ng g c [component_name] --inline-style
-    ```
+  ### Create components without **Html file**
+  ```
+      ng g c [component_name] --inline-template
+  ```
 
-    To know more, go for :
-    ```
-    ng g c --help
-    ```
+  ### Create components without **Css file**
+  ```
+      ng g c [component_name] --inline-style
+  ```
+
+  To know more, go for :
+  ```
+  ng g c --help
+  ```
 
