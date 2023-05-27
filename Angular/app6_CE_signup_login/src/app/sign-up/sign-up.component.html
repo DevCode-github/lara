@@ -1,4 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="saveData()" [hidden]="submitted">
+    <label for="userName">User Name</label>
+    <input type="text" formControlName="userName" id="userName" class="form-control">
+    <span *ngIf="userName?.touched && userName?.invalid" style="color: red;">*Enter User Name</span>
     <label for="firstname">First Name</label>
     <input type="text" formControlName="firstName" id="firstname" class="form-control">
     <span *ngIf="firstName?.touched && firstName?.invalid" style="color: red;">*Pls enter the First Name</span>
