@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter, Output } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-login',
@@ -9,37 +10,46 @@ import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
 
 export class LoginComponent {
   //fields
+  //Output decorator to transmit show signup form upon successfull login
+  //it raise an event to notify the parent of the change, which is of the type Eventemitter.
+  @Output() signupShowEvent = new EventEmitter<boolean>();
+
   //formgroup field
   loginForm: FormGroup;
+  
   //field for ngModel
-  firstName = "";
+  userName = "";
+  
   //field for ngModel
   password = "";
-
+  
+  //field to confirm formcontrol validatoin
   validateName = false;
   validatePassword = false;
+
   //field for final validation
   validateForm = false;
+  
   //field to check session storage is empty or not
   signupWarning = false;
 
   constructor (formBuilder: FormBuilder){
     this.loginForm = formBuilder.group({
-      firstName: new FormControl('',[Validators.required]),
+      userName: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required])
     })
   }
 
   validate() {
     //if session storage is empty do not validate and return the control
-    if (sessionStorage.getItem('firstName') == null || sessionStorage.getItem('password') == null) {
+    if (sessionStorage.getItem('userName') == null || sessionStorage.getItem('password') == null) {
       this.signupWarning = true;
       return;
     }
 
     //validation for Name
-    if (this.loginForm.get('firstName')?.value != sessionStorage.getItem('firstName')) {
-      this.firstName = "";
+    if (this.loginForm.get('userName')?.value != sessionStorage.getItem('userName')) {
+      this.userName = "";
       this.validateName = true;
     }
     else {
@@ -57,11 +67,15 @@ export class LoginComponent {
 
     //confirming validation for submission, validateForm is used to check for final validation
     this.validateForm = !this.validateName && !this.validatePassword;
+
+    //upon validation emit the confirmation to the parent.
+    if (this.validateForm) this.signupShowEvent.emit(true);
+    console.log("emitted");
   }
 
   //getters
   get name(){
-    return this.loginForm.get('firstName')
+    return this.loginForm.get('userName')
   }
   get pass(){
     return this.loginForm.get('password')
