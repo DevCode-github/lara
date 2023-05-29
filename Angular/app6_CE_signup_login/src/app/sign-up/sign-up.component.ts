@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl,Validators} from '@angular/forms'
 import {Router} from '@angular/router';
 import { AppComponent } from '../app.component';
@@ -8,9 +8,13 @@ import { AppComponent } from '../app.component';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent{
   //Input decorator to read data from parent which confirms successful login
   @Input() signupShowEvent = false;
+
+  //Ouput signal 
+  @Output() signupSuccess = new EventEmitter();
 
   //feilds
   //form field
@@ -28,23 +32,26 @@ export class SignUpComponent{
       firstName: new FormControl('',[Validators.required,Validators.minLength(3)]),
       lastName: new FormControl('',[Validators.required,Validators.minLength(3)]),
       age: new FormControl('',[Validators.required , Validators.min(10), Validators.max(100)]),
-      password: new FormControl('',Validators.minLength(8))
+      password: new FormControl('',[Validators.minLength(8),Validators.required])
     })
   }
+
   //function to detect changes in the input field and set the changed property from the parent.
   //Its triggered upon successfull login
   ngOnChanges(changes: SimpleChanges) {
     // changes.prop contains the old and the new value...
     const chng = changes['signupShowEvent'];
     this.signupShowEvent = chng.currentValue;
-    //changing field that decides form hidden property to false
-    this.submitted = false;
-    //changing field that decides validation msg to false
-    this.infomsg = false;
-    //resetting the form
-    this.form.reset();
-    //confirming changes in the console
-    console.log(this.signupShowEvent + " from ngOnChanges")
+    if (this.signupShowEvent){
+      //changing field that decides form hidden property to false
+      this.submitted = false;
+      //changing field that decides validation msg to false
+      this.infomsg = false;
+      //resetting the form
+      this.form.reset();
+      //confirming changes in the console
+      console.log(this.signupShowEvent + " changed signupShowEvent on signupSuccess")
+    }
   }
 
   //Saving data to session storage
@@ -59,6 +66,7 @@ export class SignUpComponent{
     this.infomsg = true;
     this.submitted = true;
     this.signupShowEvent = false;
+    this.signupSuccess.emit();
   }
 
   //getters

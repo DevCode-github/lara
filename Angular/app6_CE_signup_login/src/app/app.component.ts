@@ -10,11 +10,14 @@ export class AppComponent {
   title = 'app6_CE_signup_login';
 
   //field to catch the value from child
-  signupShowEvent = false;
-  
+  signupShowEventp = false;
+  signupSuccessEventp = false;
   //method to catch the values thrown by the event emitter of the child class
-  changeSignupShow(signupShowEvent: boolean){
-    this.signupShowEvent = signupShowEvent;
-    console.log(signupShowEvent+ " from parent");
+  signupShowEvent(signupShowEvent: boolean){
+    this.signupShowEventp = signupShowEvent;
+  }
+
+  signupSuccessEvent(){
+    this.signupShowEventp = false;
   }
 }

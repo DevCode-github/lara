@@ -366,9 +366,9 @@
 
   <!-- Resources -->
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show" id="pills-sign-up" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><app-sign-up [signupShowEvent]="signupShowEvent"></app-sign-up></div>
-    <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><app-login (signupShowEvent)="changeSignupShow($event)"></app-login></div>
-    <div class="tab-pane fade" id="pills-reset" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><app-reset></app-reset></div>
+    <div class="tab-pane fade show" id="pills-sign-up" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><app-sign-up [signupShowEvent]="signupShowEventp" (signupSuccess)="signupSuccessEvent()"></app-sign-up></div>
+    <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><app-login (signupShowEvent)="signupShowEvent($event)" [showLogin]="signupShowEventp"></app-login></div>
+    <div class="tab-pane fade" id="pills-reset" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0" ><app-reset [showReset]="signupShowEventp"></app-reset></div>
   </div>
 
 

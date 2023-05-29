@@ -1,4 +1,4 @@
-import { Component,EventEmitter, Output } from '@angular/core';
+import { Component,EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
 import { SignUpComponent } from '../sign-up/sign-up.component';
 
@@ -13,6 +13,16 @@ export class LoginComponent {
   //Output decorator to transmit show signup form upon successfull login
   //it raise an event to notify the parent of the change, which is of the type Eventemitter.
   @Output() signupShowEvent = new EventEmitter<boolean>();
+
+  //Input decorator to Reset login 
+  /*
+  On Every successfull singup, login should referesh, the @Output signupShowEvent emits true on successfull
+  login which is recieved by parent(app) which in turn is recieved by signup component to refersh signup,
+  and signup component emits a event to make signupShowEvent false on succesfull login, so we are checking for
+  showLogin which recieves its value from signupShowEvent, so when showLogin becomes false, its the signal to
+  refresh login.
+  */
+  @Input() showLogin = true;
 
   //formgroup field
   loginForm: FormGroup;
@@ -40,10 +50,27 @@ export class LoginComponent {
     })
   }
 
+  //method gets invoked on every input field change
+  ngOnChanges(changes: SimpleChanges){
+    var chng = changes['showLogin']
+    this.showLogin = chng.currentValue
+    //if showLogin is False means signup is Successfull
+    if (this.showLogin == false){
+      this.validateForm = false;
+      //warning is reset
+      this.signupWarning = false;
+      //refresh form
+      this.loginForm.reset();
+    }
+  }
+
+  //methods gets invoked on every submit event
   validate() {
     //if session storage is empty do not validate and return the control
     if (sessionStorage.getItem('userName') == null || sessionStorage.getItem('password') == null) {
       this.signupWarning = true;
+      //refresh the signup, since database is empty
+      this.signupShowEvent.emit(true);
       return;
     }
 
