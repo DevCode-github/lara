@@ -1,0 +1,58 @@
+what is application?
+User level:
+    -Standalone application - if we install we can use it, if you have it you can use it.
+    -web application - Internet(to connect to server) and server and user --web application.
+Enterprise level:
+    -enterprise application - 
+
+java program - 
+
+web application :
+    we need server - deploy in server - port number - ip-localhost
+
+Framework:
+    -Framework is the body or platfrom of predefined codes, which are used to develop application.
+    -some one will give all raw material at once - ready to use
+
+Spring:
+    light weight
+    opensource
+    Framework of Frameworks
+
+Modules:
+IOC(Inversion of control)
+AOP
+DAO
+ORM
+WEB/web MVC
+
+IOC: (helps in creating objects(Dependency) which are required for starting the project)
+    class person{
+        Address address;
+        String name;
+        int age;
+        Person(Address address){
+            this.address = address;
+        }
+    }
+    class Address{
+        String streetName;
+        String doorNo;
+        String state;
+        String pincode;
+    }
+its called DI(Dependency Injection)
+person -- address --reference for person
+
+
+IOC makes code loosely coupled, i.e no need to modify the code if our logic move to new environment.
+
+predefined template:
+template: a form mold or pattern used as a guide to make something
+
+light wieght:
+    spring framework doesn't force the programmer to inherit any class or implement any interface
+    ready to use
+    light wieght  - data transfomration is easy using POJO (setter and getter methods)
+fast development
+modules for every need of application
