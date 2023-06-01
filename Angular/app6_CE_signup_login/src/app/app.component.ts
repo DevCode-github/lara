@@ -17,7 +17,7 @@ export class AppComponent {
     this.signupShowEventp = signupShowEvent;
   }
 
-  signupSuccessEvent(){
-    this.signupShowEventp = false;
+  signupSuccessEvent(signupShowEvent: boolean){
+    this.signupShowEventp = signupShowEvent;
   }
 }

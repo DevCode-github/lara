@@ -14,7 +14,7 @@ export class SignUpComponent{
   @Input() signupShowEvent = false;
 
   //Ouput signal 
-  @Output() signupSuccess = new EventEmitter();
+  @Output() signupSuccess = new EventEmitter<boolean>();
 
   //feilds
   //form field
@@ -66,7 +66,7 @@ export class SignUpComponent{
     this.infomsg = true;
     this.submitted = true;
     this.signupShowEvent = false;
-    this.signupSuccess.emit();
+    this.signupSuccess.emit(false);
   }
 
   //getters
