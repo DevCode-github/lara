@@ -1,0 +1,43 @@
+<form [formGroup]="person" (ngSubmit)="save()">
+    <label for="firstName" >First Name</label>
+    <input type="text" id="firstName" class="form-control" formControlName="firstName">
+    <label for="lastName" class="form-group">Last Name</label>
+    <input type="text" id="lastName" class="form-control" formControlName="lastName">
+    <label for="age" class="form-group">Age</label>
+    <input type="text" id="age" class="form-control" formControlName="age">
+    <div formGroupName="address">
+        <label for="houseNo" class="form-group">House No.</label>
+        <input type="text" id="houseNo" class="form-control" formControlName="houseNo">
+        <label for="streetName" class="form-group">Street Name</label>
+        <input type="text" id="streetName" class="form-control" formControlName="streetName">
+        <label for="city" class="form-group">City</label>
+        <input type="text" id="city" class="form-control" formControlName="city">
+    </div>
+    <label for="userName" class="form-group">User Name</label>
+    <input type="text" id="userName" class="form-control" formControlName="userName">
+    <label for="password" class="form-group">Password</label>
+    <input type="password" id="password" class="form-control" formControlName="password">
+    <div formArrayName="mobileNumbers" *ngFor="let mobileNumber of mobileNumbers.controls ; let i = index">
+        <div [formGroupName]="i">
+            <label for="mobileNumberi">Mobile Number {{i+1}}</label>
+            <input type="number" id="mobileNumberi" formControlName="mobileNumber" class="form-control">
+            <label for="serviceprovideri">Service Provider</label>
+            <input type="number" id="serviceprovideri" formControlName="serviceProvider" class="form-control">
+        </div>
+    </div>
+    <div formArrayName="knownSkill">
+        <span *ngFor="let skill of skill; let i = index">
+            <input type="checkbox" [formControlName]="i" id="{{i}}">
+            <label for="{{i}}">{{skill.name}}</label>
+            &nbsp;&nbsp;
+        </span>
+    </div>
+    <br>
+    <div class="spacer">
+        <div><button class="btn btn-primary" (click)="addNewMobileNumber($event)">Add</button></div>
+        <div style="flex: 1"></div>
+       <div> <button class="btn btn-primary" (click)="removeMobileNumber($event)">Remove</button></div>
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary submit">
+</form>
