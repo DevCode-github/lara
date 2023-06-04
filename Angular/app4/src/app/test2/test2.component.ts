@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl} from '@angular/forms'
+import { Test3Service } from '../test3.service';
 
 @Component({
   selector: 'app-test2',
@@ -10,7 +11,7 @@ export class Test2Component {
   login: FormGroup;
   message: string = '';
 
-  constructor (formBuilder: FormBuilder){
+  constructor (formBuilder: FormBuilder, private service: Test3Service){
     this.login = formBuilder.group({
       userName: new FormControl(),
       password: new FormControl()
@@ -28,5 +29,6 @@ export class Test2Component {
     var pw= obj['password']
     if (userName == un && password == pw) this.message = "login successful"
     else this.message = "either name/password is wrong"
+    this.service.save(this.login.value);
   }
 }

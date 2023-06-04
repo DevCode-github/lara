@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder,FormControl,Validators, FormArray, Form } from '@angular/forms';
+import { Test3Service } from '../test3.service';
 
 @Component({
   selector: 'app-test1',
@@ -16,7 +17,7 @@ export class Test1Component {
   ]
   selectedSkill: any = [];
 
-  constructor (private formBuilder: FormBuilder){
+  constructor (private formBuilder: FormBuilder, private service: Test3Service){
     this.person = formBuilder.group({
       firstName: new FormControl(),
       lastName: new FormControl(),
@@ -76,5 +77,6 @@ export class Test1Component {
     // console.log(this.person.value)
     var s1 = JSON.stringify(this.person.value);
     sessionStorage.setItem('person', s1);
+    this.service.save(this.person.value);
   }
 }
