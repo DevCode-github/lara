@@ -1,0 +1,11 @@
+Beans.xml:
+----------
+1. Prototype:
+2. Singleton:
+
+Injection : Injection data to attribute
+Only 1 & 2 supported by spring
+1.setter injection
+2.interface injection
+
+3.constructor injection
