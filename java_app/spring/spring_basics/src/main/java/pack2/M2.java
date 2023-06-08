@@ -11,6 +11,6 @@ public class M2 {
 		Address add = employee.getAddress();
 		System.out.println(add.getHouseNo());
 		System.out.println(add.getStreetName());
-		
+		ctx.close();
 	}
 }

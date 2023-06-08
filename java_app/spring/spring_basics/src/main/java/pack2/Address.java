@@ -1,5 +1,6 @@
 package pack2;
 
+
 public class Address {
 	private String houseNo;
 	private String streetName;
