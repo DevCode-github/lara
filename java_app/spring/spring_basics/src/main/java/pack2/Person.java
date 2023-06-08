@@ -1,10 +1,11 @@
-package com.lara;
+package pack2;
 
 public class Person {
 	private String firstName;
 	private String lastName;
-	private Integer age;
-	
+	public Person() {
+		System.out.println("constructor");
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -17,11 +18,10 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Integer getAge() {
-		return age;
+	public void method1() {
+		System.out.println("method1 executed");
 	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void method2() {
+		System.out.println("method2 executed");
 	}
-	
 }

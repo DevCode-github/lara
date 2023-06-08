@@ -1,7 +1,8 @@
 Beans.xml:
 ----------
-1. Prototype:
-2. Singleton:
+scope
+1. Prototype: 
+2. Singleton: creates every bean when bean file is loading 
 
 Injection : Injection data to attribute
 Only 1 & 2 supported by spring
@@ -9,3 +10,16 @@ Only 1 & 2 supported by spring
 2.interface injection
 
 3.constructor injection
+
+
+wiring:
+------
+1. explicit wiring (using ref="")
+
+2. autowiring (using autowire="") :
+				1. "byType" : 
+				2. "byName" :
+				
+
+init-method: called while creating object
+destroy-method: called while destroying object
