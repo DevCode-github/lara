@@ -56,3 +56,67 @@ light wieght:
     light wieght  - data transfomration is easy using POJO (setter and getter methods)
 fast development
 modules for every need of application
+
+IOC : is a module container and called as core of spring framework.
+    -resposible for instantiates the objects
+    -for configurations
+    -assemble the objects and manage the objects life cycles.
+    -managing the Dependencies.
+    spring container(IOC) uses Dependency Injection container to manage all other responsibilities
+
+Dependecy Injection:
+class A{
+    B b;
+    B getB(){
+    b = new B();
+    return b;
+    }
+}
+class B{
+    C c;
+    C getC(){
+        return new C();
+    }
+}
+
+Object as a Bean.
+Beans managed by container
+
+define this Dependecy:
+Two types:
+1. setter Dependecy Injection : 
+    DI will be injected with the help of setter and getter methods
+    set the DI as a setter injection in the Bean
+    class A{
+        B b;
+        test(){
+        ...
+        s.o.p(b.getName());
+        ...
+        ...
+        }
+        void setB(B b){
+            this.b = b;
+        }
+    }
+    class test{
+        main(){
+            A.setB(new B());
+            A.test();
+        }
+    }
+
+2. constructor Dependecy Injection
+    with the help of constructor we will inject the Dependencies
+    class A{
+        B b;
+        A(B b){
+            this.b = b;
+        }
+    }
+by jyothsna
+-------------------------------------------------
+-------------------------------------------------
+
+
+Spring main motto : Inversion of control (maintaining lifetime of an object)
