@@ -28,7 +28,7 @@ class Thread2 extends Thread{
 		obj.test();
 	}
 }
-public class M1_synchronized {
+public class M1_synchronized_object {
 	public static void main(String[] args) {
 		A a1 = new A();
 		Thread1 obj1 = new Thread1(a1);
