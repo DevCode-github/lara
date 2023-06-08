@@ -14,3 +14,6 @@ Methods :
 Angular is supporting two types of development:
 1. Template driven form - required changes in html.
 2. Reactive driven form - required changes in the class in the programming place.
+
+SPA: (Single page architect)
+---
