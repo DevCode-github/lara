@@ -6,7 +6,7 @@ class Y{
 			main(null);
 			System.out.println("try end");
 		}
-		catch (StackOverflowError ex){ //incompatible exception
+		catch (StackOverflowError ex){
 			System.out.println("from catch");
 			ex.printStackTrace();
 		}

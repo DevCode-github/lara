@@ -1,5 +1,5 @@
 class Z54{
-	public static void main(String[] args){//error handled by jvm
+	public static void main(String[] args){/
 		System.out.println(1);
 		try{
 			test1();
@@ -29,7 +29,7 @@ class Z54{
 	}
 }
 class Z54_1{
-	public static void main(String[] args){//error handled by jvm
+	public static void main(String[] args){
 		System.out.println(1);
 		try{
 			test1();

@@ -9,10 +9,13 @@ class Z{
 			}
 			System.out.println("try end");
 		}
-		catch (OutOfMemoryError ex){ //incompatible exception
+		catch (OutOfMemoryError ex){
 			System.out.println("from catch");
 			ex.printStackTrace();
 		}
 		System.out.println("main end");
+		for (int i = 0 ; i < 100 ; i++ ){
+			System.out.println("working fine");
+		}
 	}
 }
