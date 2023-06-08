@@ -1,0 +1,12 @@
+-> component is super component to controller,service and repository.
+
+-> three layer - Rest controller
+                      ^
+                      |
+                    services
+                      ^
+                      |
+                 repositories
+                      ^
+                      |
+                  databases
