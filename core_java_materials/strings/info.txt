@@ -1,0 +1,20 @@
+Immuatable - String class
+Mutable - StringBuilder, StringBuffer
+
+Comparison of strings:
+----------------------
+-> if we use == operator for comparing strings, the references of the strings would be compared.
+-> if we use equals() method in string class, the contents of the strings would be compared
+-> if we use equals() method in StringBuffer class, then references will compared.
+
+Memory allocation of string objects:
+-----------------------------------
+-> String object would be created on Heap area.
+-> Only for string class objects JVM has allocated a seperate reserved space on Heap called String Constant pool.
+-> if we create string without using new keyword, then one string object will be created on SCP area 
+-> if we create String object using new keyword, then 2 string objects will be created. Main copy will be created 
+   on the Heap area and the reference varicalbewould start pointing to the String object. 
+   Also JVM would create extra copy of the same string on the scp area for future purposes for thier extra copy, 
+   user defined varibale will not point.
+-> Duplicates are not permmited in SCP area.
+-> Duplicates are permmited in the heap area.
