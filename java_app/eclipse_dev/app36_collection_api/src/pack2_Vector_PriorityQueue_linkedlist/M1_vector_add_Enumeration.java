@@ -28,9 +28,11 @@ public class M1_vector_add_Enumeration {
 			}
 		*/
 		Enumeration e1 = v1.elements();
+		v1.add(108);
 		while(e1.hasMoreElements()) {
 			System.out.println(e1.nextElement());
 		}
+		v1.add(109);
 		while(e1.hasMoreElements()) {
 			System.out.println(e1.nextElement());
 		}

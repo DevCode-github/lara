@@ -2,6 +2,7 @@ package pack7_fail_fast_safe;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
+
 public class M2 {
 	public static void main(String[] args) {
 		CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();

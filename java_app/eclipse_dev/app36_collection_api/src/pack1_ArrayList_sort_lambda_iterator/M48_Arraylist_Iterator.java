@@ -24,7 +24,13 @@ public class M48_Arraylist_Iterator {
 		 */
 		while(it.hasNext()) {
 			obj = it.next();
+			it.remove();
 			System.out.println(obj + ", ");
+		}
+		
+		System.out.println(list.size());
+		for(Object ob : list) {
+			System.out.println(ob);
 		}
 		/**
 		 * public interface java.util.Iterator<E> {

@@ -18,7 +18,9 @@ public class M9_HashMap_iterator {
 		Object obj;
 		while (it.hasNext()) {
 			obj = it.next();
+			it.remove();
 			System.out.println(obj + " : " + map.get(obj));
 		}
+		System.out.println(map.size());
 	}
-}
+	}
