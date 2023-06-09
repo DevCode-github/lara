@@ -1,0 +1,6 @@
+Thread life cycle:
+1. New State
+2. Runnable State
+3. Running state
+4. Blocked state
+

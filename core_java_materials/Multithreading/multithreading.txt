@@ -1,0 +1,38 @@
+Multithreading:
+---------------
+
+process/task: A process/task is a program which is under execution by the microcomputer.
+
+single process/single task: microprocessor will execute only one task at a time
+
+Multi process/multi task: microprocessor will execute more than one task at a time.
+
+Thread:
+-------
+-Line of execution
+
+Two types of Threads:
+    -Single Thread:
+    ---------------
+        -Only one line of execution (sequential execution)
+    -Mutiple Thread:
+    ----------------
+        -Mutiple lines of execution(parallel Execution) so that microprocessor time can be effectively utilized.
+    
+Multithreading:
+
+ ->MultiThreading is the process of creating mutiple threads in order to execute independent subtasks present in 
+   the  java program parallel without wasting CPU time.
+ ->Adavatage of multi threading is whenever one subtask one subtask wasting time, the thread scheduler can schedule 
+   another sub task for execution without wasting CPU time.
+ ->Thread scheduler is a software which is responsible for:
+    -Allocation of resources for thread
+    -Execution of thread
+    -once ites execution completed de-allocation of resources
+ ->By default, for all the java programs, JVM will create one thread called as "main" thread.
+ ->Thrad scheduler will always allow main thread to begin execution, Only then, it will schedule user-defined
+   threads.
+ ->Every thread will be having
+    -Name of the thread
+    -Priority of the thread
+

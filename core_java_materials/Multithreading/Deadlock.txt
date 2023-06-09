@@ -1,0 +1,7 @@
+Dead Lock:
+----------
+-> Dead lock is a situation in a multithreading programming where two threads are stuck in the blocked state mutually 
+   waiting for one another to release the resources, so that they can proceed with thier execution. 
+   In the process none of the thread would release the resource and the threads would be permanently be stuck in blocked state.
+
+k

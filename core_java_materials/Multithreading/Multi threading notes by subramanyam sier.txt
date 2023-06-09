@@ -1,0 +1,2408 @@
+----------------
+Multi Threading  :
+----------------
+
+Process / task /job : A process / task is a program which is under execution by the microprocessor
+-----------------
+
+Single Process / Single Task :    Microprocessor will execute only one task at a time.
+--------------------------
+
+Multi Process / Multi Task :	    Microprocessor will execute more than one task at a time.	
+-------------------------
+
+1940's to 1960's :
+--------------
+---> Single Tasking OS (STOS)
+--> Loader used to load only one process at a time onto the RAM. 
+
+---> Single Processor
+         Single Tasking
+         Using STOS
+
+Adv:
+----
+-> Inexpensive
+
+DisAdv :
+--------
+-> Only one task can be executed at a time. It takes more time to complete all the processes (jobs)
+
+
+1970's
+------
+---> Introduced multiple micro processors inside a computer
+---> Single Tasking OS 
+---> Loader will load multiple processes onto the RAM
+
+--> Multi Processor
+--> Multi tasking
+--> Using STOS
+
+Adv:
+----
+-> Multi tasking can be achieved
+
+DisAdv:
+-------
+-> Very expensive because of multiple micro processors
+
+
+1980's :
+-------
+--> Bill Gates
+--> Multi Tasking OS (Time sharing basis) 
+--> Loader will load multiple processes onto the RAM.
+--> MTOS will instruct microprocessor to execute all the processes parallely using time sharing system
+
+--> Single Processor
+--> Multi Tasking
+--> using MTOS
+
+Adv:
+----
+--> In less time, more work can be done
+--> Inexpensive
+
+DisAdv at the program level:
+--------------------------
+--> Some times programs will not utilize CPU time effectively.
+
+
+Thread:
+-------
+--> Thread is a line of execution
+
+--> There are two types of Threads
+ 	
+	--> Single Thread :
+                        -------------
+		-> Only one line of execution (Seuential Execution)
+
+	--> Multi Thread :
+    	      -------------
+		-> Multiple lines of execution (Parallel Execution) so that microprocessor time can be effectively utilized
+
+
+Multi threading :
+---------------
+--> Multi threading is the process of creating multiple threads in order to execute independent sub tasks present in the java
+       program parallely without wasting CPU time
+
+--> Advantage of multi threading is whenever one subtask wasting time, the thread scheduler can schedue another sub task
+       for execution without wasting CPU time	
+
+--> Thread Scheduler is a software which is responsible for
+          	-> Allocation of resources for thread
+	-> Execution of thread
+	-> Once its execution completed de-allocation of resources
+
+
+--> By default, for all the java programs, JVM will create one thread called as "main" thread.
+
+--> Thread scheduler will always allow main thread to begin execution. Only then, it will schedule user-defined threads
+
+--> Every thread will be having
+           --> Name of the thread
+           --> Priority of the thread
+
+--> Every thread having three types of priority
+           --> Minimum priority (1)
+           --> Normal priority (5)
+           --> Maximum priority (10)
+
+
+Eg 1: Java program to print details of the main thread
+------------------------------------------------
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		Thread t=Thread.currentThread();
+		System.out.println(t);
+
+	}
+}				
+
+--> currentThread( ) method is a static metod present java.lang. Thread class. It returns a reference of the currently 
+       executing thread object.
+
+--> getName( ) method will return the name of the thread
+
+
+Eg2: Java program to print only thread name
+----------------------------------------
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		Thread t=Thread.currentThread();
+		System.out.println(t.getName());
+
+	}
+}
+
+
+--> Using setName( ) method we can change the name of the thread
+
+
+Eg. 3: Java program to change the name of the name of the thread 
+------------------------------------------------------------
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		Thread t=Thread.currentThread();
+		t.setName("LARA");
+		System.out.println(t.getName());
+	}
+}
+
+--> Using setPriority( ) method, we can change the priority of the thread
+--> Using getPriority( ) method, we can get the thread's priority
+
+
+Eg. 4: Java program to change the priority of the thread
+--------------------------------------------------
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		Thread t=Thread.currentThread();
+		t.setName("LARA");
+		System.out.println(t.getName());
+		t.setPriority(10);
+		System.out.println(t.getPriority());
+	}
+}
+
+Note: If we try assign the priority for a thread out of range (more than 10) , then "java.lang.IllegalArgumentException"
+          will be generated. 
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		Thread t=Thread.currentThread();
+		t.setName("LARA");
+		System.out.println(t.getName());
+		t.setPriority(11);
+		System.out.println(t.getPriority());
+	}
+}
+
+
+Acheiving multi threading (Creation of user-defined threads):
+-------------------------------------------------------
+
+--> There are 2 ways to create user-defined threads
+	1) By extending Thread class (Thread class is available in java.lang package)
+	2) By implementing Runnable interface
+
+
+1) Creating user-defined thread by extending Thread class :
+-----------------------------------------------------
+
+--> Create a class and extend Thread class
+--> Create object of that class. It will be treated as a Thread object
+
+Eg: 
+---
+class MyThread extends Thread
+{
+	public void run()
+	{
+		System.out.println("run() method started its execution..");
+		System.out.println(Thread.currentThread().getName()+" is executing run() method");	
+		System.out.println("run() method completed its execution..");
+	}
+}
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		MyThread mt=new MyThread();
+		mt.setName("Mohan");
+		mt.start();
+	}
+}
+
+Note:
+-----
+--> The logic which has to be executed by user-defined thread must be compulsorily placed inside a public void run( ) method
+--> In order to begin the user-defined thread execution we should call start( ) method.
+--> The moment we call start( ) method, thread scheduler will consider user-defined thread for execution and thread 
+       scheduler will begin user-defined thread execution.
+
+--> start( ) method will internally call run( ) method.
+
+--> Programmer should not manually call run( ) method
+
+--> If the programmer calls run( ) method manually, then run( ) will behave like a normal method and it would be executed
+       by main thread.
+
+      Eg:
+      ---
+
+class MyThread extends Thread
+{
+	public void run()
+	{
+		System.out.println("run() method started its execution..");
+		System.out.println(Thread.currentThread().getName()+" is executing run() method");	
+		System.out.println("run() method completed its execution..");
+	}
+}
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		MyThread mt=new MyThread();
+		mt.setName("Mohan");
+		mt.run();
+	}
+}
+
+
+2. Achieving multi threading by implementing Runnable interface :
+----------------------------------------------------------- 	 
+
+--> Create user-defined class and implement Runnable interface by providing implementation to public void run( ) method
+
+--> Create an object of the class
+
+--> Create an object of Thread class and pass the user-defined class object as a parameter to the Thread class constructor
+
+
+Eg. Java program to achieve multi threading by implementing Runnable interface
+------------------------------------------------------------------------
+
+class MyThread implements Runnable
+{
+	public void run()
+	{
+		System.out.println("run() method started its execution..");
+		System.out.println(Thread.currentThread().getName()+" is executing run() method");	
+		System.out.println("run() method completed its execution..");
+	}
+}
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		MyThread mt=new MyThread();
+		Thread t = new Thread(mt);
+		t.setName("Swati");
+		t.start();	
+	}
+}
+
+
+Note :
+-----
+--> Out of two ways of achieving multi threading, implementing Runnable interface is better approach because, based on our
+       project need, if we have to extend any class in future, then it is possible because we have gate open for inheritance.
+
+--> If we achieve multi threading by extending Thread class, then we have gate close for interitance in future because 
+       multiple inheritance is not supproted in java
+       
+
+Java program to demonstrate dis advantages of Single threaded programming
+------------------------------------------------------------------------
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+			System.out.println("Banking activity started..");
+			System.out.print("Enter your account number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter password : ");
+			int pwd=scan.nextInt();
+			System.out.print("Enter the amount to be withdrawn : ");
+			int amount = scan.nextInt();
+			Thread.sleep(5000);
+			System.out.println("Collect your money..");
+			System.out.println("Banking activity completed..");
+
+			System.out.println("Printing acitvity started..");
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Lara Technologies");
+				Thread.sleep(5000);
+			}
+			System.out.println("Printing activity completed..");
+
+			System.out.println("Adding activity started..");
+			int a=8789678;
+			int b=8949304;
+			int c=a+b;
+			Thread.sleep(5000);
+			System.out.println("Sum = "+c);
+			System.out.println("Adding activity completed..");
+	}
+}
+
+
+Java program using Multi threading concept (By extending Thread class)
+-----------------------------------------------------------------
+
+import java.util.*;
+
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Banking activity started..");
+			System.out.print("Enter your account number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter password : ");
+			int pwd=scan.nextInt();
+			System.out.print("Enter the amount to be withdrawn : ");
+			int amount = scan.nextInt();
+			Thread.sleep(5000);
+			System.out.println("Collect your money..");
+			System.out.println("Banking activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Demo2 extends Thread
+{
+	public void run()
+	{
+		try
+		{
+			System.out.println("Printing acitvity started..");
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Lara Technologies");
+				Thread.sleep(5000);
+			}
+			System.out.println("Printing activity completed..");
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+	}
+}
+
+
+class Demo3 extends Thread
+{
+	public void run()
+	{
+		try
+		{
+			System.out.println("Adding activity started..");
+			int a=8789678;
+			int b=8949304;
+			int c=a+b;
+			Thread.sleep(5000);
+			System.out.println("Sum = "+c);
+			System.out.println("Adding activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution..");
+		Demo1 d1=new Demo1();
+		Demo2 d2=new Demo2();
+		Demo3 d3=new Demo3();
+
+		d1.start();
+		d2.start();
+		d3.start();
+		System.out.println("Main thread completed its execution..");
+	}
+}
+
+
+Java program to achieve multi threading by implementing Runnable interface
+---------------------------------------------------------------------
+
+import java.util.*;
+
+class Demo1 implements Runnable
+{
+	public void run()
+	{
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Banking activity started..");
+			System.out.print("Enter your account number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter password : ");
+			int pwd=scan.nextInt();
+			System.out.print("Enter the amount to be withdrawn : ");
+			int amount = scan.nextInt();
+			Thread.sleep(5000);
+			System.out.println("Collect your money..");
+			System.out.println("Banking activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Demo2 implements Runnable
+{
+	public void run()
+	{
+		try
+		{
+			System.out.println("Printing acitvity started..");
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Lara Technologies");
+				Thread.sleep(5000);
+			}
+			System.out.println("Printing activity completed..");
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+	}
+}
+
+
+class Demo3 implements Runnable
+{
+	public void run()
+	{
+		try
+		{
+			System.out.println("Adding activity started..");
+			int a=8789678;
+			int b=8949304;
+			int c=a+b;
+			Thread.sleep(5000);
+			System.out.println("Sum = "+c);
+			System.out.println("Adding activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution..");
+		Demo1 d1=new Demo1();
+		Demo2 d2=new Demo2();
+		Demo3 d3=new Demo3();
+
+		Thread t1=new Thread(d1);
+		Thread t2=new Thread(d2);
+		Thread t3=new Thread(d3);
+
+		t1.start();
+		t2.start();
+		t3.start();
+		System.out.println("Main thread completed its execution..");
+	}
+}
+
+
+Java program to achieve multi threading by using single run( ) method for multiple threads
+---------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("BANK"))
+		{
+			banking();
+		}
+		else if(Thread.currentThread().getName().equals("PRINT"))
+		{
+			printing();
+		}
+		else
+		{
+			adding();
+		}
+	}
+
+	public void banking()
+	{
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.println("Banking activity started..");
+			System.out.print("Enter your account number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter password : ");
+			int pwd=scan.nextInt();
+			System.out.print("Enter the amount to be withdrawn : ");
+			int amount = scan.nextInt();
+			Thread.sleep(5000);
+			System.out.println("Collect your money..");
+			System.out.println("Banking activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void printing()
+	{
+		try
+		{
+			System.out.println("Printing acitvity started..");
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Lara Technologies");
+				Thread.sleep(5000);
+			}
+			System.out.println("Printing activity completed..");
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+	}
+
+	public void adding()
+	{
+		try
+		{
+			System.out.println("Adding activity started..");
+			int a=8789678;
+			int b=8949304;
+			int c=a+b;
+			Thread.sleep(5000);
+			System.out.println("Sum = "+c);
+			System.out.println("Adding activity completed..");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution..");
+		Demo1 d1=new Demo1();
+		Demo1 d2=new Demo1();
+		Demo1 d3=new Demo1();
+
+		d1.setName("BANK");
+		d2.setName("PRINT");
+		d3.setName("ADD");
+
+		d1.start();
+		d2.start();
+		d3.start();
+		System.out.println("Main thread completed its execution..");
+	}
+}
+
+
+isAlive( ) method :
+----------------
+--> isAlive( ) method is used to check whether the thread alive or it went to dead state.
+--> If the thread is alive, then isAlive( ) method will return true. Otherwise, it will return false
+
+Eg:
+---
+
+import java.util.*;
+
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		System.out.println("run( ) method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing run( ) method..");
+		System.out.println("run( ) method completed its execution..");
+	}
+}
+
+	
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution by allocation some resources..");
+		Demo1 d1=new Demo1();
+		d1.setName("LARA");
+		d1.start();
+		System.out.println(d1.isAlive());
+		System.out.println("Main thread completed its execution..");
+		System.out.println(d1.isAlive());
+	}
+}
+  
+
+join( ) method :
+--------------
+--> join( ) is used to make one thread to wait for other thread to complete its execution
+
+Eg:
+---
+
+import java.util.*;
+
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("JAVA"))
+		{
+			java();
+		}
+		else if(Thread.currentThread().getName().equals("PYTHON"))
+		{
+			python();
+		}
+		else
+		{
+			angular();
+		}
+	}
+
+	public void java()
+	{
+		System.out.println("java method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing java( ) method..");
+		System.out.println("java method completed its execution..");
+	}
+
+	public void python()
+	{
+		System.out.println("python( ) method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing python( ) method..");
+		System.out.println("python( ) method completed its execution..");
+	}
+
+	public void angular()
+	{
+		System.out.println("angular( ) method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing angular( ) method..");
+		System.out.println("angular( ) method completed its execution..");
+	}
+}
+
+	
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution by allocating some resources..");
+		Demo1 d1=new Demo1();
+		Demo1 d2=new Demo1();
+		Demo1 d3=new Demo1();
+
+		d1.setName("JAVA");
+		d2.setName("PYTHON");
+		d3.setName("ANGULAR");
+
+		d1.start();
+		d2.start();
+		d3.start();
+
+		System.out.println(d1.isAlive());
+		System.out.println(d2.isAlive());
+		System.out.println(d3.isAlive());
+
+		d1.join();
+		d2.join();
+		d3.join();
+
+		System.out.println(d1.isAlive());
+		System.out.println(d2.isAlive());
+		System.out.println(d3.isAlive());
+
+		System.out.println("Main thread completed its execution by de-allocating resources..");
+	}
+}
+
+
+
+Daemon Threads :
+-----------------
+--> Daemon threads are such threads which would run in the background.
+--> Daemon threads are low-prirority threads which will perform subsidiary (secondary) activities
+--> Garbage collector is a Daemon thread in java which would run in the background and perform memory clean up
+       activity.
+
+How to make user-defined thread as daemon thread?
+------------------------------------------------
+--> User-defined threads can be made as daemon thread by using setDaemon(true);
+
+Eg:
+---
+
+import java.util.*;
+
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("JAVA"))
+		{
+			java();
+		}
+		else if(Thread.currentThread().getName().equals("PYTHON"))
+		{
+			python();
+		}
+		else
+		{
+			angular();
+		}
+	}
+
+	public void java()
+	{
+		System.out.println("java method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing java( ) method..");
+		System.out.println("java method completed its execution..");
+	}
+
+	public void python()
+	{
+		System.out.println("python( ) method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing python( ) method..");
+		System.out.println("python( ) method completed its execution..");
+	}
+
+	public void angular()
+	{
+		System.out.println("angular( ) method started execution..");
+		System.out.println(Thread.currentThread().getName()+" Thread is executing angular( ) method..");
+		System.out.println("angular( ) method completed its execution..");
+	}
+}
+
+	
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		System.out.println("Main thread started its execution by allocating some resources..");
+		Demo1 d1=new Demo1();
+		Demo1 d2=new Demo1();
+		Demo1 d3=new Demo1();
+
+		d1.setName("JAVA");
+		d2.setName("PYTHON");
+		d3.setName("ANGULAR");
+
+		d1.setDaemon(true);
+		d1.setPriority(1);
+
+		d1.start();
+		d2.start();
+		d3.start();
+
+		System.out.println(d1.isAlive());
+		System.out.println(d2.isAlive());
+		System.out.println(d3.isAlive());
+
+		d1.join();
+		d2.join();
+		d3.join();
+
+		System.out.println(d1.isAlive());
+		System.out.println(d2.isAlive());
+		System.out.println(d3.isAlive());
+
+		System.out.println("Main thread completed its execution by de-allocating resources..");
+	}
+}
+
+
+Can we call start( ) method more than one time for a single thread?
+------------------------------------------------------------
+
+--> One thread should be started only once during program execution
+--> If we try to call start( ) method more than one time for the same thread, then "IllegalThreadStateException" 
+       will be generated
+
+import java.util.*;
+class Demo1 extends Thread
+{
+	public void run()
+	{
+		System.out.println("run() mehtod is executing..");
+	}
+}
+	
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		Demo1 d1=new Demo1();
+		d1.start();
+		d1.start();
+	}
+}
+
+OUTPUT :
+--------
+run() mehtod is executing..Exception in thread "main"
+java.lang.IllegalThreadStateException
+        at java.base/java.lang.Thread.start(Thread.java:794)
+        at Demo.main(Demo.java:20)
+
+
+Acheiving multi threading by Anonymous Implementation of Thread class and Runnable interface:
+---------------------------------------------------------------------------------------
+
+Eg 1: Anonymous implementation of Thread class
+--------------------------------------------
+
+import java.util.*;	
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Thread t=new Thread()
+		{
+			public void run()
+			{
+			     System.out.println("run() method executing by Anonymous implementation of Thread class");
+			}
+		};
+		t.start();
+	}
+}
+
+
+Eg2: Anonymous implementation of Runnable interface
+--------------------------------------------------
+
+import java.util.*;
+	
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Runnable r=new Runnable()
+		{
+			public void run()
+			{
+				System.out.println("run() method is executing by Anonymous implementation of Runnable interface..");
+			}
+		};
+
+		Thread t=new Thread(r);
+		t.start();
+	}
+}
+
+
+Problems Associated with Multi threading :
+---------------------------------------
+
+--> Whenever we are dealing with shared resources, then multi threading would lead to a problem.
+--> Whenever multiple threads are trying access same object at the same time, then data inconsitency problem would occur
+
+
+Eg1: BathRoom Example
+----------------------
+
+import java.util.*;
+
+class BathRoom implements Runnable
+{
+		public void run()
+		{
+			try
+			{
+				System.out.println(Thread.currentThread().getName()+" has entered the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" is using the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" has exited the Bath Room..");
+				Thread.sleep(5000);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}	
+
+
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		BathRoom b=new BathRoom();
+		Thread t1=new Thread(b);
+		Thread t2=new Thread(b);
+		Thread t3=new Thread(b);
+
+		t1.setName("BOY");
+		t2.setName("GIRL");
+		t3.setName("OTHER");
+
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
+
+Eg2: Printer Example
+--------------------
+import java.util.*;
+
+class Printer implements Runnable
+{
+	public void printingData()
+	{
+		try
+		{
+			for (int i=1;i<=5 ;i++)
+			{
+				System.out.println(Thread.currentThread().getName()+"---->"+i);
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void run()
+	{
+		printingData();
+	}
+}	
+
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Printer p=new Printer();
+		Thread t1=new Thread(p);
+		Thread t2=new Thread(p);
+
+		t1.setName("JAVA");
+		t2.setName("PYTHON");
+
+		t1.start();
+		t2.start();
+	}
+}
+
+
+--> The solution for the above program can be given by using join( ) method:
+--------------------------------------------------------------------
+
+Eg1: Bath Room Example using join( ) method:
+----------------------------------------
+
+import java.util.*;
+
+class BathRoom implements Runnable
+{
+		public void run()
+		{
+			try
+			{
+				System.out.println(Thread.currentThread().getName()+" has entered the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" is using the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" has exited the Bath Room..");
+				Thread.sleep(5000);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}	
+
+
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		BathRoom b=new BathRoom();
+		Thread t1=new Thread(b);
+		Thread t2=new Thread(b);
+		Thread t3=new Thread(b);
+
+		t1.setName("BOY");
+		t2.setName("GIRL");
+		t3.setName("OTHER");
+
+		t1.start();
+		t1.join();
+		t2.start();
+		t2.join();
+		t3.start();
+	}
+}
+
+
+Eg2: Printer Example using join( ) method
+-------------------------------------
+
+import java.util.*;
+class Printer implements Runnable
+{
+	public void printingData()
+	{
+		try
+		{
+			for (int i=1;i<=5 ;i++)
+			{
+				System.out.println(Thread.currentThread().getName()+" ----> "+i);
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void run()
+	{
+		printingData();
+	}
+}	
+
+
+class Demo
+{
+	public static void main(String[] args) throws Exception
+	{
+		Printer p=new Printer();
+		Thread t1=new Thread(p);
+		Thread t2=new Thread(p);
+
+		t1.setName("JAVA");
+		t2.setName("PYTHON");
+
+		t1.start();
+		t1.join();
+		t2.start();
+	}
+}
+
+
+Second way of making sure that shared resources are being used by only one thread at a time:
+-------------------------------------------------------------------------------------
+
+StringBuffer class ---> Thread safe class
+StringBuilder class ---> Not a Thread safe class
+
+---> Thread safety is the process of ensuring that only one thread would access shared Resource object at any point of time.
+         At any cost multiple threads should not access the shared resource object. This is called as Thread safety. It is also 
+         called as "Semaphore" or "Monitor".
+
+---> Thread safety can be achieved by using Synchronization proess.
+
+---> Synchronization is the process of ensuring that shared resource object would be accessed by only one thread at any
+         given point of time.
+
+---> Synchronzation can be achieved by using "synchronized" keyword
+
+---> synchronized keyword can be applied at method level and block level
+	--> synchronized block can exist
+	--> synchronized method can exist
+
+	
+Syntax for synchronized method:
+-----------------------------
+
+public synchronized void m1( )
+{
+	//Some logic
+}
+
+
+Syntax for synchronized block :
+----------------------------
+class Demo
+{
+	String obj;
+	
+	public void m1( )
+	{
+		synchronized(obj)
+		{
+			//Some Logic
+		}	
+	}
+}
+
+
+Achieving Thread safety using synchronized keyword in BathRoom example
+--------------------------------------------------------------------
+
+import java.util.*;
+
+class BathRoom implements Runnable
+{
+		public synchronized void run()
+		{
+			try
+			{
+				System.out.println(Thread.currentThread().getName()+" has entered the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" is using the Bath Room..");
+				Thread.sleep(5000);
+
+				System.out.println(Thread.currentThread().getName()+" has exited the Bath Room..");
+				Thread.sleep(5000);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}	
+
+
+class Demo
+{
+	public static void main(String[] args) 
+	{
+		BathRoom b=new BathRoom();
+		Thread t1=new Thread(b);
+		Thread t2=new Thread(b);
+		Thread t3=new Thread(b);
+
+		t1.setName("BOY");
+		t2.setName("GIRL");
+		t3.setName("OTHER");
+
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
+
+Acheiving Thread safety using synchronized keyword in Printer Example
+-----------------------------------------------------------------
+
+import java.util.*;
+class Printer implements Runnable
+{
+	public synchronized void printingData()
+	{
+		try
+		{
+			for (int i=1;i<=5 ;i++)
+			{
+				System.out.println(Thread.currentThread().getName()+" ----> "+i);
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void run()
+	{
+		printingData();
+	}
+}	
+
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Printer p=new Printer();
+		Thread t1=new Thread(p);
+		Thread t2=new Thread(p);
+
+		t1.setName("JAVA");
+		t2.setName("PYTHON");
+
+		t1.start();
+		t2.start();
+	}
+}
+
+
+Adv of synchronized keyword:
+---------------------------
+1) Data inconsistency problem can be solved
+2) Thread safety can be achieved
+
+
+DisAdv of synchronized keyword:
+------------------------------
+1) It slows down the execution process
+
+
+-----------------
+Thread Life Cycle:
+-----------------
+
+-> New State 
+	-> Thread will be in the new state when we create Thread object (new thread is created)
+	-> Multiple threads can be present in New State
+
+-> Runnable State
+	-> When start( ) metod is encountered, thread will be moved from new state to Runnable State
+	-> Multiple threads can be present in Runnable state
+
+-> Running State
+	-> Thread shceduler will decide which thread has to be moved from Runnable state Running state
+	-> Multiple threads cannot be present in Running state. Only one thread is permitted in Running state
+	-> Thread can be moved Running state to Runnable state when yield( ) method is encountered.
+
+-> Blocked State
+	-> Thread can be moved from Running state to blocked state if the reuired resource is not available
+	-> Multiple threads can be present in the blocked state.
+	-> Thread will be moved from blocked state to Runnable state once Resource becomes available
+
+-> Sleep State
+	-> Thread can be moved from Running state to sleep state when sleep( ) method is encountered.
+	-> Multiple threads can be present in sleep state.
+	-> Thread will be moved from sleep state to Runnable state once sleep duration is over
+
+-> Wait State
+	-> Thread can be moved from Runnig state to wait state when wait( ) method is encountered.
+	-> Multiple threads can be present in Wait state
+	-> Thread will be moved from wait state to Runnable state when notify( ) method or notifyAll( ) method is 
+                      encountered
+
+-> Dead State / Terminated State
+	-> Thread will be moved from Running to Dead state once its completed its execution.
+	-> Thread can be moved from Any state to Dead state when interrupt( ) method is encountered.
+
+
+
+Eg1. for synchronized block:
+-------------------------
+Teacher - Student Example
+-------------------------
+
+
+class Person extends Thread
+{
+	String res1="Knowledge";
+	String res2="Money";
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("TEACHER"))
+		{
+			teacherAccResource();
+		}
+		else
+		{
+			studentAccResource();
+		}
+	}
+
+	public void teacherAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Teacher acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Teacher acquried and locked "+res2);
+					Thread.sleep(5000);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void studentAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				 System.out.println("Student acquired and locked "+res1);
+				 Thread.sleep(5000);
+				 synchronized(res2)
+				{
+					System.out.println("Student acquired and locked "+res2);
+					Thread.sleep(5000);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+public class Demo 
+{
+    public static void main(String args[])
+    {
+		Person p1=new Person();
+		Person p2=new Person();
+
+		p1.setName("TEACHER");
+		p2.setName("STUDENT");
+
+		p1.start();
+		p2.start();
+    }
+}
+
+
+Eg:2 for synchronized block:
+-------------------------
+Contractors Example
+-------------------
+
+
+class Contractor extends Thread
+{
+	String res1="Water";
+	String res2="Sand";
+	String res3="Cement";
+	
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("CONTRACTOR-1"))
+		{
+			contractor1AccResource();
+		}
+		else
+		{
+			contractor2AccResource();
+		}
+	}
+
+	public void contractor1AccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Contractor-1 acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Contractor-1 acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Contractor-1 acquired and locked "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void contractor2AccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Contractor-2 acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Contractor-2 acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Contractor-2 acquired and locked "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		Contractor c1=new Contractor();
+		Contractor c2=new Contractor();
+
+		c1.setName("CONTRACTOR-1");
+		c2.setName("CONTRACTOR-2");
+
+		c1.start();
+		c2.start();
+	}
+}
+
+
+Eg3. for synchronized block:
+--------------------------
+Rama and Ravana Example
+-------------------------
+
+
+class Warrior extends Thread
+{
+	String res1="Brahmastra";
+	String res2="Garudastra";
+	String res3="Sarpastra";
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("RAMA"))
+		{
+			ramaAccResource();
+		}
+		else
+		{
+			ravanaAccResource();
+		}
+	}
+
+	public void ramaAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Rama has acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Rama has acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Rama has acquired "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void ravanaAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Ravana has acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Ravana has acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Ravana has acquired "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Mahabharath 
+{
+	public static void main(String[] args) 
+	{
+		Warrior w1=new Warrior();
+		Warrior w2=new Warrior();
+
+		w1.setName("RAMA");
+		w2.setName("RAVANA");
+
+		w1.start();
+		w2.start();
+	}
+}
+
+
+Dead Lock:
+----------
+--> Dead lock is a situation in a mutithreaded programming where multiple threads are stucked in the blocked state and 
+       they are mutually waiting for one another to release a resource  so that they can proceed with their execution. 
+       In the process none of the thread would release the resource and the threads would be permanently stucked in the
+       blocked state.
+
+--> Once dead lock occured in a java program, it cannot be recovered.
+
+--> Dead lock occurs due to cyclic dependency between two threads. 
+
+
+Eg1. Dead lock Program
+---------------------
+
+
+class Person extends Thread
+{
+	String res1="Knowledge";
+	String res2="Money";
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("TEACHER"))
+		{
+			teacherAccResource();
+		}
+		else
+		{
+			studentAccResource();
+		}
+	}
+
+	public void teacherAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Teacher acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Teacher acquried and locked "+res2);
+					Thread.sleep(5000);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void studentAccResource()
+	{
+		try
+		{
+			synchronized(res2)
+			{
+				 System.out.println("Student acquired and locked "+res2);
+				 Thread.sleep(5000);
+				 synchronized(res1)
+				{
+					System.out.println("Student acquired and locked "+res1);
+					Thread.sleep(5000);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+public class Demo 
+{
+    public static void main(String args[])
+    {
+		Person p1=new Person();
+		Person p2=new Person();
+
+		p1.setName("TEACHER");
+		p2.setName("STUDENT");
+
+		p1.start();
+		p2.start();
+    }
+}
+
+
+Eg2. of Dead lock program :
+-------------------------
+
+class Contractor extends Thread
+{
+	String res1="Water";
+	String res2="Sand";
+	String res3="Cement";
+	
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("CONTRACTOR-1"))
+		{
+			contractor1AccResource();
+		}
+		else
+		{
+			contractor2AccResource();
+		}
+	}
+
+	public void contractor1AccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Contractor-1 acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Contractor-1 acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Contractor-1 acquired and locked "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void contractor2AccResource()
+	{
+		try
+		{
+			synchronized(res3)
+			{
+				System.out.println("Contractor-2 acquired and locked "+res3);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Contractor-2 acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res1)
+					{
+						System.out.println("Contractor-2 acquired and locked "+res1);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		Contractor c1=new Contractor();
+		Contractor c2=new Contractor();
+
+		c1.setName("CONTRACTOR-1");
+		c2.setName("CONTRACTOR-2");
+
+		c1.start();
+		c2.start();
+	}
+}
+
+
+Eg. 3 of dead lock program :
+--------------------------
+
+
+class Warrior extends Thread
+{
+	String res1="Brahmastra";
+	String res2="Garudastra";
+	String res3="Sarpastra";
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("RAMA"))
+		{
+			ramaAccResource();
+		}
+		else
+		{
+			ravanaAccResource();
+		}
+	}
+
+	public void ramaAccResource()
+	{
+		try
+		{
+			synchronized(res1)
+			{
+				System.out.println("Rama has acquired and locked "+res1);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Rama has acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res3)
+					{
+						System.out.println("Rama has acquired "+res3);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void ravanaAccResource()
+	{
+		try
+		{
+			synchronized(res3)
+			{
+				System.out.println("Ravana has acquired and locked "+res3);
+				Thread.sleep(5000);
+				synchronized(res2)
+				{
+					System.out.println("Ravana has acquired and locked "+res2);
+					Thread.sleep(5000);
+					synchronized(res1)
+					{
+						System.out.println("Ravana has acquired "+res1);
+						Thread.sleep(5000);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Mahabharath 
+{
+	public static void main(String[] args) 
+	{
+		Warrior w1=new Warrior();
+		Warrior w2=new Warrior();
+
+		w1.setName("RAMA");
+		w2.setName("RAVANA");
+
+		w1.start();
+		w2.start();
+	}
+}
+
+
+Live lock /live stock :
+------------------
+--> Iive lock is a situation in a multi threaded programming where execution will not proceed further even though there
+       is no cyclic dependency between two threads. Normally this would occur due to faulty or illogical coding by the 
+       programmer. 
+
+
+Starvation :
+----------
+--> Starvation is a situation in a multi threaded programming where a thread which is in blocked state is desperately
+       wating for the resource to be released.
+
+
+Producer-Consumer Problem :
+----------------------------
+Eg:
+----
+class Queue
+{
+	int x;
+
+	public void put(int j)
+	{
+		x=j;
+		System.out.println("Producer has produced the value "+x);
+	}
+
+	public void get()
+	{
+		System.out.println("Consumer has consumed the value "+x);
+	}
+}
+
+
+class Producer extends Thread
+{
+	Queue a;
+	Producer(Queue q)
+	{
+		a=q;
+	}
+	public void run()
+	{
+		int i=1;
+		while(true)
+		{
+			a.put(i++);
+		}
+	}
+}
+
+
+class Consumer extends Thread
+{
+	Queue b;
+	Consumer(Queue q)
+	{
+		b=q;
+	}
+
+	public void run()
+	{
+		while(true)
+		{
+			b.get();
+		}
+	}
+}
+
+
+class Communication 
+{
+	public static void main(String[] args) 
+	{
+		Queue q =new Queue();
+		Producer p=new Producer(q);
+		Consumer c=new Consumer(q);
+
+		p.start();
+		c.start();
+	}
+}
+
+--> In the above program, if thread shceduler schedules produer thread for execution, then producer thread would be keep
+      on producing new values without checking whether consumer has conumed the value or not.
+
+--> Similarly, if the thread scheduler schedules consumer thread for execution, then consumer thread would be keep on
+       consuming only the latest value producer has produced.
+
+--> In other words, all the values produced by Producer are not being conumed by the Consumer.
+
+--> This problem is because, there no inter-thread communication between producer and cosumer threads.
+
+
+The above problem can be solved by using Inter-Thread Communication concept.
+
+
+Inter-Thread communication  :
+----------------------------
+
+--> Inter-Thread communication can be achieved in java by using 3 methods
+	-> wait( )
+	-> notify( )
+	-> notifyAll( )
+
+Eg:
+---
+
+
+class Queue
+{
+	int x;
+	boolean value_present_in_x = false;
+
+	synchronized public void put(int j)
+	{
+		try
+		{
+			if(value_present_in_x == false)
+			{
+				x=j;
+				value_present_in_x=true;
+				System.out.println("Producer has produced the value "+x);
+				notify();
+			}
+			else
+			{
+				wait();
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	synchronized public void get()
+	{
+		try
+		{
+			if(value_present_in_x == true)
+			{
+				System.out.println("Consumer has consumed the value "+x);
+				value_present_in_x=false;
+				notify();
+			}
+			else
+			{
+				wait();
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+class Producer extends Thread
+{
+	Queue a;
+	Producer(Queue q)
+	{
+		a=q;
+	}
+	public void run()
+	{
+		int i=1;
+		while(true)
+		{
+			a.put(i++);
+		}
+	}
+}
+
+
+class Consumer extends Thread
+{
+	Queue b;
+	Consumer(Queue q)
+	{
+		b=q;
+	}
+
+	public void run()
+	{
+		while(true)
+		{
+			b.get();
+		}
+	}
+}
+
+
+class Communication 
+{
+	public static void main(String[] args) 
+	{
+		Queue q =new Queue();
+		Producer p=new Producer(q);
+		Consumer c=new Consumer(q);
+
+		p.start();
+		c.start();
+	}
+}
+
+
+Thread Local variable :
+---------------------
+
+import java.util.*;
+class Demo1 extends Thread
+{
+	int count;
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("PRINT"))
+		{
+			printing();
+		}
+		else
+		{
+			adding();
+		}
+	}
+
+	public void printing()
+	{
+		try
+		{
+			for(int i=1;i<=5;i++)
+			{
+				count++;
+				System.out.println("count = "+count);
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void adding()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter any number : ");
+		int num=scan.nextInt();
+		int sum=num+count;
+		System.out.println("Sum = "+sum);
+	}
+}
+
+class Activity 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Demo1 d1=new Demo1();
+		Demo1 d2=new Demo1();
+
+		d1.setName("PRINT");
+		d2.setName("ADD");
+
+		d1.start();
+		d1.join();
+		d2.start();
+	}
+}
+
+--> In the above program, internal optimization would be done and one separate copy of count variable will be created
+       for PRINT thread. All the modifications done for count variable will not get reflected in the instance count variable.
+       Once PRINT thread completes its execution, the thread local variable count also would get destroyed.
+
+--> The instance count variable is still having only default value as 0. Hence, when try to perform addition operation, we
+       did not get expected result.
+
+--> To avoid such internal optimization of creating automatic Thread local variable, we have to use ''volatile'' key word along
+       static keyword
+
+	Eg: static volatile int count;
+
+
+Eg: Java program using volatile keyword :
+--------------------------------------
+
+import java.util.*;
+class Demo1 extends Thread
+{
+	static volatile int count;
+
+	public void run()
+	{
+		if(Thread.currentThread().getName().equals("PRINT"))
+		{
+			printing();
+		}
+		else
+		{
+			adding();
+		}
+	}
+
+	public void printing()
+	{
+		try
+		{
+			for(int i=1;i<=5;i++)
+			{
+				count++;
+				System.out.println("count = "+count);
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void adding()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter any number : ");
+		int num=scan.nextInt();
+		int sum=num+count;
+		System.out.println("Sum = "+sum);
+	}
+}
+
+class Activity 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Demo1 d1=new Demo1();
+		Demo1 d2=new Demo1();
+
+		d1.setName("PRINT");
+		d2.setName("ADD");
+
+		d1.start();
+		d1.join();
+		d2.start();
+	}
+}
+
+
+---> If we want to manually create thread local variable, we use java.lang.ThreadLocal
+
+
+Thread pool :
+------------
+
+--> Thread pool is a collection of multiple threads which already have been created and ready for usage. In the real time
+       applications, creating threads manually and using them would reduce the performance of the application. Hence, 
+       Thread pool is the better approach.
+
+--> The advantage of thread pool is re-useability of threads.
+
+
+------------------
+Callable interface :
+------------------
+--> Callable interface has been introduced in java from 1.5 version onwards.
+--> Callable interface contains one abstract method public Object call( );
+--> Callable interface is a functional interface beause it contains only one abstract method i.e. call( ) method
+
+
+Differences between Runnable run( ) method and Callable call( ) method:
+------------------------------------------------------------------
+
+--> Runnable run( ) metod does not return anything (return type is void)
+	public void run( );
+
+--> Callable call( ) method returns an Object (any object) for future purpose
+
+
+How to achieve multi threading by implementing Callable interface ?
+-------------------------------------------------------------
+
+--> We cannot use start( ) method in Callable interace as in Runnable interface
+--> We can use submit( ) method which is present in a class called as "Executors" in order to submit the task.
+
+--> Using ExecutorService we can work with multi threading
+--> ExecutorService is an interface present in java.util.concurrent package
+--> Future interface reference can be used to collect an object returned by call( ) method
+
+Eg1: Java program to achieve multi threading by implementing Callable interface
+------------------------------------------------------------------------
+Submitting single task:
+---------------------
+
+package in.co.lara;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class Demo implements Callable{
+	public Object call() {
+		System.out.println("call() method started its execution....");
+		return "sucess";
+	}
+}
+
+public class CallableAPP {
+
+	public static void main(String[] args) throws Exception {
+		Demo d=new Demo();
+		// Creating a thread-pool with 10 threads
+		ExecutorService executorService = Executors.newFixedThreadPool(10);
+		
+		// Submitting task to the thread and collecting object returned by call() method
+		Future f=executorService.submit(d);
+		System.out.println(f.get());
+		
+		// shutdown() method is used to terminate the execution of thread so that it would become
+		//available to execute other tasks.
+		executorService.shutdown();
+		
+	}
+
+}
+
+
+Submitting multiple task :
+------------------------
+
+package in.co.lara;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class Demo implements Callable{
+	public Object call() {
+		System.out.println("call() method started its execution....");
+		return "sucess";
+	}
+}
+
+public class CallableAPP {
+
+	public static void main(String[] args) throws Exception {
+		Demo d=new Demo();
+		// Creating a thread-pool with 10 threads
+		ExecutorService executorService = Executors.newFixedThreadPool(10);
+		
+		// Submitting task to the thread and collecting object returned by call() method
+		for(int i=1;i<=10;i++) {
+			Future f=executorService.submit(d);
+			System.out.println(f.get());
+		}
+		
+		// shutdown() method is used to terminate the execution of thread so that it would become
+		//available to execute other tasks.
+		executorService.shutdown();
+		
+	}
+
+}
+
+
+Anonymous implementation of Callable interface :
+---------------------------------------------
+package in.co.lara;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+
+public class CallableAPP {
+
+	public static void main(String[] args) throws Exception {
+		Callable c=new Callable() {
+			public Object call() {
+				System.out.println("Anonymous implementation of call() method");
+				return "success";
+			}
+		};
+		
+		ExecutorService service = Executors.newFixedThreadPool(5);
+		Future f=service.submit(c);
+		System.out.println(f.get());
+		service.shutdown();	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
