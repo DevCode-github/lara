@@ -1,0 +1,14 @@
+Rest api or http endpoint or rest webservices
+
+Rest api in application class is not recommended.
+
+status codes:
+------------
+
+1. 200 - 299 - successful execution | request processing is successful
+2. 300 - 399 - redirection kind responses
+3. 400 - 499 - client side errors
+4. 500 - 599 - server side errors
+
+
+@RequestParam - queryStream
