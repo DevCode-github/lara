@@ -18,3 +18,14 @@ Memory allocation of string objects:
    user defined varibale will not point.
 -> Duplicates are not permmited in SCP area.
 -> Duplicates are permmited in the heap area.
+
+
+Mutable Strings:
+----------------
+-> Mutable string mean its mofifiable
+-> Java has provided classes to manage mutable strings
+   ->StringBuffer
+   ->StringBuilder
+-> String cannot be converted to StringBuffer and StringBuilder
+-> In StringBuffer equals method in not overrided
+-> StringBuffer new size = oldsize*2 + 2

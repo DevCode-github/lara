@@ -1,0 +1,2 @@
+->  covariant return type allows us to have different return type for the overriding method in the child class,
+    as long as the child's class method return type is a subclass to parent's method return type.
