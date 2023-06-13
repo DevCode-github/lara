@@ -4,6 +4,9 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private Address address;
+	public Customer() {
+		System.out.println("customer obj created");
+	}
 	public String getFirstName() {
 		return firstName;
 	}
