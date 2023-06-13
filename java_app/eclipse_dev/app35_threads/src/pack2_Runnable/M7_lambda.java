@@ -1,4 +1,4 @@
-package pack2_Runnable;
+ package pack2_Runnable;
 
 public class M7_lambda {
 	static Runnable test1() {

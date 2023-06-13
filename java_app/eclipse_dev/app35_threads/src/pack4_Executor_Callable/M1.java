@@ -19,11 +19,11 @@ public class M1 {
 		ExecutorService es = Executors.newFixedThreadPool(10);
 //		es.submit(d);
 		//submitting task to the thread and collecting object returned by call() method
-		for (int i = 1 ; i < 10 ; i++) {
+		for (int i = 1 ; i < 50 ; i++) {
 			Future f = es.submit(d);
 			System.out.println(f.get());
+			es.shutdown();
 		}
 		//shutdown method is used to terminate the execution of thread so that is would become available to execute other tasks
-		es.shutdown();
 	}
 }

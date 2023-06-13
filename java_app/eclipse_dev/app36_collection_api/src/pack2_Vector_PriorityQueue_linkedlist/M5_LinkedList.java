@@ -12,6 +12,7 @@ public class M5_LinkedList {
 		list.add(list.size()-1, 56);
 		list.add(list.size(),null);
 //		list.set(1, "eee");j
+		list.
 		System.out.println(list.removeLast());
 		System.out.println(list); 
 		Collections.sort(list);

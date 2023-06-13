@@ -12,7 +12,7 @@ public class M4_remove {
 		list.add("abc");
 		list.add('t');
 		System.out.println(list);
-		list.remove(3);
+		System.out.println(list.remove(3));
 		System.out.println(list);
 	}
 }

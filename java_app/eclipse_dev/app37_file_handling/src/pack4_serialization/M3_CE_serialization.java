@@ -12,6 +12,7 @@ import java.io.Serializable;
 class B implements Serializable{
 	int i;
 	String s;
+	int a;
 	B(int i, String s){
 		this.i = i;
 		this.s = s;

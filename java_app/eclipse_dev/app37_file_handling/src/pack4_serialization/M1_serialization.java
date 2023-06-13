@@ -21,5 +21,4 @@ public class M1_serialization {
 		fout.close();
 		System.out.println("done");
 	}
-
 }

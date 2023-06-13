@@ -18,9 +18,9 @@ public class M2 {
 		list.add(11);
 		list.add(8);
 		list.add(7);
-		Iterator<Integer> it = list.iterator();
-		list.add(6);
 		System.out.println(list);
+		Iterator<Integer> it = list.iterator();
+		list.add(6); 
 		while(it.hasNext()) {
 			System.out.println(it.next());
 			if(it.hasNext()) list.add(20);

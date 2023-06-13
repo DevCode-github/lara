@@ -1,6 +1,7 @@
 package pack3_Set;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class M1_Hashset_add {
 	 @SuppressWarnings({ "unchecked", "rawtypes" })
