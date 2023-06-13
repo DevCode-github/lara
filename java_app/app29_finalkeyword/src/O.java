@@ -1,6 +1,7 @@
 class O{
 	final int i;
 	O(){
+		// this("abc");
 		i = 10;
 	}
 	O(String s1){
