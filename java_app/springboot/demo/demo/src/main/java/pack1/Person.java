@@ -18,7 +18,7 @@ public class Person {
 		this.userId = userId;
 	}
 	public String toString() {
-		return "{" + "firstName : "+ this.firstName + " lastName : " + this.lastName + " age :" + this.age + " userId : " + this.userId + "}";
+		return "{" + "firstName : "+ this.firstName + ", lastName : " + this.lastName + ", age :" + this.age + ", userId : " + this.userId + "}";
 	}
 	public String getFirstName() {
 		return firstName;
