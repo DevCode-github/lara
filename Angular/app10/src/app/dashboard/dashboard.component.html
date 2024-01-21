@@ -1,0 +1,71 @@
+<div class="container">
+    <Details>
+        <form [formGroup]="detail" (ngSubmit)="submit()">
+            <div class="container d-flex flex-wrap  bg-body-tertiary detail-box">
+                <div class="p-2 row">
+                    <div class="p-2 col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input type="text" formControlName="firstName" id="firstName" class="form-control">
+                    </div>
+                    <div class="p-2 col-md-6">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" formControlName="lastName" id="lastName" class="form-control">
+                    </div>
+                </div>
+                <div class="p-2 row">
+                    <div class="p-2 col-md-6">
+                        <label for="email">email</label>
+                        <input type="text" formControlName="email" id="email" class="form-control">
+                    </div>
+                    <div class="p-2 col-md-6 pt-4 mt-1">
+                        <label for="password" class="px-2">password</label>
+                        <a routerLink="getId"><button class="btn btn-secondary p-1">Reset password</button></a>
+                    </div>
+                </div>
+                <div formGroupName="address" class="row" >
+                   <div class="p-2 col-9">
+                        <label for="street">Street NO</label>
+                        <input type="text" formControlName="street" id="street" class="form-control">
+                   </div>
+                   <div class="p-2 col-3">
+                    <label for="house">Houese NO</label>
+                    <input type="text" formControlName="house" id="house" class="form-control">
+                   </div>
+                </div>
+                <div class="p-2 row book">
+                    <div formArrayName="bookList" *ngFor="let bookList of bookList.controls; index as i" class="col-10">
+                        <div [formGroupName]="i" >
+                            <label for="bookNamei">Book Name</label>
+                            <input type="text" formControlName="bookName" id="bookName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mt-3 col-9">
+                        <div class="d-flex justify-content-between">
+                           <div> <button (click)="addBook($event)" class="btn btn-primary">add</button></div>
+                            <div><button (click)="removeBook($event)" class="btn btn-primary">remove</button></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="p-2 row">
+                    <div class="container-fluid">
+                        <div formArrayName="courses" *ngFor="let course of courses.controls; index as i">
+                            <div [formGroupName]="i">
+                                <label for="idi">Course Id</label>
+                                <input type="number" formControlName="id" id="idi" class="form-control">
+                                <label for="courseNamei">Course Name</label>
+                                <input type="text" formControlName="courseName" id="courseNamei" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button (click)="addCourse($event)" class="btn btn-primary">add</button>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">update</button>
+        </form>
+    </Details>
+    
+</div>
+<div *ngIf="msg" style="color: green;" class="border-bottom border-success
+"><h3>{{content}}</h3></div>

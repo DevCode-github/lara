@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" [hidden]="msg" action="dashboard">
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" id="email" class="form-control">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="password" class="form-control">
+    <br>
+    <input type="submit" value="submit" class="btn btn-primary">
+    <br>
+    <br>
+    <a href="#" routerLink="getId">Forgot password</a>
+</form>
+<div *ngIf="msg"><h3 style="color: green;">Login successfull!</h3></div>

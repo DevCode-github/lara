@@ -1,0 +1,17 @@
+
+<form [formGroup]="resetForm" (ngSubmit)="reset()" [hidden]="msg">
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" id="email" class="form-control">
+    <label for="resetCode">Reset Code</label>
+    <input type="text" formControlName="resetCode" id="resetCode" class="form-control">
+    <label for="newPassword">New Password</label>
+    <input type="password" formControlName="newPassword" id="newPassword" class="form-control">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control">
+    <span *ngIf="match === false" style="color: red;">Password do not match</span>
+    <br>
+    <input type="submit" value="submit" class="btn btn-primary">
+    <br>
+    <br>
+</form>
+<div *ngIf="msg"><h3 style="color: green;" >Reset Confirmed</h3></div>

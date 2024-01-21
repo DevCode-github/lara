@@ -1,0 +1,31 @@
+body{
+  background: linear-gradient(to left, rgb(238, 105, 238) 0%, rgb(229, 83, 144) 100%);
+}
+.back{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  border-radius: 10px;
+  height: 300px;
+  background: linear-gradient(rgb(250, 250, 250, 0.5),rgb(250, 250, 250, 0.5));
+  backdrop-filter: blur(20px);
+  margin: 20px;
+  padding: 20px;
+  /* background: linear-gradient(to left, rgb(179, 216, 119, 0.9) 0%, rgba(227, 215, 42, 0.6) 100%); */
+}
+.btn {
+  border-radius: 10px;
+  background: none;
+}
+.btn:active{
+  border: 2px solid white;
+}

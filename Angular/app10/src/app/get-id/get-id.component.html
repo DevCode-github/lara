@@ -1,0 +1,11 @@
+<form [formGroup]="getIdForm" (ngSubmit)="submit()" [hidden]="msg">
+    <label for="email">Enter your Email</label>
+    <input type="email" formControlName="email" id="email" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!getIdForm.valid">get the link</button>
+</form>
+<div *ngIf="noSuchId"><h3 style="color: green;">No Such Email</h3></div>
+<div *ngIf="sending"><h3 style="color: green;">Sending ...</h3></div>
+<div *ngIf="error"><h3 style="color: red;">{{error}}</h3></div>
+<div *ngIf="msg"><h3 style="color: green;">Link sent, go to change password and enter the code !</h3></div>
+<a href="#" routerLink="resetPass" *ngIf="msg">change password</a>

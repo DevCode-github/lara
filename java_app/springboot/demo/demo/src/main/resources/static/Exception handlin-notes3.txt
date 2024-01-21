@@ -1,0 +1,1311 @@
+Exception Handling
+------------------
+
+What is Exception?
+An Exception is a mistake that would occur during execution time / Run time of an application due to faulty input given by the User.
+An Exception is an un expected or un wanted situation which would occur during run time and affects the normal flow of execution of the program (application) and leads to abrupt or abnormal termination.
+
+Eg: 
+1) Trying to transfer -1000 Rupees
+2) Trying to enter tomorrow's date for date of birth
+3)Trying to enter tomorrow's date for onward journey and today's date for return journey.
+
+What is compilation time?
+The time taken in order to convert HLL code to MLL code by the compiler
+
+What is Exectution time or Run time?
+The time taken in order to load object file on to the RAM and Microprocessor executing all the instructions and producing output.
+
+If Exception occurs, then abrupt termination or abnormal termination of the App will occur. Graceful termination will not occur.
+
+What is Exception handling?
+It is the process of ensuring graceful termination or normal termination of the Application instead of abnormal or abrupt termination
+
+Exception Handling Keywords:     
+---------------------------
+Java has provided 5 keywords in order handle Exception
+
+1. try
+2. catch
+3. throw
+4. throws
+5. finally
+
+Default Exception Handler (DEH)
+
+-------------------
+Exception Programs
+-------------------
+
+
+Eg1: Java program without handling Exception
+-------------------------------------------
+
+import java.util.*;
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection established");
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter numerator : ");
+		int a=scan.nextInt();
+		System.out.print("Enter denominator : ");
+		int b=scan.nextInt();
+
+		int c = a/b;
+		System.out.println(c);
+		System.out.println("Connection terminated");
+	}
+}
+
+
+Eg:2 Java program with try-catch
+--------------------------------
+import java.util.*;
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection established");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.print("Enter numerator : ");
+			int a=scan.nextInt();
+			System.out.print("Enter denominator : ");
+			int b=scan.nextInt();
+
+			int c = a/b;
+			System.out.println(c);
+		}
+		catch (Exception e)
+		{
+			System.out.println("Invalid input");
+		}
+		System.out.println("Connection terminated");
+	}
+}
+
+
+Eg 3: Java program with single catch block (Disadvangae of Single catch block)
+-----------------------------------------------------------------------
+import java.util.*;
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection established");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.print("Enter numerator : ");
+			int a=scan.nextInt();
+			System.out.print("Enter denominator : ");
+			int b=scan.nextInt();
+			int c = a/b;
+			System.out.println(c);
+
+			System.out.print("Enter the size of an array : ");
+			int size=scan.nextInt();
+			int arr[]=new int[size];
+			System.out.println("Array created successfull");
+
+			System.out.print("Enter the element to be inserted : ");
+			int elem=scan.nextInt();
+
+			System.out.print("Enter the position into which element has to be inserted : ");
+			int pos=scan.nextInt();
+			arr[pos]=elem;
+			//arr[1]=100;
+			System.out.println("Element inserted successfully");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Invalid input");
+		}
+		System.out.println("Connection terminated");
+	}
+}
+
+Advantage of above program
+--------------------------
+1. Graceful termination (No abrupt or abnormal termination)
+
+Dis Advantage
+-------------
+2. No suitable error message is displayed for different Exceptions. Displaying same error message for all types of Exception
+
+      This dis advantage can be overcome by using multiple catch blocks.
+      Note: One try block can have multiple catch blocks
+
+
+Eg:4 Java program with multiple catch blocks
+------------------------------------------
+import java.util.*;
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection established");
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.print("Enter numerator : ");
+			int a=scan.nextInt();
+			System.out.print("Enter denominator : ");
+			int b=scan.nextInt();
+			int c = a/b;
+			System.out.println(c);
+
+			System.out.print("Enter the size of an array : ");
+			int size=scan.nextInt();
+			int arr[]=new int[size];
+			System.out.println("Array created successfull");
+
+			System.out.print("Enter the element to be inserted : ");
+			int elem=scan.nextInt();
+
+			System.out.print("Enter the position into which element has to be inserted : ");
+			int pos=scan.nextInt();
+			arr[pos]=elem;
+			//arr[1]=100;
+			System.out.println("Element inserted successfully");
+		}
+
+		catch (ArithmeticException e)
+		{
+			System.out.println("Please enter non-zero denominator");
+		}
+
+		catch (NegativeArraySizeException e)
+		{
+			System.out.println("Please enter positive array size");
+		}
+
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Please enter the position within array size");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Some problem occurred");
+		}
+		System.out.println("Connection terminated");
+	}
+}
+ 
+-> Whenever we are writing multiple catch blocks, always we have ensure specific catch blocks would be present at the top of the catch blocks hierarchy. At the end of all specific catch blocks, it always good practice to provide one generic catch block so that if none of the specific catch blocks not able to handle Exception, then generic catch will handle that.
+
+-> Never code generic catch block at the top of the multiple catch blocks.
+
+
+
+Propagation of Exception object when multiple method calls are involved:
+------------------------------------------------------------------
+(Refer diagram)
+
+Eg1: Java program to demonstrate propagation of Exception object when multiple methods are involved
+--------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+class Demo1
+{
+	public void alpha()
+	{
+		System.out.println("Connection 2 established..");
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter numerator : ");
+		int a=scan.nextInt();
+		System.out.print("Enter denominator : ");
+		int b=scan.nextInt();
+
+		int c=a/b;
+		System.out.println(c);
+		System.out.println("Connection 2 terminated..");
+	}
+}
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection 1 establieshe..");
+		Demo1 d1=new Demo1();
+		d1.alpha();
+		System.out.println("Connection 1 terminated..");
+	}
+}
+
+
+Eg2: Java program to demonstrate propagation of Exception object:
+--------------------------------------------------------------
+import java.util.*;
+
+class Demo1
+{
+	public void alpha()
+	{
+		System.out.println("Connection 4 established..");
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter numerator : ");
+		int a=scan.nextInt();
+		System.out.print("Enter denominator : ");
+		int b=scan.nextInt();
+
+		int c=a/b;
+		System.out.println(c);
+		System.out.println("Connection 4 terminated..");
+	}
+}
+
+
+class Demo2
+{
+	public void beta()
+	{
+		System.out.println("Connection 3 established..");
+		Demo1 d1=new Demo1();
+		d1.alpha();
+		System.out.println("Connection 3 terminated..");
+	}
+}
+
+
+class Demo3
+{
+	public void gamma()
+	{
+		System.out.println("Connection 2 established..");
+		Demo2 d2=new Demo2();
+		d2.beta();
+		System.out.println("Connection 2 terminated..");
+	}
+}
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection 1 establieshed..");
+		Demo3 d3=new Demo3();
+		d3.gamma();
+		System.out.println("Connection 1 terminated..");
+	}
+}
+
+-> If the Exception object got generated in a method, and if the User defined Exception handler(UDEH) is not present in that method then RTS will not directly hand over Exception object to Default Exception Handler. Rather, It will check in all the available Activation Records in the Stack hierarchy whether UDEH is present or not. If UDEH is not present in any of the activation records, only  then RTS will handover Exception object to Default Exception Handler.
+
+
+Errors: 
+--------
+Errors are the run time mistakes occurred due to faulty coding (illogical coding) coded by the developer.
+Runtime errors will normally occur due to lack of system resources.
+
+Eg: OutOfMemoryError, StackOverFlowError, LinkageError, NoSuchMethodError etc...
+
+
+Eg1: Demonstration of StackOverFlowError
+--------------------------------------
+import java.util.*;
+
+class Demo1
+{
+	public void alpha()
+	{
+		try
+		{
+			System.out.println("Connection 2 established..");
+			alpha();
+			System.out.println("Connection 2 terminated..");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Some problem occurred");
+		}
+		
+	}
+}
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection 1 establieshed..");
+		Demo1 d1=new Demo1();
+		d1.alpha();
+		System.out.println("Connection 1 terminated..");
+	}
+}
+
+
+Eg2: Demonstration of OutOfMemoryError
+---------------------------------------
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection 1 establieshed..");
+		int a[]=new int[999999999];
+		System.out.println("Array created successfully..");
+		System.out.println("Connection 1 terminated..");
+	}
+}
+
+
+Differences between Exception and Error :
+---------------------------------------
+1. Exception refers to run time mistakes occured due to faulty input given by the user of an application
+   Error refers to run time mistakes occured due to faulty coding (illogical coding) by the developer and also due to lack of system resources.
+
+2. Exceptions can be handled using try-catch (Exceptions are recoverable)
+    Errors cannot be handled using try-catch (Errors are irrecoverable)
+
+3. Eg. for Exceptions: 
+	-> ArithmeticException
+	-> ClassNotFoundException
+	-> SQLException
+	-> FileNotFoundException
+	->NullPointerException etc.
+
+    Eg. for Errors:
+	-> OutOfMemoryError
+	-> StackOverFlowError
+	-> NoSuchMethodError etc.
+
+
+
+Different ways of handling an Exception :
+-------------------------------------
+There are 3 ways to handle an Exception.
+
+1. Handling an Exception object (using try-catch)
+2. Re-throwing an Exception object (using try-catch-throw-throws-finally)
+3. Ducking an Exception object (using throws)	
+
+1. Handling an Exception object (using try-catch) :
+-------------------------------------------
+-> It is the process of handling an Exception object in the same Activation Record where Exception got generated.
+-> In this case, the handled Exception object will not get propagated to the other activation records present in the stack hierarchy. 
+
+
+2. Re-throwing an Exception object (using try-catch-throw-throws-finally)
+--------------------------------------------------------------------
+-> It is the process of throwing the handled Exception object to the next activation record present in the stack hierarchy.
+-> Advantage of throw keyword is that we can propagte the handled Exception object to the other activation records.
+-> Statements below throw keyword will not get executed. In order resolve this problem, we can place important critical statements which have to be compulosorily executed inside the "finally block"
+
+
+3. Ducking an Exception object (using throws):
+------------------------------------------
+-> It is process of passing the Exception object without handling it.
+-> For ducking an Exception we will use "throws" keyword	
+
+Eg: 
+import java.util.*;
+
+class Demo1
+{
+	public void alpha() throws Exception
+	{
+		System.out.println("Connection 2 established..");
+		Scanner scan=new Scanner(System.in);
+		
+			System.out.print("Enter numerator : ");
+			int a=scan.nextInt();
+			System.out.print("Enter denominator : ");
+			int b=scan.nextInt();
+
+			int c=a/b;
+			System.out.println(c);
+			System.out.println("Connection 2 terminated..");	
+	}	
+}
+
+
+
+class Launch 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Connection 1 establieshed..");
+		try
+		{
+			Demo1 d1=new Demo1();
+			d1.alpha();	
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exception handled in main() method");
+		}
+		
+		System.out.println("Connection 1 terminated..");
+	}
+}
+
+
+Differences between throw and throws Keywords:
+---------------------------------------------
+1. throw keyword can be used to throw an Exception object to the activation records present down the stack hierarchy
+   throws keyword will be used
+	-> while throwing an Exception object (As an indication to the JVM)
+	-> For ducking an Exception object
+
+2. throw keyword will be associated with Exception object and would be present inside the method
+    throws keyword will be present in the method signature.
+
+
+Valid and invalid combination of try-catch-finally :
+---------------------------------------------
+
+Invalid combinations :
+------------------
+1. try
+   {
+	--
+	--
+    }	
+
+2. catch(Exception e)
+   {
+	--
+	--
+    }	
+
+3. finally
+   {
+	--
+	--
+    }
+
+4. catch(Exception e)
+   {
+	--
+	--
+    }
+   finally
+   {
+	--
+	--
+    }	
+	
+
+Vaild Combinations:
+-------------------	
+1. try
+   {
+	--
+	--
+    }	
+    catch(Exception e)
+    {
+	--
+	--
+     }
+
+
+2. try
+   {
+	--
+	--
+    }	
+    catch(Exception e)
+    {
+	--
+	--
+     }
+     finally
+     {
+   	--
+	--
+      }
+
+3. try
+   {
+	--
+	--
+    }	
+    finally
+    {
+	--
+	--
+     }
+
+4. try
+   {
+       try
+       {
+	--
+	--
+        }
+        catch(Exception e)
+        {
+	--
+	--
+         }
+         finally
+         {
+	--
+	--
+          }		
+    }	
+    catch(Exception e)
+    {
+	--
+	--
+     }
+
+5. try
+   {
+       --
+       --		
+    }	
+    catch(Exception e)
+    {
+	try
+       	{
+		--
+		--
+        	}
+        catch(Exception e)
+        {
+	--
+	--
+         }
+         finally
+         {
+	--
+	--
+          }
+     }
+
+
+6. try
+    {
+	--
+	--
+     }
+     catch(Exception e)
+     {
+	--
+	--
+      }
+      finally
+      {
+	try
+       	{
+		--
+		--
+        	}
+        catch(Exception e)
+        {
+	--
+	--
+         }
+         finally
+         {
+	--
+	--
+          }
+  }
+
+
+Checked Exceptions and Un checked Exceptions:
+--------------------------------------------
+
+-> Checked Exceptions are such Exceptions which would be checked by Compiler during compilation time (But Exception occurs at run time)	
+
+-> In the Exception Hierarchy, all the Exceptions which are direct sub class of Exception class are checked Exceptions
+
+Eg: IOException
+      ClassNotFoundException
+      SQLException 
+      InterruptedException etc...
+
+-> Un checked Exceptions are such Exceptions which would not be checked by Compiler rather during Run time JVM will detect un checked Exceptions
+
+-> Un checked Exceptions are not direct subclass of Exception class. Rather, they are the sub classes of RuntimeException class
+
+Eg: ArithmeticException
+      NullPointerException
+      NegativeArraySizeException
+      ArrayIndexOutOfBoundsException
+
+
+Exception Hierarchy
+-------------------
+(Refer diagram)
+
+Custom Exceptions or User defined Exceptions:
+-------------------------------------------
+
+-> In java there are so many Bulit in Exception which we have so far. 
+-> However, if want to handle specific Exceptions based on our project requirements, then Built in Exceptions are not sufficient. Rather we should use Custom or user defined Exceptions
+
+Built-in methods present in Exception class:
+----------------------------------------
+1. public String getMessage()
+   {
+
+    }
+
+-> getMessage() method will return only description of the Exception
+-> Exception object reference 'e' will print name of the Exception and description
+-> pritnStackTrace() method will return all the details about the Exception including location
+
+Eg: Java program to demonstrate getMessage() and printStackTrace() methods
+
+public class Test
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			int a=10/0;	
+		}
+		catch (Exception e)
+		{
+			//System.out.println(e.getMessage());
+			//System.out.println(e);
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+
+Handling custom Exceptions by overriding getMessage() method:
+----------------------------------------------------------
+Eg:
+
+import java.util.*;
+class InvalidAmountException extends Exception
+{
+	public String getMessage()
+	{
+		return "Please enter valid amount..";
+	}
+}
+
+
+public class Test
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Enter accoun number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter amount to be transferred : ");
+			int amount=scan.nextInt();
+			
+			if(amount>=0)
+			{
+				System.out.println("Amount transferred successfully..");
+			}
+			else
+			{
+				InvalidAmountException iae=new InvalidAmountException();
+				throw iae;
+			}
+		}
+		catch (InvalidAmountException iae)
+		{
+			System.out.println(iae.getMessage());
+		}	
+	}
+}
+
+
+
+Handling custom Exceptions by providing parameterized constructor of the user defined Exception class:
+---------------------------------------------------------------------------------------------
+
+Eg:
+
+
+import java.util.*;
+class InvalidAmountException extends Exception
+{
+	InvalidAmountException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+public class Test
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Enter accoun number : ");
+			int an=scan.nextInt();
+			System.out.print("Enter amount to be transferred : ");
+			int amount=scan.nextInt();
+			
+			if(amount>=0)
+			{
+				System.out.println("Amount transferred successfully..");
+			}
+			else
+			{
+				throw new InvalidAmountException("Please enter valid amount..");
+			}
+		}
+		catch (InvalidAmountException iae)
+		{
+			System.out.println(iae.getMessage());
+		}	
+	}
+}
+
+
+Task 1:
+-------
+--> Accept Account Number from the user.
+--> Account Number should contain minimum 10 digits
+--> For valid account number, display successfull message
+--> If the account number does not contain 10 digits, then InvalidAccountNumberException has to be generated and handled
+
+
+Task 2:
+------
+--> Accept Nationality from the User
+--> Accept Age from the user
+--> If the nationality is other than Indian, InvalidNationalityException has to be generated and handled
+--> If age is lesser than 18, then InvalidAgeException has to be generated and handled
+--> If Nationality is Indian and age >=18 then successfull message should be displayed as 
+       "Congratulations !! You are eligible for voting !!
+
+Task - 2 solution:
+---------------
+import java.util.*;
+
+class InvalidNationalityException extends Exception
+{
+	InvalidNationalityException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+class InvalidAgeException extends Exception
+{
+	InvalidAgeException(String msg1)
+	{
+		super(msg1);
+	}
+}
+
+
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan=new Scanner(System.in);
+		try
+		{
+			System.out.print("Enter your Nationality : ");
+			String nationality = scan.next();
+
+			System.out.print("Enter your age : ");
+			int age = scan.nextInt();
+
+			if(nationality.equalsIgnoreCase("India") && age>=18)
+			{
+				System.out.println("Congratulations !! You are eligible for voting !!");
+			}
+			else if(age<18)
+			{
+				throw new InvalidAgeException("Sorry, You are not eligible for voting..");
+			}
+			else
+			{
+				throw new InvalidNationalityException("Sorry, You are not belonging to India..");
+			}
+
+		}
+		catch (InvalidAgeException iae)
+		{
+			System.out.println(iae.getMessage());
+		}
+		catch(InvalidNationalityException ine)
+		{
+			System.out.println(ine.getMessage());
+		}
+		catch(Exception e)
+		{
+			System.out.println("Some problem occurred..");
+		}
+	}
+}
+
+
+
+Task 3:
+------
+--> Create String array which contains 5 names
+--> Search for any name by accepting from the user
+--> If the name is present in the array, then successful message "Congratulations, You are eligible for free Iphone !!"
+--> If the name is not present in the array, then NoRecodsFoundException has to generated and handled 
+
+Task 3 Solution:
+--------------
+
+import java.util.*;
+
+class NoRecordsFoundException extends Exception
+{
+	NoRecordsFoundException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner(System.in);
+		try
+		{
+			String names[]={"Mohan", "Vinod", "Mahteb", "Fathima","Thoya","Swati","Suresh","Arun"};
+			System.out.print("Enter name to be searched : ");
+			String str = scan.next();
+			int flag=0;
+
+			for(String n:names)
+			{
+				if(str.equalsIgnoreCase(n))
+				{
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1)
+			{
+				System.out.println("Congratualations !! You are eligible for free Iphone !!");
+			}
+			else
+			{
+				throw new NoRecordsFoundException("Sorry, your name is not present in the List..");
+			}
+		}
+		catch (NoRecordsFoundException nrf)
+		{
+			System.out.println(nrf.getMessage());
+		}
+		catch(Exception e)
+		{
+			System.out.println("Some problem occurred");
+		}
+	}
+}
+
+
+Java Program to handle Custom Exception and demonstrating nested try-catch
+------------------------------------------------------------------------
+import java.util.*;
+
+class InvalidCustomerException extends Exception
+{
+	InvalidCustomerException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+class ATM
+{
+	int accountNumber = 4567;
+	int password = 8888;
+	int an;
+	int pwd;
+
+	public void acceptInput()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter Account Number : ");
+		an=scan.nextInt();
+		System.out.print("Enter password : ");
+		pwd=scan.nextInt();
+	}
+
+	public void verify() throws Exception
+	{
+		if(an==accountNumber && pwd==password)
+		{
+			System.out.println("Please collect your money..");
+		}
+		else
+		{
+			throw new InvalidCustomerException("Invalid Account details..");
+		}
+	}
+}
+
+
+class Bank
+{
+	public void initiate() throws Exception
+	{
+		ATM atm=new ATM();
+		try
+		{
+			atm.acceptInput();
+			atm.verify();
+		}
+		catch (InvalidCustomerException ice)
+		{
+			try
+			{
+				System.out.println(ice.getMessage());
+				atm.acceptInput();
+				atm.verify();
+			}
+			catch (InvalidCustomerException ice1)
+			{
+				try
+				{
+					System.out.println(ice1.getMessage());
+					atm.acceptInput();
+					atm.verify();
+				}
+				catch (InvalidCustomerException ice2)
+				{
+					System.out.println(ice2.getMessage());
+					System.out.println("Your ATM card is blocked. Please contact your Home branch..");
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Some problem occurred..");
+		}
+	}
+}
+
+
+class Demo 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Bank b=new Bank();
+		b.initiate();
+	}
+}
+
+
+Eg 2: Java program to demonstrate nested try-catch block
+------------------------------------------------------
+import java.util.*;
+
+class UnderAgeException extends Exception
+{
+	UnderAgeException(String msg)
+	{
+		super(msg);
+	}
+}
+
+
+class OverAgeException extends Exception
+{
+	OverAgeException(String msg1)
+	{
+		super(msg1);
+	}
+}
+
+
+class Applicant
+{
+	int age;
+	
+	public void acceptInput()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter your age : ");
+		age=scan.nextInt();
+	}
+
+	public void verify() throws Exception
+	{
+		if(age<18)
+		{
+			throw new UnderAgeException("You are too young.. Hold on !!");
+		}
+		else if(age>65)
+		{
+			throw new OverAgeException("You are too old.. Cool down !!");
+		}
+		else
+		{
+			System.out.println("Please come and collect your Driving License..");
+		}
+	}
+}
+
+
+class RTO
+{
+	public void initiate() throws Exception
+	{
+		Applicant a=new Applicant();
+	try
+	{
+		a.acceptInput();
+		a.verify();
+	}
+	catch(Exception e)
+	{
+		try
+		{
+			System.out.println(e.getMessage());
+			a.acceptInput();
+			a.verify();
+		}
+		catch (Exception f)
+		{
+			try
+			{
+				System.out.println(f.getMessage());
+				a.acceptInput();
+				a.verify();
+			}
+			catch (Exception g)
+			{
+				System.out.println(g.getMessage());
+				System.out.println("Please try After some days..");
+			}
+		}
+	}
+	}
+}
+
+
+class Demo 
+{
+	public static void main(String[] args) throws Exception
+	{
+		RTO rto=new RTO();
+		rto.initiate();
+	}
+}
+
+
+Liskov Substitution principles (LSP rules) :
+---------------------------------------
+
+Rule - 1:
+--------
+If the parent class method throws any Exception, then the corresponding overridden method present in the child class can throw the same Exception or it need not throw any Exception
+
+Eg1:
+--
+class Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+Eg2:
+----
+class Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1()
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+Rule 2: 
+------
+The child class method can throw different Exception other than parent class method provide there is "Is-a" relationship between Exception
+
+Vaild:
+-----
+class Demo1
+{
+	public void m1() throws RuntimeException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1() throws NegativeArraySizeException
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+
+Invalid:
+-------
+
+class Demo1
+{
+	public void m1() throws IOException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+
+Rule 3:
+------
+The overridden method present in the child class can throw different Exception even though there is no "Is-a" relationship provided both the Exceptions are children of RuntimeException.
+
+Vaid case:
+---------
+class Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1() throws ArrayIndexOutOfBoundsException
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+Invalid case:
+------------
+class Demo1
+{
+	public void m1() throws ArithmeticException
+	{
+		Statement 1;
+		Statement 2;
+	}
+}
+
+class Demo2 extends Demo1
+{
+	public void m1() throws InterruptedException
+	{
+		Statement 3;
+		Statement 4;
+	}
+}
+
+--------------------
+Try-with-Resources :
+--------------------
+
+--> This concept has been introduced from java 1.7 version onwards.
+
+--> While developing java application, we may use several reources such as DB Connection, Network resources, Stream
+       resources etc..
+--> The programmer has to compulsorily close all the resources explicitly using close() method inside the finally block.
+
+Eg: Without using try-with-resources
+---------------------------------
+
+try
+{
+	Resource 1;
+	Resource 2;
+	Resource 3;
+	Resource 4;
+	--
+	--
+	--
+}
+catch(Exception e)
+{
+	--
+	--
+} 
+finally
+{
+	try
+	{
+		Resource 1.close();
+		Resource 2.close();
+		Resource 3.close();
+		Resource 4.close();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+
+
+Using try-with-resources concept :
+--------------------------------
+
+try(Resource1 ; Resource2 ; Resource3 ; Resource4)
+{
+	--
+	--
+}
+catch(Exception e)
+{
+	e.printStackTrace();
+}
+
+In the above example, the programmer need not explicitly close the resources. The moment control comes out the try block
+JVM will automatically close all the resource so that there is no extra burden for the programmer to close resources explicity.
+
+
+
+
+
+
+

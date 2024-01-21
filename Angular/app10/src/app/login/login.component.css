@@ -1,0 +1,7 @@
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+a:visited{
+    color: red;
+}

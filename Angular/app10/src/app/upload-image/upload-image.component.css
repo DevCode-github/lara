@@ -1,0 +1,9 @@
+.container img{
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+pre{
+    max-height: 500px;
+    overflow-y: scroll;
+}

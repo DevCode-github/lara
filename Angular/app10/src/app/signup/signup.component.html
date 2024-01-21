@@ -1,0 +1,13 @@
+<form [formGroup]="signupForm" (ngSubmit)="signup()" [hidden]="msg">
+    <label for="firstName">FirstName</label>
+    <input type="text" id="firstName" class="form-control" formControlName="firstName">
+    <label for="lastName">LastName</label>
+    <input type="text" formControlName="lastName" id="lastName" class="form-control">
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" id="email" class="form-control">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="Password" class="form-control">
+    <input type="submit" value="submit" [disabled]="!signupForm.valid" class="btn btn-primary mt-2">
+</form>
+
+<div *ngIf="msg"><h3 style="color: green;">signup successfull</h3></div>

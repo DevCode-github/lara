@@ -13,6 +13,7 @@ public class M1_HashMap {
 		map.put(134, "test");
 		map.put(341, 'r');
 		map.put("abc", 35);
+		System.out.println(map.get("dsfs"));
 		System.out.println(map);
 	}
 }

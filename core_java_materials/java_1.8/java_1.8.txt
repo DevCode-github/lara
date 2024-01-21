@@ -1,0 +1,14 @@
+-> Introduced in 1.8 in year 2014
+
+New Interface of java 1.8
+-------------------------
+-> Interface changes
+-> Lambda expressions
+-> Functional Interface
+    Pre-defined Functional Interface
+        ->Predicate
+        ->Function
+        ->Supplier
+        ->Consumer
+->Optional class in order to avoid java.lang.NullPointerException
+->Stream Apis -> associated with collections

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+	
+	<bean id="a1" class="pack1.Address">
+		<property name="houseNo" value="12/3"></property>
+		<property name="streetName" value="BTM"></property>
+	</bean>
+	<bean id="a2" class="pack1.Address">
+		<property name="houseNo" value="12/4"></property>
+		<property name="streetName" value="BTM1"></property>
+	</bean>
+	<bean id="address" class="pack1.Address">
+		<property name="houseNo" value="12/5"></property>
+		<property name="streetName" value="BTM2"></property>
+	</bean>
+	<bean id="address1" class="pack1.Address">
+		<property name="houseNo" value="12/6"></property>
+		<property name="streetName" value="BTM3"></property>
+	</bean>
+	
+	
+	<bean id="e1" class="pack1.Employee" scope="prototype" init-method="method1" autowire="byName" destroy-method="method2">
+		<property name="firstName" value="dev"></property>
+		<property name="lastName" value="kumar"></property>
+	</bean>
+	<bean id="e2" class="pack1.Employee" scope="prototype" autowire="constructor" init-method="method1" destroy-method="method2">
+		<property name="firstName" value="dev1"></property>
+		<property name="lastName" value="kumar"></property>
+	</bean>
+	<bean id="e3" class="pack1.Employee" scope="prototype" autowire="byType">
+		<property name="firstName" value="dev1"></property>
+		<property name="lastName" value="kumar"></property>
+	</bean>
+	<bean id="e4" class="pack1.Employee"  autowire="constructor" init-method="method1" destroy-method="method2">
+		<constructor-arg name="firstName1" value="dev2"></constructor-arg>
+		<constructor-arg name="lastName1" value="kumar"></constructor-arg>
+	</bean>
+	
+</beans>

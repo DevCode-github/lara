@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <h2>File Upload</h2>
+</div>
+<div class="p-4 d-flex justify-content-center flex-column" >
+
+    <div class="container">
+        <!-- <textarea  *ngIf="content" id="myTextarea" (change)="adjust($event)" cols="100">{{content}} </textarea> -->
+        <pre style="white-space: pre-wrap;" *ngIf="content">{{content}}</pre>
+        <img [src]="url"  style="aspect-ratio: 1/1;"  *ngIf="url">
+    </div>
+    <br>
+    <input type="file" (change)="onChange($event)">
+</div>
+<div *ngIf="msg"><h3 style="color: green;">Uploded</h3></div>
+<div *ngIf="error"><h3 style="color: red;">something went wrong!</h3></div>

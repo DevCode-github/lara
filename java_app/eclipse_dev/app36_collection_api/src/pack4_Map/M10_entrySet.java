@@ -3,6 +3,9 @@ package pack4_Map;
 import java.util.HashMap;
 import java.util.Set;
 
+/**
+ * 
+ */
 @SuppressWarnings({"unchecked","rawtypes"})
 public class M10_entrySet {
 	public static void main(String[] args) {

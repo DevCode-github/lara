@@ -1,0 +1,550 @@
+1.  CREATE TABLE PERSON(ID NUMBER, 
+			FIRST_NAME VARCHAR2(90), 
+			EMAIL VARCHAR2(90), 
+			AGE NUMBER);
+    
+    Write the sql command to insert email as a@a.com and age as 25
+    
+
+2. CREATE TABLE EMPLOYEE(ID NUMBER, 
+			FIRST_NAME VARCHAR2(90), 
+			EMAIL VARCHAR2(90), 
+			AGE NUMBER, 
+			SALARY INTEGER);
+    
+    Write the sql command to read first_name of the person whose
+    salary is 2nd min (without using rank function)
+
+    
+
+3.  
+
+trainer
+-------
+t_id		Name		age		subject
+----		----		---		-------
+1		manu		28		Maths
+1		manu		28		Physics
+2		Ramu		38		Maths
+2		Ramu		38		Physics
+
+
+Which normal form is not following in the above table?
+
+
+4.  
+CREATE TABLE EMP(ID INT, NAME VARCHAR(90), DOB DATE);
+
+Write a command to read the employees from the above table 
+whose DOB is JAN in any year
+
+
+5. Which mapping we can expect between CarModel and Color?
+
+6. 
+		long v1 = 99999999999;
+		System.out.println(v1 % 2);
+
+
+7.
+		byte b1 = 10;
+		byte b2 = 20;
+		byte b3 = b1 + b2;
+		System.out.println(b3 + (b3 % 2 == 0));
+
+8.  
+
+                     byte x = 127;
+                     x++;
+                     x++;
+                     System.out.print(x);
+
+
+9. 
+ 
+Find the value of A[1] after execution of the following program.
+
+int[] A = {0,2,4,1,3};
+for(int i = 0; i < a.length; i++){
+    a[i] = a[(a[i] + 3) % a.length];
+}
+
+
+
+10.   Identify the correct statements on static methods.
+
+A. They must access only static data
+B. They can only call other static methods.
+C. They cannot refer to this or super.
+
+
+11.  Identify the infinite loops.
+
+A. for(; ;)
+B. for(int i = 0; i < 1; i--)
+C. for(int i = 0; ; i++)
+
+12.
+
+10. abstract class A {
+11. abstract void a1();
+12. void a2() { }
+13. }
+14. class B extends A {
+15. void a1() { }
+16. void a2() { }
+17. }
+18. class C extends B { void c1() { } }
+and:
+A x = new B(); C y = new C(); A z = new C();
+What are four valid examples of polymorphic method calls? (Choose four.)
+A. x.a2();
+B. z.a2();
+C. z.c1();
+D. z.a1();
+E. y.c1();
+F. x.a1();
+
+13.
+
+
+11. class Animal { public String noise() { return "peep"; } }
+12. class Dog extends Animal {
+13. public String noise() { return "bark"; }
+14. }
+15. class Cat extends Animal {
+16. public String noise() { return "meow"; }
+17. }
+...
+30. Animal animal = new Dog();
+31. Cat cat = (Cat)animal;
+32. System.out.println(cat.noise());
+What is the result?
+
+
+
+14.
+
+11. abstract class Vehicle { public int speed() { return 0; }
+12. class Car extends Vehicle { public int speed() { return 60; }
+13. class RaceCar extends Car { public int speed() { return 150; }
+...
+21. RaceCar racer = new RaceCar();
+22. Car car = (Car) (Vehicle)new RaceCar();
+23. Vehicle vehicle = (Vehicle) new RaceCar();
+24. System.out.println(racer.speed() + ", " + car.speed()
+					+ ", " + vehicle.speed());
+
+
+15.
+
+
+1. package packageA;
+2. public class Message {
+3. protected String getText() { return "text"; }
+4. }
+
+and:
+
+1. package packageB;
+2. public class XMLMessage extends packageA.Message {
+3. public String getText() { return super.getText() + "-subtext";}
+4. public static void main(String[] args) {
+	Message msg = new XMLMessage();
+	System.out.println(msg.getText());
+   }
+}
+What is the result of executing XMLMessage.main?
+
+
+
+16.
+
+1. public class Employee {
+2. String name;
+3. double baseSalary;
+4. Employee(String name, double baseSalary) {
+5. this.name = name;
+6. this.baseSalary = baseSalary;
+7. }
+8. }
+And:
+1. public class Salesperson extends Employee {
+2. double commission;
+3. public Salesperson(String name, double baseSalary,
+4. double commission) {
+5. // insert code here to compile successfully
+6. }
+7. }
+
+
+
+17.
+interface A
+{
+	int i;
+}
+public class M2 {
+	public static void main(String[] args) {
+		System.out.println(A.i == 0 ? (A.i++) :  (--A.i));
+	}
+}
+
+
+
+18.
+
+public class M3 {
+	static
+	{
+		System.out.println("sib");
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("main");
+	}
+}
+
+Change the static initialization block to produce output as main.
+
+
+
+19.
+
+class A{
+	A(int i){
+		this(i++);
+		System.out.print(i);
+		if(i == 3)
+		{
+			System.exit(0);
+		}
+	}
+}
+public class M4 {
+	public static void main(String[] args) {
+		A a1 = new A(9);
+	}
+}
+
+
+20.
+interface B{
+	abstract void test();
+}
+class C{
+	void test() {
+		System.out.print(1);
+	}
+}
+class D extends C implements B{
+	void test() {
+		super.test();
+		System.out.print(2);
+	}
+}
+public class M5 {
+	public static void main(String[] args) {
+		new C().test();
+		new D().test();
+	}
+}
+
+
+21. which constant is used to verify the version of the object
+    in the serialization?
+
+
+22. write a signature of a method which we are developing for the
+    customizing serialization?
+
+
+23. write the signature of the method which we are using in the 
+    de externalization (read) from the Externalizable interface? 
+
+24. Which are the super classes in the pure un checked in the 
+    exception handling?
+
+25. for which two statements we cant use try/catch?
+
+26. 
+
+import java.io.Closeable;
+class A implements Closeable{
+	public void close() {
+		System.out.print(1);
+	}
+	void test() {
+		System.out.print(2);
+	}
+}
+public class M2 {
+	public static void main(String[] args) {
+		try(A a1 = new A(); A a2 = new A()){
+			a1.test();
+			a2.test();
+		}
+		catch(Exception ex) {
+			System.out.print(3);
+		}
+		finally {
+			System.out.print(4);
+		}
+	}
+}
+
+27.
+
+class A <Z extends _________ >{
+	
+}
+public class M7 {
+	public static void main(String[] args) {
+		A<Integer> a1 = new A<Integer>();
+		A<String> a2 = new A<String>();
+		A<Object> a3 = new A<Object>();
+	}
+}
+
+What could be at the underline to give a2 and a3 compile time error
+
+28. which method of a Thread should be used to make parent waiting till
+    to child execution completely getting over.
+
+
+29. assume there are two packages pack1 and pack2.
+    pack1 containing three classes A, B, C
+    pack2 containing three classes D, E, F
+
+    write a java command to run F class from the classes folder and 
+
+    assert statements should be enabled only in F and 
+    also in all the classes of pack1.
+    
+
+30. before which statement/event we can make a Thread as a deamon?
+
+
+31. 
+<script>
+	var elements = [10, 20.4, "abc"];
+	function test()
+	{
+	    document.getElementById('d1').innerHTML = elements._____(' and ');
+	}
+</script>
+<a href='#' onclick='test()'>Print JS Array</a>
+<p id='d1'></p>
+
+what could be at the underline to get the output as 10 and 20.4 and abc 
+while clicking on Print JS Array??
+
+32.
+
+<script>
+	function test()
+	{
+		for(let i = 1; i <= 5; i++)
+		{
+			i += 2;
+			i--;
+		}
+		console.log(i);
+	}
+	test();
+</script>
+
+33.  
+
+	<script>
+		function test()
+		{
+			var v1 =  document.getElementById('p1');
+			console.log(v1._________);
+		}
+	</script>
+  	<p id='p1'>
+		hello
+	</p>
+	<a href='#' onclick='test()'> click </a>
+
+	what could be at the underline to print hello while clicking on click
+
+
+34.
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<script>
+		var t1 = document.getElementById("p1");
+		console.log(t1);
+	</script>
+ </head>
+ <body>
+	<p id='p1'>10</p>
+ </body>
+</html>
+
+
+What is the console output?
+35.
+<form action="success.html">
+	Parameter1 : <input type="text" name="param1"/> <br>
+	<input type="submit" value="submit" onclick=___________/>
+</form>
+<script>
+	function validate()
+	{
+		var myForm = document.forms[0];
+		if(myForm.param1.value.length == 0)
+		{
+			alert("Please enter Parameter1");
+			return false;
+		}
+	}
+</script>
+
+what could be at the underline for meaningfull development?
+
+36. Which operation is mandatory before binary search in the container?
+
+note : (for 37, 38, 39 and 40 questions)
+    class A{
+	private String firstName;
+	private String lastName;
+	private Double weight;
+
+    }
+
+37. try overriding a method which is required to print the state of an object
+    in class A.
+
+38. try overriding a method which is required to evaluate inquality of two 
+    objects of class A.
+
+39. try overriding a method which is required to evaluate quality of two 
+    objects of class A.
+
+40. try developing a comparator to class A by considering firstName and with 
+    an ananymouse inner class
+
+41. What is the class name used for storing hard coded users data in the 
+    Spring security
+
+42.
+System.out.println(("abc" == "abc") == (new String("abc") == new String("abc")));
+
+43. 
+
+	@Autowired
+	private _________   obj;
+	
+	@RequestMapping("mail")
+	public String sendMail() throws Exception
+	{
+		MimeMessage mime = obj.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(mime);
+		helper.setTo("ramesh@lara.co.in");
+		helper.setSubject("Subject: Mail from App");
+		helper.setText("Content:This is from app", true);
+		obj.send(mime);
+		return "mail sent successfully";
+	}
+
+	What could be the obj data type????
+
+
+44. What is the response header name used while attaching 
+    a file in the response?
+45. 
+@Entity
+public class Person {
+	@Id
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	//setters and getters
+}
+---------
+public class PersonDTO {
+	private String firstName;
+	private String email;
+	public PersonDTO(String firstName, String email) {
+		this.firstName = firstName;
+		this.email = email;
+	}
+	//getter methods
+}
+---------
+public interface PersonRepository extends CrudRepository<Person, Integer>{
+	@Query(___________)
+	public Iterable<PersonDTO> read14();
+}
+
+What should be at underline?
+
+46. 
+
+class Address{
+	private String houseNo;
+	private String streetName;
+	// setters and getters
+}
+class Person{
+	private String firstName;
+	private String lastName;
+	private Address[] multipleAddresses;
+	// setters and getters
+}
+
+write the JSON object to the Person reference by choosing sample data 
+
+
+47. @jsonIgnore is required only in the case of _______
+
+
+48. in which architecture service can be re deployed independtly without 
+    effecting other services?
+
+49. which series of status codes represents request processing is success.
+
+50. which method of repository used to insert multiple entities together?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+2. 

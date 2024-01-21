@@ -1,0 +1,27 @@
+
+body{
+  background : linear-gradient(to top left, rgb(178, 109, 144) 0%, rgb(237, 17, 17) 100%);
+}
+footer{
+  position: absolute;
+  top : 0;
+  left: 0;
+  height: 100px;
+  width: 100vh;
+  font-weight: 700;
+  
+}
+footer:after{
+  content: "";
+  width: 80vh;
+  border-bottom: 2px solid white;
+}
+footer h1{
+  margin-left: 10px;
+}
+div{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
